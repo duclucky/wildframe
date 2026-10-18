@@ -10,13 +10,13 @@ const assert=require('node:assert/strict');
  try{
   await page.goto(process.env.TEST_BASE_URL||'http://127.0.0.1:4173');await page.waitForFunction(()=>document.querySelector('#world').style.transform);
   await page.mouse.move(450,520);const before=await rotation();await page.mouse.move(900,520,{steps:24});await settle();const right=await rotation();
-  assert.ok(right.yaw>before.yaw+5,'Moving the mouse right must turn the globe without holding a button');
-  await page.mouse.move(900,300,{steps:18});await settle();assert.ok((await rotation()).pitch>right.pitch+3);assert.equal(await page.locator('#promptDialog').evaluate(e=>e.inert),true);
+  assert.ok(right.yaw-before.yaw>=60,'A 450px mouse movement must produce at least 60 degrees of rotation without holding a button');
+  await page.mouse.move(900,300,{steps:18});await settle();assert.ok((await rotation()).pitch-right.pitch>=20);assert.equal(await page.locator('#promptDialog').evaluate(e=>e.inert),true);
   passed.push('Horizontal and vertical pointer movement rotate the sphere without a mouse button or accidental recipe opening');
   const idle=await page.evaluate(()=>new Promise(resolve=>{const frames=window.__frames;setTimeout(()=>resolve(window.__frames-frames),800)}));assert.ok(idle<=1);
   passed.push('The camera settles when the pointer stops; no continuous idle animation');
   await page.locator('#libraryNav').click();const paused=await rotation();await page.mouse.move(300,500,{steps:15});assert.deepEqual(await rotation(),paused);
-  await page.keyboard.press('Escape');await page.emulateMedia({reducedMotion:'reduce'});await page.mouse.move(400,550);const reduced=await rotation();await page.mouse.move(850,550,{steps:15});await settle();assert.ok((await rotation()).yaw>reduced.yaw+5,'Reduced motion must retain direct mouse control without holding a button');
+  await page.keyboard.press('Escape');await page.emulateMedia({reducedMotion:'reduce'});await page.mouse.move(400,550);const reduced=await rotation();await page.mouse.move(850,550,{steps:15});await settle();assert.ok((await rotation()).yaw-reduced.yaw>=60,'Reduced motion must retain the increased sensitivity without holding a button');
   const reducedIdle=await page.evaluate(()=>new Promise(resolve=>{const frames=window.__frames;setTimeout(()=>resolve(window.__frames-frames),600)}));assert.ok(reducedIdle<=1,'Reduced motion must not leave easing or inertia running');
   passed.push('Library overlays pause the effect; reduced motion keeps direct mouse control with no idle animation');
   await page.emulateMedia({reducedMotion:'no-preference'});await page.mouse.move(700,500);await page.mouse.move(850,450,{steps:12});await settle();
@@ -30,6 +30,6 @@ const assert=require('node:assert/strict');
   assert.equal(await hybrid.evaluate(()=>matchMedia('(pointer:coarse)').matches),true);
   await hybrid.mouse.move(400,500);const hybridBefore=await hybrid.locator('#world').getAttribute('style');await hybrid.mouse.move(900,500,{steps:20});await hybrid.waitForFunction(before=>document.querySelector('#world').getAttribute('style')!==before,hybridBefore);await hybrid.close();
   passed.push('A real mouse also controls a touch-capable device with a coarse primary pointer');
-  assert.deepEqual(errors,[]);console.log(JSON.stringify({passed,idleAnimationCallbacks:idle,errors},null,2));
+  assert.deepEqual(errors,[]);console.log(JSON.stringify({passed,yawDegreesFor450px:right.yaw-before.yaw,idleAnimationCallbacks:idle,errors},null,2));
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exitCode=1});

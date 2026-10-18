@@ -1714,10 +1714,10 @@ function wake(){if(!raf&&!document.hidden)raf=requestAnimationFrame(frame)}
 function layout(force=false){
  const w=innerWidth,h=innerHeight;if(!force&&w===lastWidth&&h===lastHeight)return;lastWidth=w;lastHeight=h;
  const controls=$('.atlas-controls').getBoundingClientRect(),kicker=$('.hero-kicker').getBoundingClientRect();
- const top=Math.max($('header').getBoundingClientRect().bottom+16,kicker.height?kicker.bottom+16:0,controls.left<w/2&&controls.right>w/2?controls.bottom+16:0);
- const bottom=$('.hero-cta').getBoundingClientRect().top-16;
+ const top=Math.max($('header').getBoundingClientRect().bottom+8,kicker.height?kicker.bottom+8:0,controls.left<w/2&&controls.right>w/2?controls.bottom+8:0);
+ const bottom=$('.hero-cta').getBoundingClientRect().top-8;
  // Leave room for perspective and tangent cards, with the whole atlas in view.
- R=Math.max(44,Math.min(300,h*.28,w*.4,(bottom-top)/2/1.12));
+ R=Math.max(44,Math.min(330,h*.31,w*.44,(bottom-top)/2/1.08));
  root.style.setProperty('--sphere-y',((top+bottom)/2)+'px');
  root.style.setProperty('--cw',Math.round(Math.max(68,R*(w<=640?.39:.42)))+'px');
  perspective=w<=380?620:w<=640?760:w<=900?920:1150;root.style.setProperty('--persp',perspective+'px');
@@ -1738,7 +1738,7 @@ function frame(time){
 function followMouse(event){
  if(event.pointerType!=='mouse'||event.buttons||sphereLocked||stage.inert)return;
  const current={x:event.clientX,y:event.clientY};
- if(hoverPoint){const dx=current.x-hoverPoint.x,dy=current.y-hoverPoint.y;if(dx||dy){const aim={yaw:(hoverAim?.yaw??yaw)+dx*.08,pitch:clamp((hoverAim?.pitch??pitch)-dy*.06,-32,32)};
+ if(hoverPoint){const dx=current.x-hoverPoint.x,dy=current.y-hoverPoint.y;if(dx||dy){const aim={yaw:(hoverAim?.yaw??yaw)+dx*.16,pitch:clamp((hoverAim?.pitch??pitch)-dy*.12,-32,32)};
   // Keep deliberate mouse input available with reduced motion, without easing.
   if(reduced.matches){yaw=aim.yaw;pitch=aim.pitch;hoverAim=null}else hoverAim=aim;
   velocityX=velocityY=0;wake()}}
