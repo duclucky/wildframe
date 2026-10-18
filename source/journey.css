@@ -1,0 +1,11 @@
+.hero-cta{width:min(370px,calc(100vw - 32px));display:grid;justify-items:center;gap:7px}
+.hero-cta>.primary{min-height:48px;width:100%}.hero-cta #browsePrompts{border:0;box-shadow:none;background:#080a08bb;color:var(--ink);padding:8px 14px;min-height:38px;font-size:12px}
+.hero-cta p{margin:0;font-size:12px;line-height:1.6;max-width:36ch;color:#c3cbb8;text-shadow:0 2px 8px #000}
+.lab-teaser #startJourneyLibrary{display:block;font-size:12px;min-height:38px;margin-top:3px}
+.journey-panel{padding:18px 30px;background:linear-gradient(110deg,#d7e6a014,#d7e6a003);border-bottom:1px solid #d7e6a040;scroll-margin-top:90px}
+.journey-content{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:10px}.journey-content>div:first-child{max-width:70ch;min-width:0}.journey-content h3{font:400 27px/1.2 var(--serif);margin-bottom:8px}.journey-content p{font-size:13px;line-height:1.7;color:var(--muted)}
+.journey-actions{display:flex;align-items:center;gap:14px;flex-shrink:0}.journey-actions .button{font-size:12px;max-width:240px}.journey-actions .text-button{white-space:nowrap}
+#experiments.guided .experiments-heading,#experiments.guided .experiment-context{display:none}#experiments.guided .experiment-tools{padding-top:18px}
+@media(max-width:900px){.journey-content{align-items:flex-start;flex-direction:column;gap:12px}.journey-actions{flex-wrap:wrap}}
+@media(max-width:520px){.hero-cta{bottom:calc(25px + var(--safe));gap:5px}.hero-cta p{font-size:11px}.hero-cta>.primary{font-size:13px}.journey-panel{padding:16px}.journey-content h3{font-size:25px}.journey-actions{gap:12px}.journey-actions .button{min-height:44px}.journey-actions .text-button{min-height:44px}}
+@media(max-height:520px) and (orientation:landscape){.hero-cta{grid-template-columns:auto auto;width:auto;gap:8px;bottom:8px}.hero-cta>.primary{width:auto;min-height:40px;padding:9px 16px}.hero-cta #browsePrompts{min-height:40px}.hero-cta p{display:none}}

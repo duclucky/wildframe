@@ -1,0 +1,16 @@
+/references/
+/qa/
+/dist/
+/.vercel/
+/.env*
+!/.env.example
+/index.before-*.html
+/index.masterprompt.html
+**/__pycache__/
+*.log
+# Historical portfolio checks remain local; the repository tracks WildFrame checks.
+/tests/ux.cjs
+/tests/motion.cjs
+/tests/noticing.cjs
+/tests/generated-images.cjs
+/scripts/build-prompt-catalog.py

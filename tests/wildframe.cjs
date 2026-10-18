@@ -1,0 +1,53 @@
+const {chromium}=require('C:/Users/TBC/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const assert=require('node:assert/strict');
+const fs=require('node:fs/promises');
+(async()=>{
+ const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
+ const page=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'});page.setDefaultTimeout(12000);
+ const errors=[],passed=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.addInitScript(()=>{window.__copied='';Object.defineProperty(navigator,'clipboard',{value:{writeText:async text=>{window.__copied=text}}})});
+ try{
+  await page.goto('http://127.0.0.1:4173');assert.match(await page.title(),/WildFrame/);
+  assert.equal(await page.locator('.sphere-card').count(),41);
+  await page.locator('#browsePrompts').click();
+  assert.equal(await page.locator('.recipe-card').count(),41);
+  await page.locator('[data-category="Landscapes"]').click();assert.equal(await page.locator('.recipe-card').count(),6);
+  await page.locator('#styleFilter').selectOption('Ink wash');assert.equal(await page.locator('.recipe-card').count(),1);
+  await page.locator('.open-recipe').click();assert.match(await page.locator('#promptTitle').textContent(),/Ink/);
+  await page.locator('#copyMaster').click();assert.match(await page.evaluate(()=>window.__copied),/ink-wash/);
+  assert.equal(await page.locator('#sourceBadge').textContent(),'Generated example');
+  passed.push('41 curated recipes, category/style filters, exact masterprompt copy');
+  await page.locator('#savePrompt').click();assert.equal(await page.locator('#savePrompt').getAttribute('aria-pressed'),'true');
+  await page.locator('#sharePrompt').click();const shared=await page.evaluate(()=>window.__copied);assert.match(shared,/#prompt=ai-ink-mountains$/);
+  const recipient=await browser.newPage();recipient.on('pageerror',e=>errors.push(e.message));await recipient.goto(shared);await recipient.waitForSelector('#promptDialog:not([inert])');
+  assert.equal(await recipient.locator('#promptTitle').textContent(),'Mountains Remembered in Ink');await recipient.close();
+  passed.push('Save and share a direct recipe link');
+  await page.locator('#customizePrompt').click();await page.locator('#studioSubject').fill('a silver fox');await page.locator('#studioSetting').fill('a moonlit bamboo forest');await page.locator('#studioRatio').selectOption('9:16');
+  await page.locator('#copyStudio').click();const variation=await page.evaluate(()=>window.__copied);assert.match(variation,/silver fox/);assert.match(variation,/moonlit bamboo forest/);assert.match(variation,/9:16/);
+  await page.locator('#saveVariation').click();assert.match(await page.locator('#studioStatus').textContent(),/Saved/);
+  const downloadPromise=page.waitForEvent('download');await page.locator('#downloadStudio').click();const download=await downloadPromise;await download.saveAs('qa/wildframe-variation.txt');assert.match(await fs.readFile('qa/wildframe-variation.txt','utf8'),/silver fox/);
+  await page.keyboard.press('Escape');assert.equal(await page.locator('#customizePrompt').evaluate(e=>e===document.activeElement),true);
+  assert.doesNotMatch(await page.locator('#masterText').inputValue(),/silver fox/);
+  passed.push('Customize, copy, save variation and download without changing original');
+  await page.keyboard.press('Escape');await page.reload();await page.locator('#savedNav').click();assert.equal(await page.locator('.recipe-card').count(),1);
+  await page.getByRole('searchbox').fill('does-not-exist');assert.equal(await page.locator('#emptyState').isVisible(),true);await page.locator('#clearFilters').click();assert.equal(await page.locator('.recipe-card').count(),41);
+  await page.getByRole('searchbox').fill('snow leopard');assert.equal(await page.locator('.recipe-card').count(),1);await page.locator('.open-recipe').click();assert.equal(await page.locator('#promptTitle').textContent(),'The Mountain Keeps Its Own Time');
+  await page.locator('#promptClose').focus();await page.keyboard.press('Shift+Tab');assert.equal(await page.evaluate(()=>!!document.activeElement.closest('#promptDialog')),true);
+  await page.keyboard.press('Escape');assert.equal(await page.locator('.open-recipe').evaluate(e=>e===document.activeElement),true);
+  await page.locator('#savedNav').click();assert.equal(await page.locator('.recipe-card').count(),1);assert.equal(await page.getByRole('searchbox').inputValue(),'');
+  await page.locator('#clearFilters').click();
+  passed.push('Saved prompts persist and open across active filters; search/empty state and modal focus restoration');
+  await page.getByRole('searchbox').fill('Before the Dust Settled');await page.locator('.open-recipe').click();assert.equal(await page.locator('#sourceBadge').textContent(),'Reference study');assert.match(await page.locator('#sourceNote').textContent(),/not the original/);
+  passed.push('Reference images are distinguished from verified generation prompts');
+  const mobile=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'reduce'});mobile.on('pageerror',e=>errors.push(e.message));await mobile.goto('http://127.0.0.1:4173');
+  assert.equal(await mobile.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+  await mobile.locator('#browsePrompts').tap();await mobile.locator('[data-category="Landscapes"]').tap();await mobile.locator('.open-recipe').first().tap();await mobile.locator('#customizePrompt').tap();
+  assert.equal(await mobile.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await mobile.locator('#studioClose').tap();await mobile.locator('#promptClose').tap();
+  passed.push('Mobile browsing, prompt inspection and studio without horizontal overflow');
+  const blocked=await browser.newPage({reducedMotion:'reduce'});blocked.on('pageerror',e=>errors.push(e.message));await blocked.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw Error('blocked')}});Object.defineProperty(navigator,'clipboard',{value:{writeText:async()=>{throw Error('blocked')}}})});await blocked.route('**/assets/**',r=>r.abort());await blocked.goto('http://127.0.0.1:4173');await blocked.locator('#browsePrompts').click();await blocked.locator('.open-recipe').first().click();await blocked.locator('#savePrompt').click();assert.match(await blocked.locator('#promptStatus').textContent(),/visit|storage/i);
+  await blocked.locator('#copyMaster').click();assert.equal(await blocked.locator('#promptCopyFallback').isVisible(),true);assert.equal(await blocked.locator('#promptCopyFallback textarea').inputValue(),await blocked.locator('#masterText').inputValue());
+  passed.push('Storage/image failures and denied clipboard retain usable prompts with manual copy');
+  assert.deepEqual(errors,[]);console.log(JSON.stringify({passed,errors},null,2));
+ }finally{await browser.close()}
+})().catch(e=>{console.error(e);process.exitCode=1});
+

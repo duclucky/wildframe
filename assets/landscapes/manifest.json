@@ -1,0 +1,134 @@
+[
+  {
+    "id": "ai-mist-forest",
+    "title": "Where the Forest Breathes",
+    "place": "Imagined landscape · AI study",
+    "category": "Landscapes",
+    "style": "Photography",
+    "tags": [
+      "forest",
+      "mist",
+      "river",
+      "cinematic"
+    ],
+    "source": "AI-generated",
+    "thumb": "assets/landscapes/mist-forest-thumb.webp",
+    "full": "assets/landscapes/mist-forest-full.webp",
+    "original": "assets/landscapes/originals/mist-forest.png",
+    "width": 1536,
+    "height": 1024,
+    "prompt": "Create ONE landscape 3:2 image for a curated AI image masterprompt library called WildFrame. The image itself must contain no text, no watermark, no typography, no border or collage. High visual quality and intentional composition. This is a fictional AI-created landscape, not a claim of a real place. Scene and art direction: An ancient temperate forest at dawn, towering dark conifers fading through layers of soft mist, a narrow emerald river curling through mossy rocks in the foreground, delicate shafts of natural early light, realistic forest textures, muted deep green and slate palette, editorial fine-art landscape photography, calm and spacious, no people or buildings.",
+    "generation": "Built-in ImageGen",
+    "generated": "2026-10-17"
+  },
+  {
+    "id": "ai-desert-silence",
+    "title": "The Space Between Dunes",
+    "place": "Imagined landscape · AI study",
+    "category": "Landscapes",
+    "style": "Photography",
+    "tags": [
+      "desert",
+      "minimal",
+      "sand",
+      "golden hour"
+    ],
+    "source": "AI-generated",
+    "thumb": "assets/landscapes/desert-silence-thumb.webp",
+    "full": "assets/landscapes/desert-silence-full.webp",
+    "original": "assets/landscapes/originals/desert-silence.png",
+    "width": 1536,
+    "height": 1024,
+    "prompt": "Create ONE landscape 3:2 image for a curated AI image masterprompt library called WildFrame. The image itself must contain no text, no watermark, no typography, no border or collage. High visual quality and intentional composition. This is a fictional AI-created landscape, not a claim of a real place. Scene and art direction: A minimal fine-art photograph of vast sculptural desert dunes viewed from an elevated angle just after sunrise. One elegant S-curve of pale ochre sand divides warm light and deep umber shadow. Fine wind ripples in the near foreground, soft distant ridges, restrained amber and charcoal colours, enormous negative space, no footprints, no people, no sun disk, quietly abstract but photorealistic.",
+    "generation": "Built-in ImageGen",
+    "generated": "2026-10-17"
+  },
+  {
+    "id": "ai-alpine-mirror",
+    "title": "A Mountain Held in Water",
+    "place": "Imagined landscape · AI study",
+    "category": "Landscapes",
+    "style": "Photography",
+    "tags": [
+      "mountain",
+      "lake",
+      "reflection",
+      "blue hour"
+    ],
+    "source": "AI-generated",
+    "thumb": "assets/landscapes/alpine-mirror-thumb.webp",
+    "full": "assets/landscapes/alpine-mirror-full.webp",
+    "original": "assets/landscapes/originals/alpine-mirror.png",
+    "width": 1536,
+    "height": 1024,
+    "prompt": "Create ONE landscape 3:2 image for a curated AI image masterprompt library called WildFrame. The image itself must contain no text, no watermark, no typography, no border or collage. High visual quality and intentional composition. This is a fictional AI-created landscape, not a claim of a real place. Scene and art direction: A still alpine lake beneath steep dark mountains at blue hour, a slender shore of weathered stone and one bent pine on the left, a distant pale snow ridge reflected in the glassy water, low translucent ribbons of mist, realistic subtle natural light and intricate rock detail, restrained deep blue-green and ivory colours, wide photographic composition, no cabins or people.",
+    "generation": "Built-in ImageGen",
+    "generated": "2026-10-17"
+  },
+  {
+    "id": "ai-painted-coast",
+    "title": "The Last Light on the Headland",
+    "place": "Imagined landscape · AI study",
+    "category": "Landscapes",
+    "style": "Painterly",
+    "tags": [
+      "coast",
+      "oil painting",
+      "storm",
+      "light"
+    ],
+    "source": "AI-generated",
+    "thumb": "assets/landscapes/painted-coast-thumb.webp",
+    "full": "assets/landscapes/painted-coast-full.webp",
+    "original": "assets/landscapes/originals/painted-coast.png",
+    "width": 1536,
+    "height": 1024,
+    "prompt": "Create ONE landscape 3:2 image for a curated AI image masterprompt library called WildFrame. The image itself must contain no text, no watermark, no typography, no border or collage. High visual quality and intentional composition. This is a fictional AI-created landscape, not a claim of a real place. Scene and art direction: A sweeping rugged sea coast and headland beneath a clearing storm, painted as a refined contemporary oil painting on linen. Warm late light touches the top edge of the cliffs, deep petrol-blue waves below, atmospheric grey clouds, expressive but controlled brushwork, subtle visible canvas texture, elegant muted palette, no people, buildings, boats, or lettering. Gallery-quality painterly landscape with a strong diagonal coast.",
+    "generation": "Built-in ImageGen",
+    "generated": "2026-10-17"
+  },
+  {
+    "id": "ai-ink-mountains",
+    "title": "Mountains Remembered in Ink",
+    "place": "Imagined landscape · AI study",
+    "category": "Landscapes",
+    "style": "Ink wash",
+    "tags": [
+      "mountain",
+      "ink wash",
+      "minimal",
+      "mist"
+    ],
+    "source": "AI-generated",
+    "thumb": "assets/landscapes/ink-mountains-thumb.webp",
+    "full": "assets/landscapes/ink-mountains-full.webp",
+    "original": "assets/landscapes/originals/ink-mountains.png",
+    "width": 1536,
+    "height": 1024,
+    "prompt": "Create ONE landscape 3:2 image for a curated AI image masterprompt library called WildFrame. The image itself must contain no text, no watermark, no typography, no border or collage. High visual quality and intentional composition. This is a fictional AI-created landscape, not a claim of a real place. Scene and art direction: A contemporary East Asian ink-wash inspired mountain landscape on warm ivory rice paper, layered charcoal mountains emerging from broad areas of pale mist, one delicate dark pine on a rocky foreground ledge, a very small waterfall suggested with empty paper. Masterful expressive brush texture and subtle ink bleeding, restrained black, warm grey and ivory, generous negative space, no calligraphy, no seal, no text, no people.",
+    "generation": "Built-in ImageGen",
+    "generated": "2026-10-17"
+  },
+  {
+    "id": "ai-luminous-shore",
+    "title": "A Tide Made of Starlight",
+    "place": "Imagined landscape · AI study",
+    "category": "Landscapes",
+    "style": "Dreamscape",
+    "tags": [
+      "ocean",
+      "surreal",
+      "night",
+      "luminous"
+    ],
+    "source": "AI-generated",
+    "thumb": "assets/landscapes/luminous-shore-thumb.webp",
+    "full": "assets/landscapes/luminous-shore-full.webp",
+    "original": "assets/landscapes/originals/luminous-shore.png",
+    "width": 1536,
+    "height": 1024,
+    "prompt": "Create ONE landscape 3:2 image for a curated AI image masterprompt library called WildFrame. The image itself must contain no text, no watermark, no typography, no border or collage. High visual quality and intentional composition. This is a fictional AI-created landscape, not a claim of a real place. Scene and art direction: A dreamlike fine-art nocturnal coastal landscape, small natural-looking turquoise luminous waves washing around dark volcanic rocks, a broad deep indigo sky scattered with faint stars and thin silver cloud, subtle light from the water on wet sand. Cinematic photographic realism mixed with restrained magical atmosphere, deep blacks with detail, soft highlights, no exaggerated neon, no people, buildings, boats or text.",
+    "generation": "Built-in ImageGen",
+    "generated": "2026-10-17"
+  }
+]

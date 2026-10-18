@@ -1,0 +1,14 @@
+<section id="experiments" class="overlay" role="dialog" aria-modal="true" aria-labelledby="experimentsTitle" inert>
+ <div class="dialog-shell experiments-shell">
+  <div class="dialog-top"><p class="eyebrow">WildFrame / A field lab for your imagination</p><button id="experimentsClose" class="button close-button">Close <span aria-hidden="true">×</span></button></div>
+  <div class="experiments-heading"><p class="eyebrow">Visual experiments / 02 studies</p><h2 id="experimentsTitle">One scene.<br><em>Three ways of seeing.</em></h2><p>Keep the idea. Change the visual language. Explore real generated examples and see the words behind the difference.</p></div>
+  <div class="experiment-tools"><div class="category-tabs" role="group" aria-label="Choose an experiment"><button data-experiment-group="fox" aria-pressed="true">01 / A quiet fox</button><button data-experiment-group="valley" aria-pressed="false">02 / The river remembers</button></div><span class="badge">6 generated examples / ImageGen</span></div>
+  <div class="experiment-context"><p class="eyebrow" id="experimentSceneTitle"></p><p id="experimentScene"></p></div>
+  <div class="experiment-pair">
+   <article><label class="experiment-select" for="experimentA"><span>View A</span><select id="experimentA"></select></label><figure><img id="experimentImageA" alt=""><figcaption id="experimentCaptionA"></figcaption></figure><div class="experiment-actions"><button id="experimentUseA" class="button primary">Make this your own ↗</button><button id="experimentOpenA" class="text-button">Read exact prompt →</button></div></article>
+   <article><label class="experiment-select" for="experimentB"><span>View B</span><select id="experimentB"></select></label><figure><img id="experimentImageB" alt=""><figcaption id="experimentCaptionB"></figcaption></figure><div class="experiment-actions"><button id="experimentUseB" class="button primary">Make this your own ↗</button><button id="experimentOpenB" class="text-button">Read exact prompt →</button></div></article>
+  </div>
+  <section class="experiment-difference" aria-labelledby="differenceTitle"><p class="eyebrow">The instruction that changes</p><h3 id="differenceTitle">A new medium. A new feeling.</h3><div id="experimentDifference" aria-live="polite"></div></section>
+  <p class="experiment-footnote">Curated examples, not a live generator. These prompts keep subject, environment, composition, lighting and palette the same while changing the visual-language instruction. Other image details can vary between generations.</p>
+ </div>
+</section>

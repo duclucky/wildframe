@@ -1,0 +1,164 @@
+{
+  "groups": [
+    {
+      "id": "fox",
+      "title": "A quiet fox",
+      "subtitle": "A familiar subject, three ways of seeing.",
+      "variants": [
+        "ai-experiment-fox-photography",
+        "ai-experiment-fox-painterly",
+        "ai-experiment-fox-ink-wash"
+      ]
+    },
+    {
+      "id": "valley",
+      "title": "The river remembers",
+      "subtitle": "One landscape, from lens to brush to ink.",
+      "variants": [
+        "ai-experiment-valley-photography",
+        "ai-experiment-valley-painterly",
+        "ai-experiment-valley-ink-wash"
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "id": "ai-experiment-fox-photography",
+      "group": "fox",
+      "title": "A quiet fox / Photography",
+      "category": "Wildlife",
+      "style": "Photography",
+      "tags": [
+        "fox",
+        "visual experiment",
+        "photography"
+      ],
+      "subject": "a solitary red fox sitting on a moss-covered rock beside a narrow forest stream",
+      "setting": "a quiet ancient pine forest, layered mist between tall trunks",
+      "light": "soft dawn light, pale gold filtering through cool grey mist",
+      "palette": "muted forest green, warm rust orange, slate grey",
+      "composition": "the fox occupies the left third, its complete body and bushy tail visible, the stream curves from foreground to the right background, eye-level viewpoint",
+      "description": "A curated visual experiment. The visual-language instruction changes; other image details can vary between generations.",
+      "source": "generated",
+      "thumb": "assets/experiments/experiment-fox-photography-thumb.webp",
+      "full": "assets/experiments/experiment-fox-photography-full.webp",
+      "prompt": "Create one 3:2 landscape-format artwork.\nSubject: a solitary red fox sitting on a moss-covered rock beside a narrow forest stream.\nEnvironment: a quiet ancient pine forest, layered mist between tall trunks.\nComposition: the fox occupies the left third, its complete body and bushy tail visible, the stream curves from foreground to the right background, eye-level viewpoint.\nLighting: soft dawn light, pale gold filtering through cool grey mist.\nPalette: muted forest green, warm rust orange, slate grey.\nVisual language: Fine-art photographic realism. Believable natural detail, realistic textures and atmosphere, restrained editorial finish, subtle depth of field.\nConstraints: no people, buildings, text, lettering, watermark, logo, border or collage. This is an imagined scene, not documentary evidence.",
+      "negative": "People, buildings, text, lettering, watermarks, logos, borders, collages."
+    },
+    {
+      "id": "ai-experiment-fox-painterly",
+      "group": "fox",
+      "title": "A quiet fox / Painterly",
+      "category": "Wildlife",
+      "style": "Painterly",
+      "tags": [
+        "fox",
+        "visual experiment",
+        "painterly"
+      ],
+      "subject": "a solitary red fox sitting on a moss-covered rock beside a narrow forest stream",
+      "setting": "a quiet ancient pine forest, layered mist between tall trunks",
+      "light": "soft dawn light, pale gold filtering through cool grey mist",
+      "palette": "muted forest green, warm rust orange, slate grey",
+      "composition": "the fox occupies the left third, its complete body and bushy tail visible, the stream curves from foreground to the right background, eye-level viewpoint",
+      "description": "A curated visual experiment. The visual-language instruction changes; other image details can vary between generations.",
+      "source": "generated",
+      "thumb": "assets/experiments/experiment-fox-painterly-thumb.webp",
+      "full": "assets/experiments/experiment-fox-painterly-full.webp",
+      "prompt": "Create one 3:2 landscape-format artwork.\nSubject: a solitary red fox sitting on a moss-covered rock beside a narrow forest stream.\nEnvironment: a quiet ancient pine forest, layered mist between tall trunks.\nComposition: the fox occupies the left third, its complete body and bushy tail visible, the stream curves from foreground to the right background, eye-level viewpoint.\nLighting: soft dawn light, pale gold filtering through cool grey mist.\nPalette: muted forest green, warm rust orange, slate grey.\nVisual language: A contemporary oil painting on linen. Expressive yet controlled brushwork, layered pigments, subtle visible canvas texture, gallery-quality painterly edges.\nConstraints: no people, buildings, text, lettering, watermark, logo, border or collage. This is an imagined scene, not documentary evidence.",
+      "negative": "People, buildings, text, lettering, watermarks, logos, borders, collages."
+    },
+    {
+      "id": "ai-experiment-fox-ink-wash",
+      "group": "fox",
+      "title": "A quiet fox / Ink wash",
+      "category": "Wildlife",
+      "style": "Ink wash",
+      "tags": [
+        "fox",
+        "visual experiment",
+        "ink wash"
+      ],
+      "subject": "a solitary red fox sitting on a moss-covered rock beside a narrow forest stream",
+      "setting": "a quiet ancient pine forest, layered mist between tall trunks",
+      "light": "soft dawn light, pale gold filtering through cool grey mist",
+      "palette": "muted forest green, warm rust orange, slate grey",
+      "composition": "the fox occupies the left third, its complete body and bushy tail visible, the stream curves from foreground to the right background, eye-level viewpoint",
+      "description": "A curated visual experiment. The visual-language instruction changes; other image details can vary between generations.",
+      "source": "generated",
+      "thumb": "assets/experiments/experiment-fox-ink-wash-thumb.webp",
+      "full": "assets/experiments/experiment-fox-ink-wash-full.webp",
+      "prompt": "Create one 3:2 landscape-format artwork.\nSubject: a solitary red fox sitting on a moss-covered rock beside a narrow forest stream.\nEnvironment: a quiet ancient pine forest, layered mist between tall trunks.\nComposition: the fox occupies the left third, its complete body and bushy tail visible, the stream curves from foreground to the right background, eye-level viewpoint.\nLighting: soft dawn light, pale gold filtering through cool grey mist.\nPalette: muted forest green, warm rust orange, slate grey.\nVisual language: An ink-wash artwork on warm rice paper. Restrained ink tonal gradations, delicate warm colour washes, expressive brushwork and subtle ink bleeding, generous breathing room.\nConstraints: no people, buildings, text, lettering, watermark, logo, border or collage. This is an imagined scene, not documentary evidence.",
+      "negative": "People, buildings, text, lettering, watermarks, logos, borders, collages."
+    },
+    {
+      "id": "ai-experiment-valley-photography",
+      "group": "valley",
+      "title": "The river remembers / Photography",
+      "category": "Landscapes",
+      "style": "Photography",
+      "tags": [
+        "valley",
+        "visual experiment",
+        "photography"
+      ],
+      "subject": "a winding river through a spacious alpine valley",
+      "setting": "distant layered mountains, a small grove of conifers on the left bank, scattered foreground stones",
+      "light": "soft dawn light, pale gold filtering through cool grey mist",
+      "palette": "muted forest green, pale gold, slate grey",
+      "composition": "the river leads from the lower centre towards the distant mountains, open sky across the upper third, wide balanced landscape",
+      "description": "A curated visual experiment. The visual-language instruction changes; other image details can vary between generations.",
+      "source": "generated",
+      "thumb": "assets/experiments/experiment-valley-photography-thumb.webp",
+      "full": "assets/experiments/experiment-valley-photography-full.webp",
+      "prompt": "Create one 3:2 landscape-format artwork.\nSubject: a winding river through a spacious alpine valley.\nEnvironment: distant layered mountains, a small grove of conifers on the left bank, scattered foreground stones.\nComposition: the river leads from the lower centre towards the distant mountains, open sky across the upper third, wide balanced landscape.\nLighting: soft dawn light, pale gold filtering through cool grey mist.\nPalette: muted forest green, pale gold, slate grey.\nVisual language: Fine-art photographic realism. Believable natural detail, realistic textures and atmosphere, restrained editorial finish, subtle depth of field.\nConstraints: no people, buildings, text, lettering, watermark, logo, border or collage. This is an imagined scene, not documentary evidence.",
+      "negative": "People, buildings, text, lettering, watermarks, logos, borders, collages."
+    },
+    {
+      "id": "ai-experiment-valley-painterly",
+      "group": "valley",
+      "title": "The river remembers / Painterly",
+      "category": "Landscapes",
+      "style": "Painterly",
+      "tags": [
+        "valley",
+        "visual experiment",
+        "painterly"
+      ],
+      "subject": "a winding river through a spacious alpine valley",
+      "setting": "distant layered mountains, a small grove of conifers on the left bank, scattered foreground stones",
+      "light": "soft dawn light, pale gold filtering through cool grey mist",
+      "palette": "muted forest green, pale gold, slate grey",
+      "composition": "the river leads from the lower centre towards the distant mountains, open sky across the upper third, wide balanced landscape",
+      "description": "A curated visual experiment. The visual-language instruction changes; other image details can vary between generations.",
+      "source": "generated",
+      "thumb": "assets/experiments/experiment-valley-painterly-thumb.webp",
+      "full": "assets/experiments/experiment-valley-painterly-full.webp",
+      "prompt": "Create one 3:2 landscape-format artwork.\nSubject: a winding river through a spacious alpine valley.\nEnvironment: distant layered mountains, a small grove of conifers on the left bank, scattered foreground stones.\nComposition: the river leads from the lower centre towards the distant mountains, open sky across the upper third, wide balanced landscape.\nLighting: soft dawn light, pale gold filtering through cool grey mist.\nPalette: muted forest green, pale gold, slate grey.\nVisual language: A contemporary oil painting on linen. Expressive yet controlled brushwork, layered pigments, subtle visible canvas texture, gallery-quality painterly edges.\nConstraints: no people, buildings, text, lettering, watermark, logo, border or collage. This is an imagined scene, not documentary evidence.",
+      "negative": "People, buildings, text, lettering, watermarks, logos, borders, collages."
+    },
+    {
+      "id": "ai-experiment-valley-ink-wash",
+      "group": "valley",
+      "title": "The river remembers / Ink wash",
+      "category": "Landscapes",
+      "style": "Ink wash",
+      "tags": [
+        "valley",
+        "visual experiment",
+        "ink wash"
+      ],
+      "subject": "a winding river through a spacious alpine valley",
+      "setting": "distant layered mountains, a small grove of conifers on the left bank, scattered foreground stones",
+      "light": "soft dawn light, pale gold filtering through cool grey mist",
+      "palette": "muted forest green, pale gold, slate grey",
+      "composition": "the river leads from the lower centre towards the distant mountains, open sky across the upper third, wide balanced landscape",
+      "description": "A curated visual experiment. The visual-language instruction changes; other image details can vary between generations.",
+      "source": "generated",
+      "thumb": "assets/experiments/experiment-valley-ink-wash-thumb.webp",
+      "full": "assets/experiments/experiment-valley-ink-wash-full.webp",
+      "prompt": "Create one 3:2 landscape-format artwork.\nSubject: a winding river through a spacious alpine valley.\nEnvironment: distant layered mountains, a small grove of conifers on the left bank, scattered foreground stones.\nComposition: the river leads from the lower centre towards the distant mountains, open sky across the upper third, wide balanced landscape.\nLighting: soft dawn light, pale gold filtering through cool grey mist.\nPalette: muted forest green, pale gold, slate grey.\nVisual language: An ink-wash artwork on warm rice paper. Restrained ink tonal gradations, delicate warm colour washes, expressive brushwork and subtle ink bleeding, generous breathing room.\nConstraints: no people, buildings, text, lettering, watermark, logo, border or collage. This is an imagined scene, not documentary evidence.",
+      "negative": "People, buildings, text, lettering, watermarks, logos, borders, collages."
+    }
+  ]
+}

@@ -1,0 +1,1866 @@
+{
+  "ai-snow-leopard": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a solitary snow leopard",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "on a dark rocky ledge in a cold mountain landscape",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "cinematic but believable natural overcast side light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "subdued slate and ivory palette",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "generous breathing room around the complete animal",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Naturalistic anatomy and fur",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, no watermark, no border, no collage, no humans, no artificial colored lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-mist-forest": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "An ancient temperate forest at dawn",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "delicate shafts of natural early light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted deep green and slate palette",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "intentional composition",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "editorial fine-art landscape photography",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, no watermark, no typography, no border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-giraffes": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "Two giraffes",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "a wide quiet savanna at first light",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "thin band of warm gold on the horizon beneath a blue-grey sky",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "one nearer and one farther away",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-desert-silence": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "vast sculptural desert dunes viewed from an elevated angle just after sunrise.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "warm light and deep umber shadow",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "intentional composition",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, no watermark, no typography, no border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-kingfisher": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "A single common kingfisher",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "above a dark forest river",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "delicate soft side light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "include the full branch and breathing room",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-alpine-mirror": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "A still alpine lake beneath steep dark mountains at blue hour",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "natural light and intricate rock detail",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "intentional composition",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, no watermark, no typography, no border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-humpback": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "An immense humpback whale",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "beneath a blue-green ocean surface",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft natural sunbeams from the rippled surface",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "viewed underwater from a respectful distant side angle",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-painted-coast": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "A sweeping rugged sea coast and headland beneath a clearing storm",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "Warm late light touches the top edge of the cliffs",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted palette",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "intentional composition",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "contemporary oil painting on linen",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, no watermark, no typography, no border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-red-panda": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "A red panda",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "a cool misty cloud forest",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "rusty fur touched by soft daylight",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "full ringed tail draping downward",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-ink-mountains": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "A contemporary East Asian ink-wash inspired mountain landscape on warm ivory rice paper",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "generous negative space",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "contemporary East Asian ink-wash inspired mountain landscape on warm ivory rice paper",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, no watermark, no typography, no border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-penguins": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "A small group of five gentoo penguins",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "a dark stony shore at the edge of Antarctic blue ice",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "overcast cold daylight",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Layered depth and ample space",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-luminous-shore": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "A dreamlike fine-art nocturnal coastal landscape",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft highlights",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "intentional composition",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, no watermark, no typography, no border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-stag": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "A red deer stag",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "the edge of an autumn woodland in early dawn mist",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "Soft rim of natural morning light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "complete animal and branching antlers fully inside frame",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-sea-turtle": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "A green sea turtle",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "a shallow coral reef",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft sunlight moving across turquoise water",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "full turtle in a three-quarter view",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-zebras": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "Three plains zebras",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "tall dry grass",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft cloudy late-afternoon light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "one in foreground in profile and two partially overlapping at distance",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-puffin": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "One Atlantic puffin",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "a mossy rugged sea-cliff edge",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "natural overcast coastal light with a very subtle bright break in clouds",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "complete bird including orange feet",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-octopus": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "A single common octopus",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "a dark rocky seabed in shallow Mediterranean-like water",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "dappled natural underwater light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "one eye visible",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-moth": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a single grey peppered moth",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "a dark lichen-covered tree trunk",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft diffused forest daylight",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "bark and wing patterns visually echo each other",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-polar-bear": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "One polar bear",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "a flat expanse of sea ice",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft blue-grey polar morning light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "complete body seen from side with head slightly turned",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-seal": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "one harbour seal",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "a still dark cold-water inlet",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "delicate side light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "quiet intimate composition with breathing room",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-butterfly": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a single orange-and-black butterfly",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "a meadow at dusk",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "gentle natural backlight",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted organic colours",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "wings folded upright",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "restrained documentary-style photographic aesthetic",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, borders, collage, humans, plastic CGI appearance, or artificial coloured lighting.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194349_26ffdbfd-ac5e-49e9-a07d-c06d3f7cb4cb": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a rhinoceros approaching through dry grass.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Limpopo Province.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194350_5546ea3d-6336-42c7-a59f-06165c5802be": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "an elephant family crossing open grassland.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Maasai Mara.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194349_b4533691-cb49-41d4-b56c-51f0fdcbe250": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a lion looking directly out of deep shadow.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Okavango Delta.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194349_e588abd3-1bfa-4918-894f-05632cc51ccc": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a snowy owl with clear yellow eyes.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Lapland.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194350_28d92c80-de66-41cb-911e-b3b44aebe1f5": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a red fox framed by a dark woodland background.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Cairngorms.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194349_04e89718-4214-4aff-bac5-490462bbfe2f": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a red-eyed tree frog on a mossy branch.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Osa Peninsula.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194417_2c031e22-2fad-4c81-a544-83cd6bba1c33": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a bald eagle gliding beneath storm clouds.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Chilkat Valley.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194349_a39c3226-7848-4b15-b840-98ad8aec467b": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a pale tiger partly hidden by dark foliage.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Bandhavgarh.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194417_555e4d90-f35f-4a1a-8c75-def1e8b71988": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a green snake coiled around a branch.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Raja Ampat.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194417_e525a243-03c8-454b-83b4-60f541baf70a": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a reef shark beneath the water surface.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Fakarava.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194349_ec830e6f-b8e6-4569-8540-ee7f33902c53": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "two tigers resting together in a forest.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Ranthambore.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194417_35a9af5f-bd07-45a7-bb73-08b47d19d530": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a tiger resting low in golden grass.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Chitwan.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194416_30e307a9-1265-45c3-a1a0-5c6fa5bb9f8d": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a horse moving through shallow water.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Southern Coast.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194417_ff5cb9f8-8eed-4bfb-bb08-11256da92eae": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a white wolf against a pale snowy landscape.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Ellesmere Island.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194418_1d9bff4a-4971-4944-9e49-d72e755ceeb0": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "two rhinoceroses beneath warm evening light.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Etosha.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194349_75e53821-0807-4ebc-992d-34bae0ec2ce6": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a ladybird on a dewy blade of grass.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Provence.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194417_5a227847-3796-4438-805d-7e66e9538205": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a young deer among broken patches of forest light.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Bavarian Forest.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194350_b49aa67e-0401-4029-af4f-f6ac3ee83398": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "an antelope standing among thin dry stems.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Serengeti.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194349_89b82779-3a46-4c55-b7c5-f4a0fd955874": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a flamingo described by a curve of red against darkness.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Fuente de Piedra.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "hf_20260922_194416_47e18c62-253a-42e1-97a9-9e5f6a6b8d59": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "one delicate feather against a black background.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "Set the scene in a natural environment inspired by Reykjavík.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft directional light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "Build the composition around a clear focal point, soft directional light, and meaningful negative space.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Use realistic textures, natural anatomy and restrained colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "No text, watermark, border or collage.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-experiment-fox-photography": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a solitary red fox sitting on a moss-covered rock beside a narrow forest stream.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "a quiet ancient pine forest, layered mist between tall trunks.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft dawn light, pale gold filtering through cool grey mist.",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted forest green, warm rust orange, slate grey.",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "the fox occupies the left third, its complete body and bushy tail visible, the stream curves from foreground to the right background, eye-level viewpoint.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Fine-art photographic realism. Believable natural detail, realistic textures and atmosphere, restrained editorial finish, subtle depth of field.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no people, buildings, text, lettering, watermark, logo, border or collage. This is an imagined scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-experiment-fox-painterly": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a solitary red fox sitting on a moss-covered rock beside a narrow forest stream.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "a quiet ancient pine forest, layered mist between tall trunks.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft dawn light, pale gold filtering through cool grey mist.",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted forest green, warm rust orange, slate grey.",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "the fox occupies the left third, its complete body and bushy tail visible, the stream curves from foreground to the right background, eye-level viewpoint.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "A contemporary oil painting on linen. Expressive yet controlled brushwork, layered pigments, subtle visible canvas texture, gallery-quality painterly edges.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no people, buildings, text, lettering, watermark, logo, border or collage. This is an imagined scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-experiment-fox-ink-wash": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a solitary red fox sitting on a moss-covered rock beside a narrow forest stream.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "a quiet ancient pine forest, layered mist between tall trunks.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft dawn light, pale gold filtering through cool grey mist.",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted forest green, warm rust orange, slate grey.",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "the fox occupies the left third, its complete body and bushy tail visible, the stream curves from foreground to the right background, eye-level viewpoint.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "An ink-wash artwork on warm rice paper. Restrained ink tonal gradations, delicate warm colour washes, expressive brushwork and subtle ink bleeding, generous breathing room.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no people, buildings, text, lettering, watermark, logo, border or collage. This is an imagined scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-experiment-valley-photography": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a winding river through a spacious alpine valley.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "distant layered mountains, a small grove of conifers on the left bank, scattered foreground stones.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft dawn light, pale gold filtering through cool grey mist.",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted forest green, pale gold, slate grey.",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "the river leads from the lower centre towards the distant mountains, open sky across the upper third, wide balanced landscape.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "Fine-art photographic realism. Believable natural detail, realistic textures and atmosphere, restrained editorial finish, subtle depth of field.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no people, buildings, text, lettering, watermark, logo, border or collage. This is an imagined scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-experiment-valley-painterly": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a winding river through a spacious alpine valley.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "distant layered mountains, a small grove of conifers on the left bank, scattered foreground stones.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft dawn light, pale gold filtering through cool grey mist.",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted forest green, pale gold, slate grey.",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "the river leads from the lower centre towards the distant mountains, open sky across the upper third, wide balanced landscape.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "A contemporary oil painting on linen. Expressive yet controlled brushwork, layered pigments, subtle visible canvas texture, gallery-quality painterly edges.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no people, buildings, text, lettering, watermark, logo, border or collage. This is an imagined scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-experiment-valley-ink-wash": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a winding river through a spacious alpine valley.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "setting",
+      "label": "Environment",
+      "quote": "distant layered mountains, a small grove of conifers on the left bank, scattered foreground stones.",
+      "note": "Gives the subject a place and establishes the world around it."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft dawn light, pale gold filtering through cool grey mist.",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "palette",
+      "label": "Colour palette",
+      "quote": "muted forest green, pale gold, slate grey.",
+      "note": "Gives the image a colour direction. Use a few related tones to keep the scene coherent."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "the river leads from the lower centre towards the distant mountains, open sky across the upper third, wide balanced landscape.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "An ink-wash artwork on warm rice paper. Restrained ink tonal gradations, delicate warm colour washes, expressive brushwork and subtle ink bleeding, generous breathing room.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no people, buildings, text, lettering, watermark, logo, border or collage. This is an imagined scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ]
+}

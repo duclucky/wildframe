@@ -1,0 +1,10 @@
+.git
+.vercel
+.env*
+references
+qa
+tests
+dist
+index.before-*.html
+index.masterprompt.html
+assets/**/originals/**

@@ -1,0 +1,9 @@
+<div class="prompt-view-switch" role="group" aria-label="Prompt reading mode">
+ <button id="rawMode" class="button small" aria-pressed="true">Original prompt</button>
+ <button id="dnaMode" class="button small" aria-pressed="false">Prompt DNA <span aria-hidden="true">↗</span></button>
+</div>
+<section id="dnaPanel" aria-label="Understand the prompt" hidden>
+ <div id="dnaParts" class="dna-parts" role="group" aria-label="Parts of the prompt"></div>
+ <div class="dna-insight"><p class="eyebrow" id="dnaLabel"></p><p id="dnaNote"></p><div class="prompt-actions"><button id="editDnaPart" class="text-button">Edit this part in the studio →</button><button id="copyDnaOriginal" class="button small">Copy original prompt</button></div></div>
+ <div id="dnaReading" class="dna-reading" tabindex="0" aria-label="Original prompt with selected part highlighted"></div>
+</section>
