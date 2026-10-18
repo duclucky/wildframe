@@ -23,6 +23,8 @@ Prompt DNA giải thích các đoạn trích đúng từ masterprompt gốc và 
 
 Nút “Try your first remix” mở hướng dẫn tùy chọn qua chọn phong cách, hiểu prompt và sửa/lưu. Người dùng có thể bỏ qua; thông báo hoàn thành chỉ xuất hiện sau khi lưu thành công. `/try` là bài dùng thử tự báo cáo, xuất JSON tại máy và không tự gửi phản hồi. Chưa có kết quả thử nghiệm với người thật.
 
+Khối cầu trên desktop xoay nhẹ theo hướng di chuột, không cần giữ nút. Chuyển động dừng dần khi chuột đứng yên, tạm dừng trong thư viện/modal và tắt theo reduced motion. Điện thoại vẫn kéo để xoay; nhấp ảnh vẫn mở đúng prompt. `tests/sphere-follow.cjs` kiểm tra bốn nhóm hành vi này.
+
 Lịch sử dùng khóa `wildframe:remixes:v2`, tự chuyển biến thể cũ ở `wildframe:variation:v1` một lần, giữ nguyên khóa cũ. Dữ liệu không đọc được không bị ghi đè; khi không thể lưu, người dùng vẫn có thể sao chép hoặc tải file.
 
 Yêu thích và biến thể lưu trong trình duyệt. Chưa có tài khoản, backend cộng đồng hoặc đồng bộ giữa thiết bị. Liên kết chia sẻ dùng địa chỉ hiện tại; địa chỉ localhost cần được triển khai lên hosting trước khi chia sẻ cho người bên ngoài.
@@ -46,3 +48,5 @@ Yêu thích và biến thể lưu trong trình duyệt. Chưa có tài khoản, 
 35 nhóm kiểm tra đã chạy thành công: 24 nhóm browser gốc, 4 nhóm hướng dẫn lần đầu, 1 nhóm biểu mẫu dùng thử và 6 nhóm logic. Browser dùng Playwright từ runtime cục bộ và Edge trên máy này; đường dẫn runtime được ghi trực tiếp trong file kiểm tra. Không có lỗi JavaScript trong các bài browser. Kiểm tra điện thoại bằng mô phỏng trình duyệt, chưa kiểm tra trên thiết bị vật lý. Ảnh chụp QA nằm trong `qa/wildframe-*.png`. Các bài kiểm tra portfolio cũ chỉ áp dụng cho các bản HTML sao lưu, giữ local và không thuộc bộ kiểm tra hiện tại.
 
 Cấu hình GitHub/Vercel và bản public đã được người dùng cho phép. `scripts/build-static.cjs` chỉ đưa các tệp được chọn vào `dist`, không đưa source, bản sao lưu, ảnh QA hay credentials lên website. Kết quả triển khai được xác nhận sau khi deploy và kiểm tra truy cập ẩn danh.
+
+Đã xuất bản tại https://wildframe.vercel.app và trang bài dùng thử https://wildframe.vercel.app/try. Repo https://github.com/duclucky/wildframe được giữ private; website truy cập công khai không cần đăng nhập. Vercel đã kết nối repo để cập nhật từ nhánh `main`.

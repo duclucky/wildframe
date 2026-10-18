@@ -14,3 +14,6 @@
 /tests/noticing.cjs
 /tests/generated-images.cjs
 /scripts/build-prompt-catalog.py
+
+.vercel
+.env*

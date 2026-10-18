@@ -9,3 +9,4 @@
 @media(max-width:900px){.journey-content{align-items:flex-start;flex-direction:column;gap:12px}.journey-actions{flex-wrap:wrap}}
 @media(max-width:520px){.hero-cta{bottom:calc(25px + var(--safe));gap:5px}.hero-cta p{font-size:11px}.hero-cta>.primary{font-size:13px}.journey-panel{padding:16px}.journey-content h3{font-size:25px}.journey-actions{gap:12px}.journey-actions .button{min-height:44px}.journey-actions .text-button{min-height:44px}}
 @media(max-height:520px) and (orientation:landscape){.hero-cta{grid-template-columns:auto auto;width:auto;gap:8px;bottom:8px}.hero-cta>.primary{width:auto;min-height:40px;padding:9px 16px}.hero-cta #browsePrompts{min-height:40px}.hero-cta p{display:none}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){#stage{cursor:default}#stage.dragging{cursor:grabbing}.load-note{font-size:10px}}
