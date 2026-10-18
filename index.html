@@ -1541,7 +1541,7 @@ function updateSphereControls(){
 }
 function updateAtlasHint(){
  if(loaded<sphereRecipes.length)return;
- $('#loadNote').textContent=sphereLocked?'View locked · Options to unlock':coarse.matches?'Drag to explore · Tap an image':'Move to explore · Click an image';
+ $('#loadNote').textContent='';$('#loadNote').hidden=true;
 }
 function closeAtlasOptions(focus=false){$('#atlasOptions').open=false;if(focus)$('#atlasOptionsToggle').focus({preventScroll:true})}
 function initializeAtlasUx(){
