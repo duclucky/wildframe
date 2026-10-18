@@ -132,7 +132,7 @@ function layout(force=false){
  const top=Math.max($('header').getBoundingClientRect().bottom+8,kicker.height?kicker.bottom+8:0,controls.left<w/2&&controls.right>w/2?controls.bottom+8:0);
  const bottom=$('.hero-cta').getBoundingClientRect().top-8;
  // Leave room for perspective and tangent cards, with the whole atlas in view.
- R=Math.max(44,Math.min(330,h*.31,w*.44,(bottom-top)/2/1.08));
+ R=Math.max(44,Math.min(360,h*.36,w*.44,(bottom-top)/2/1.08));
  root.style.setProperty('--sphere-y',((top+bottom)/2)+'px');
  root.style.setProperty('--cw',Math.round(Math.max(68,R*(w<=640?.39:.42)))+'px');
  perspective=w<=380?620:w<=640?760:w<=900?920:1150;root.style.setProperty('--persp',perspective+'px');
@@ -141,8 +141,8 @@ function layout(force=false){
 function frame(time){
  raf=0;const dt=lastFrame?clamp((time-lastFrame)/16.667,.25,2):1;lastFrame=time;const paused=sphereLocked||library.classList.contains('open')||dialog.classList.contains('open')||studio.classList.contains('open')||experiments.classList.contains('open');
  if(!pointer&&!paused){
-  if(reduced.matches){velocityX=velocityY=0;hoverAim=null}
-  if(hoverAim){const follow=1-Math.pow(.84,dt);yaw+=(hoverAim.yaw-yaw)*follow;pitch+=(hoverAim.pitch-pitch)*follow;if(Math.abs(hoverAim.yaw-yaw)<.005&&Math.abs(hoverAim.pitch-pitch)<.005){yaw=hoverAim.yaw;pitch=hoverAim.pitch;hoverAim=null}}
+  if(reduced.matches)velocityX=velocityY=0;
+  if(hoverAim){const follow=1-Math.exp(-dt*16.667/(reduced.matches?85:115));yaw+=(hoverAim.yaw-yaw)*follow;pitch+=(hoverAim.pitch-pitch)*follow;if(Math.abs(hoverAim.yaw-yaw)<.01&&Math.abs(hoverAim.pitch-pitch)<.01){yaw=hoverAim.yaw;pitch=hoverAim.pitch;hoverAim=null}}
   else{const decay=Math.pow(.94,dt),travel=(1-decay)/.06;yaw+=velocityX*travel;pitch+=velocityY*travel;velocityX*=decay;velocityY*=decay;if(Math.abs(velocityX)<.002)velocityX=0;if(Math.abs(velocityY)<.002)velocityY=0}
  }
  const bounded=clamp(pitch,-32,32);if(bounded!==pitch)velocityY=0;pitch=bounded;
@@ -154,8 +154,8 @@ function followMouse(event){
  if(event.pointerType!=='mouse'||event.buttons||sphereLocked||stage.inert)return;
  const current={x:event.clientX,y:event.clientY};
  if(hoverPoint){const dx=current.x-hoverPoint.x,dy=current.y-hoverPoint.y;if(dx||dy){const aim={yaw:(hoverAim?.yaw??yaw)+dx*.16,pitch:clamp((hoverAim?.pitch??pitch)-dy*.12,-32,32)};
-  // Keep deliberate mouse input available with reduced motion, without easing.
-  if(reduced.matches){yaw=aim.yaw;pitch=aim.pitch;hoverAim=null}else hoverAim=aim;
+  // Dampen only deliberate input, with a shorter settling time for reduced motion.
+  hoverAim=aim;
   velocityX=velocityY=0;wake()}}
  hoverPoint=current;
 }

@@ -184,8 +184,8 @@ html{overflow:hidden;scrollbar-gutter:auto}body{height:100dvh;overflow:hidden}
 #stage.view-locked{cursor:default}#stage:focus-visible{outline-offset:-5px}
 .sphere-card figure{transition:transform 180ms var(--ease),filter 180ms var(--ease),box-shadow 180ms}
 .sphere-card:hover figure{transform:none}
-.sphere-card.is-previewed figure{transform:scale(1.025);box-shadow:0 0 0 2px var(--accent),0 0 25px #d7e6a026}
-#orb.previewing .sphere-card:not(.is-previewed) figure{filter:brightness(.76)}
+.sphere-card.is-previewed figure{transform:none;box-shadow:0 0 0 2px var(--accent),0 0 25px #d7e6a026}
+#orb.previewing .sphere-card:not(.is-previewed) figure{filter:brightness(.9)}
 .sphere-card.is-previewed figure::after{background:rgba(8,10,8,calc(var(--d,0)*.35))}
 .sphere-preview{position:fixed;z-index:25;left:var(--pad);top:174px;width:278px;padding:14px;display:flex;align-items:center;gap:12px;border:1px solid #d7e6a040;border-radius:12px;background:#10150ef2;box-shadow:0 12px 36px #0005;pointer-events:none}
 .sphere-preview img{width:62px;height:52px;object-fit:cover;border-radius:5px;flex-shrink:0}
@@ -227,6 +227,27 @@ html{overflow:hidden;scrollbar-gutter:auto}body{height:100dvh;overflow:hidden}
 @media(max-height:520px) and (min-width:521px){.atlas-controls{top:88px;left:var(--pad);transform:none}.sphere-preview{top:142px}#headline{font-size:clamp(26px,8.5vh,36px)}}
 @media(prefers-reduced-motion:reduce){.sphere-card figure{transition:none}}
 
+/* An uncluttered home gives the atlas the available screen. */
+body:not(.library-view) header .main-nav,.header-note,.hero-description,.hero-meta,.hero-kicker{display:none}
+.hero-cta{width:auto;max-width:calc(100vw - 128px);bottom:calc(38px + var(--safe));display:block}
+.hero-cta::before{display:none}
+.hero-cta #browsePrompts{min-height:44px;padding:10px 18px;font-size:12px;white-space:nowrap;background:#10150e80;border:1px solid #ffffff30;box-shadow:none}
+.hero-cta #browsePrompts:hover{border-color:#d7e6a080;background:#d7e6a00d}
+.load-note{display:block;left:50%;bottom:10px;transform:translateX(-50%);max-width:calc(100vw - 112px);white-space:nowrap;text-align:center;font-size:10px;color:#9aa28f}
+.atlas-controls{top:auto;left:auto;right:var(--pad);bottom:calc(38px + var(--safe));width:44px;height:44px;display:block;transform:none;z-index:27}
+.atlas-controls summary{list-style:none;width:44px;height:44px;display:grid;place-items:center;border:1px solid #ffffff24;border-radius:50%;color:var(--muted);background:#10150e60;cursor:pointer;touch-action:manipulation}
+.atlas-controls summary::-webkit-details-marker{display:none}
+.atlas-controls summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.atlas-controls summary:hover,.atlas-controls[open] summary{border-color:#d7e6a070;color:var(--accent);background:var(--panel)}
+.atlas-controls summary svg{width:20px;height:20px}
+.atlas-options-panel{position:absolute;right:0;bottom:54px;width:200px;padding:7px;background:#10150ef5;border:1px solid #ffffff30;border-radius:12px;box-shadow:0 12px 30px #0007}
+.atlas-controls:not([open]) .atlas-options-panel{display:none}
+.atlas-options-panel .button{width:100%;justify-content:flex-start;border:0;border-radius:7px;box-shadow:none;background:none;font-size:12px}
+.atlas-options-panel .button:hover{background:#ffffff0a}
+.atlas-options-panel .button[aria-pressed=true]{background:#d7e6a018;color:var(--accent)}
+.sphere-preview{top:96px}
+@media(max-height:520px){.hero-cta{bottom:12px}.atlas-controls{bottom:12px}.load-note{display:none}}
+
 </style>
 </head>
 <body>
@@ -237,10 +258,10 @@ html{overflow:hidden;scrollbar-gutter:auto}body{height:100dvh;overflow:hidden}
 <div class="vignette"></div>
 <p class="hero-kicker hero-layer">Explore · Understand · Remix</p>
 <aside class="hero-description hero-layer"><p class="eyebrow">A little language.<br>A whole new wilderness.</p><p>Masterprompts for wildlife, wild places, and everything your imagination finds in between.</p></aside>
-<div class="hero-cta hero-layer"><button class="button primary" id="startJourney">Try your first remix <svg aria-hidden="true"><use href="#icon-arrow"/></svg></button><button class="button" id="browsePrompts">Browse the prompt library →</button><p>AI wildlife &amp; landscape prompts.<br>Understand the words. Make the next image your own.</p></div>
+<div class="hero-cta hero-layer"><button class="button" id="browsePrompts">Explore prompts <span aria-hidden="true">→</span></button></div>
 <aside class="hero-meta hero-layer"><strong id="heroCount">65</strong><p>visual prompt recipes</p><small>No sign-in. Just imagination.</small></aside>
 <p class="load-note hero-layer" id="loadNote" role="status">Preparing your atlas…</p>
-<div class="atlas-controls hero-layer" role="group" aria-label="Atlas view controls"><button class="button" id="lockSphere" aria-pressed="false"><svg aria-hidden="true"><use href="#icon-unlock"/></svg><span id="lockSphereLabel">Lock view</span></button><button class="button" id="resetSphere"><svg aria-hidden="true"><use href="#icon-reset"/></svg>Reset angle</button></div>
+<details class="atlas-controls hero-layer" id="atlasOptions"><summary id="atlasOptionsToggle" aria-label="View options" title="View options"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></summary><div class="atlas-options-panel" role="group" aria-label="Atlas view controls"><button class="button" id="lockSphere" aria-pressed="false"><svg aria-hidden="true"><use href="#icon-unlock"/></svg><span id="lockSphereLabel">Lock view</span></button><button class="button" id="resetSphere"><svg aria-hidden="true"><use href="#icon-reset"/></svg>Reset angle</button></div></details>
 <aside class="sphere-preview hero-layer" id="spherePreview" aria-hidden="true" hidden><img id="spherePreviewImage" alt="" width="62" height="52"><div><p id="spherePreviewMeta"></p><h2 id="spherePreviewTitle"></h2><small id="spherePreviewHint"></small></div></aside>
 <p class="sr-only" id="sphereHelp">Move your mouse or drag to turn the atlas. With the atlas focused, use arrow keys to turn and Enter to open the front image. Lock view holds the angle; Reset angle restores the initial view.</p><p class="sr-only" id="sphereStatus" role="status" aria-live="polite"></p>
 
@@ -1384,7 +1405,7 @@ function recordJourneySave(item){
   journeyPanel.scrollIntoView({block:'start',behavior:reduced.matches?'instant':'smooth'});$('#journeyTitle').focus({preventScroll:true});
 }
 function initializeJourney(){
-  for(const id of ['startJourney','startJourneyLibrary'])$('#'+id).addEventListener('click',event=>startJourney(event.currentTarget));
+  $('#startJourneyLibrary').addEventListener('click',event=>startJourney(event.currentTarget));
 }
 
 /* React Bits adaptations: SpotlightCard and FadeContent.
@@ -1520,17 +1541,24 @@ function updateSphereControls(){
 }
 function updateAtlasHint(){
  if(loaded<sphereRecipes.length)return;
- $('#loadNote').textContent=sphereLocked?'View locked · Select an image, or unlock to turn':coarse.matches?'Drag to explore · Tap an image for its prompt':'Move your mouse to explore · Click an image for its prompt';
+ $('#loadNote').textContent=sphereLocked?'View locked · Options to unlock':coarse.matches?'Drag to explore · Tap an image':'Move to explore · Click an image';
 }
+function closeAtlasOptions(focus=false){$('#atlasOptions').open=false;if(focus)$('#atlasOptionsToggle').focus({preventScroll:true})}
 function initializeAtlasUx(){
  $('#lockSphere').addEventListener('click',()=>{
   sphereLocked=!sphereLocked;resetHoverMotion();hideSpherePreview();velocityX=velocityY=0;updateSphereControls();wake();
   $('#sphereStatus').textContent=sphereLocked?'View locked. Images remain available to open.':'View unlocked.';
+  closeAtlasOptions(true);
  });
  $('#resetSphere').addEventListener('click',()=>{
   resetHoverMotion();hideSpherePreview();velocityX=velocityY=0;yaw=0;pitch=-4;renderStamp='';wake();
   $('#sphereStatus').textContent='Initial angle restored.'+(sphereLocked?' View remains locked.':'');
+  closeAtlasOptions(true);
  });
+ const options=$('#atlasOptions');
+ options.addEventListener('toggle',()=>{if(options.open){hideSpherePreview();resetHoverMotion();velocityX=velocityY=0}});
+ document.addEventListener('click',event=>{if(options.open&&!options.contains(event.target))closeAtlasOptions()});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&options.open){event.preventDefault();event.stopPropagation();closeAtlasOptions(true)}});
  stage.addEventListener('pointermove',queueSpherePreview);
  stage.addEventListener('pointerleave',hideSpherePreview);stage.addEventListener('pointerdown',hideSpherePreview);
  stage.addEventListener('focus',()=>{resetHoverMotion();velocityX=velocityY=0;showSpherePreview(frontSphereCard(),true)});
@@ -1717,7 +1745,7 @@ function layout(force=false){
  const top=Math.max($('header').getBoundingClientRect().bottom+8,kicker.height?kicker.bottom+8:0,controls.left<w/2&&controls.right>w/2?controls.bottom+8:0);
  const bottom=$('.hero-cta').getBoundingClientRect().top-8;
  // Leave room for perspective and tangent cards, with the whole atlas in view.
- R=Math.max(44,Math.min(330,h*.31,w*.44,(bottom-top)/2/1.08));
+ R=Math.max(44,Math.min(360,h*.36,w*.44,(bottom-top)/2/1.08));
  root.style.setProperty('--sphere-y',((top+bottom)/2)+'px');
  root.style.setProperty('--cw',Math.round(Math.max(68,R*(w<=640?.39:.42)))+'px');
  perspective=w<=380?620:w<=640?760:w<=900?920:1150;root.style.setProperty('--persp',perspective+'px');
@@ -1726,8 +1754,8 @@ function layout(force=false){
 function frame(time){
  raf=0;const dt=lastFrame?clamp((time-lastFrame)/16.667,.25,2):1;lastFrame=time;const paused=sphereLocked||library.classList.contains('open')||dialog.classList.contains('open')||studio.classList.contains('open')||experiments.classList.contains('open');
  if(!pointer&&!paused){
-  if(reduced.matches){velocityX=velocityY=0;hoverAim=null}
-  if(hoverAim){const follow=1-Math.pow(.84,dt);yaw+=(hoverAim.yaw-yaw)*follow;pitch+=(hoverAim.pitch-pitch)*follow;if(Math.abs(hoverAim.yaw-yaw)<.005&&Math.abs(hoverAim.pitch-pitch)<.005){yaw=hoverAim.yaw;pitch=hoverAim.pitch;hoverAim=null}}
+  if(reduced.matches)velocityX=velocityY=0;
+  if(hoverAim){const follow=1-Math.exp(-dt*16.667/(reduced.matches?85:115));yaw+=(hoverAim.yaw-yaw)*follow;pitch+=(hoverAim.pitch-pitch)*follow;if(Math.abs(hoverAim.yaw-yaw)<.01&&Math.abs(hoverAim.pitch-pitch)<.01){yaw=hoverAim.yaw;pitch=hoverAim.pitch;hoverAim=null}}
   else{const decay=Math.pow(.94,dt),travel=(1-decay)/.06;yaw+=velocityX*travel;pitch+=velocityY*travel;velocityX*=decay;velocityY*=decay;if(Math.abs(velocityX)<.002)velocityX=0;if(Math.abs(velocityY)<.002)velocityY=0}
  }
  const bounded=clamp(pitch,-32,32);if(bounded!==pitch)velocityY=0;pitch=bounded;
@@ -1739,8 +1767,8 @@ function followMouse(event){
  if(event.pointerType!=='mouse'||event.buttons||sphereLocked||stage.inert)return;
  const current={x:event.clientX,y:event.clientY};
  if(hoverPoint){const dx=current.x-hoverPoint.x,dy=current.y-hoverPoint.y;if(dx||dy){const aim={yaw:(hoverAim?.yaw??yaw)+dx*.16,pitch:clamp((hoverAim?.pitch??pitch)-dy*.12,-32,32)};
-  // Keep deliberate mouse input available with reduced motion, without easing.
-  if(reduced.matches){yaw=aim.yaw;pitch=aim.pitch;hoverAim=null}else hoverAim=aim;
+  // Dampen only deliberate input, with a shorter settling time for reduced motion.
+  hoverAim=aim;
   velocityX=velocityY=0;wake()}}
  hoverPoint=current;
 }

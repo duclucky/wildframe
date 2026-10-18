@@ -7,27 +7,28 @@ const base=process.env.TEST_BASE_URL||'http://127.0.0.1:4173';
  const errors=[],passed=[];
  const watch=page=>{page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(12000);return page};
  const pose=page=>page.locator('#world').evaluate(e=>e.style.transform);
+ const viewControl=async(page,id,touch=false)=>{const action=touch?'tap':'click';if(await page.locator('#atlasOptions').getAttribute('open')===null)await page.locator('#atlasOptionsToggle')[action]();await page.locator('#'+id)[action]()};
  const settle=page=>page.waitForFunction(()=>{const value=document.querySelector('#world').style.transform;if(window.lastPose!==value){window.lastPose=value;window.lastMove=performance.now();return false}return performance.now()-window.lastMove>450});
  const hit=page=>page.evaluate(()=>{for(const card of document.querySelectorAll('.sphere-card')){const r=card.getBoundingClientRect(),x=r.x+r.width/2,y=r.y+r.height/2;if(x>120&&x<innerWidth-120&&y>220&&y<innerHeight-260&&document.elementFromPoint(x,y)?.closest('.sphere-card')===card)return {x,y,id:card.dataset.id}}});
  try{
   if(!process.env.UX_CASE||process.env.UX_CASE==='sphere'){
    const page=watch(await browser.newPage({viewport:{width:1440,height:1000}}));await page.goto(base);
    assert.equal(await page.locator('#lockSphere').count(),1,'The atlas must expose a view-lock control');
-   await page.locator('#lockSphere').click();assert.equal(await page.locator('#lockSphere').getAttribute('aria-pressed'),'true');const frozen=await pose(page);
+   await viewControl(page,'lockSphere');assert.equal(await page.locator('#lockSphere').getAttribute('aria-pressed'),'true');const frozen=await pose(page);
    await page.mouse.move(450,500);await page.mouse.move(950,450,{steps:20});await settle(page);assert.equal(await pose(page),frozen);
-   await page.locator('#lockSphere').click();await page.mouse.move(400,500);await page.mouse.move(950,500,{steps:20});await settle(page);assert.notEqual(await pose(page),frozen);
-   await page.locator('#resetSphere').click();await settle(page);assert.match(await pose(page),/rotateY\(0deg\) rotateX\(-4deg\)/);
+   await viewControl(page,'lockSphere');await page.mouse.move(400,500);await page.mouse.move(950,500,{steps:20});await settle(page);assert.notEqual(await pose(page),frozen);
+   await viewControl(page,'resetSphere');await settle(page);assert.match(await pose(page),/rotateY\(0deg\) rotateX\(-4deg\)/);
    passed.push('Lock freezes mouse rotation, unlock restores it, and reset returns to the initial angle');
-   await page.locator('#lockSphere').click();const target=await hit(page);assert.ok(target);await page.mouse.move(target.x,target.y);
+   await viewControl(page,'lockSphere');const target=await hit(page);assert.ok(target);await page.mouse.move(target.x,target.y);
    await page.locator('#spherePreview:not([hidden])').waitFor();assert.equal(await page.locator('#spherePreviewTitle').textContent(),recipes.find(r=>r.id===target.id).title);
    assert.equal(await page.locator('#promptDialog').evaluate(e=>e.inert),true);assert.equal(await page.locator('.sphere-card.is-previewed').getAttribute('data-id'),target.id);
    await page.screenshot({path:'qa/wildframe-atlas-preview.png'});await page.mouse.click(target.x,target.y);assert.ok(page.url().includes(target.id));
    assert.equal(await page.locator('#spherePreview').isVisible(),false);await page.keyboard.press('Escape');
    passed.push('Stationary hover previews the actual image and its style; a single click opens that exact prompt');
-   await page.locator('#lockSphere').click();await page.locator('#stage').focus();const keyboardBefore=await pose(page);await page.keyboard.press('ArrowRight');await settle(page);assert.notEqual(await pose(page),keyboardBefore);
+   await viewControl(page,'lockSphere');await page.locator('#stage').focus();const keyboardBefore=await pose(page);await page.keyboard.press('ArrowRight');await settle(page);assert.notEqual(await pose(page),keyboardBefore);
    const keyboardId=await page.locator('.sphere-card.is-previewed').getAttribute('data-id');await page.keyboard.press('Enter');assert.ok(page.url().includes(keyboardId));await page.keyboard.press('Escape');
    await page.emulateMedia({reducedMotion:'reduce'});await page.mouse.move(400,550);const reduced=await pose(page);await page.mouse.move(950,450,{steps:16});await settle(page);assert.notEqual(await pose(page),reduced);
-   await page.locator('#lockSphere').click();const reducedLocked=await pose(page);await page.mouse.move(400,550);await page.mouse.move(950,450,{steps:16});await settle(page);assert.equal(await pose(page),reducedLocked);
+   await viewControl(page,'lockSphere');const reducedLocked=await pose(page);await page.mouse.move(400,550);await page.mouse.move(950,450,{steps:16});await settle(page);assert.equal(await pose(page),reducedLocked);
    passed.push('Keyboard exploration and opening work; reduced motion keeps mouse control while view-lock still stops it');await page.close();
   }
   if(!process.env.UX_CASE||process.env.UX_CASE==='library'){
@@ -45,7 +46,7 @@ const base=process.env.TEST_BASE_URL||'http://127.0.0.1:4173';
   }
   if(!process.env.UX_CASE||process.env.UX_CASE==='mobile'){
    const page=watch(await browser.newPage({viewport:{width:375,height:812},isMobile:true,hasTouch:true,reducedMotion:'reduce'}));await page.goto(base);
-   const lock=await page.locator('#lockSphere').boundingBox();assert.ok(lock&&lock.width>=44&&lock.height>=44);await page.locator('#lockSphere').tap();assert.equal(await page.locator('#lockSphere').getAttribute('aria-pressed'),'true');
+   await page.locator('#atlasOptionsToggle').tap();const lock=await page.locator('#lockSphere').boundingBox();assert.ok(lock&&lock.width>=44&&lock.height>=44);await page.locator('#lockSphere').tap();assert.equal(await page.locator('#lockSphere').getAttribute('aria-pressed'),'true');
    await page.waitForFunction(()=>[...document.querySelectorAll('.sphere-card img')].every(e=>e.complete&&e.naturalWidth));await page.screenshot({path:'qa/wildframe-atlas-controls-mobile.png'});
    const frozen=await pose(page),cdp=await page.context().newCDPSession(page);
    await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:280,y:300}]});

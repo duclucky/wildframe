@@ -31,7 +31,7 @@ const sphereCount=recipes.length+require('../assets/visual-experiments.json').re
   await page.keyboard.press('Escape');assert.equal(await page.locator('#customizePrompt').evaluate(e=>e===document.activeElement),true);
   assert.doesNotMatch(await page.locator('#masterText').inputValue(),/silver fox/);
   passed.push('Customize, copy, save variation and download without changing original');
-  await page.keyboard.press('Escape');await page.reload();await page.locator('#savedNav').click();assert.equal(await page.locator('.recipe-card').count(),1);
+  await page.keyboard.press('Escape');await page.reload();await page.locator('#browsePrompts').click();await page.locator('#savedNav').click();assert.equal(await page.locator('.recipe-card').count(),1);
   await page.getByRole('searchbox').fill('does-not-exist');assert.equal(await page.locator('#emptyState').isVisible(),true);await page.locator('#clearFilters').click();assert.equal(await page.locator('.recipe-card').count(),recipes.length);
   await page.getByRole('searchbox').fill('snow leopard');assert.equal(await page.locator('.recipe-card').count(),1);await page.locator('.open-recipe').click();assert.equal(await page.locator('#promptTitle').textContent(),'The Mountain Keeps Its Own Time');
   await page.locator('#promptClose').focus();await page.keyboard.press('Shift+Tab');assert.equal(await page.evaluate(()=>!!document.activeElement.closest('#promptDialog')),true);

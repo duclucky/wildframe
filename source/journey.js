@@ -38,5 +38,5 @@ function recordJourneySave(item){
   journeyPanel.scrollIntoView({block:'start',behavior:reduced.matches?'instant':'smooth'});$('#journeyTitle').focus({preventScroll:true});
 }
 function initializeJourney(){
-  for(const id of ['startJourney','startJourneyLibrary'])$('#'+id).addEventListener('click',event=>startJourney(event.currentTarget));
+  $('#startJourneyLibrary').addEventListener('click',event=>startJourney(event.currentTarget));
 }

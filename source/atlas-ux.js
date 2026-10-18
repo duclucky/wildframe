@@ -43,17 +43,24 @@ function updateSphereControls(){
 }
 function updateAtlasHint(){
  if(loaded<sphereRecipes.length)return;
- $('#loadNote').textContent=sphereLocked?'View locked · Select an image, or unlock to turn':coarse.matches?'Drag to explore · Tap an image for its prompt':'Move your mouse to explore · Click an image for its prompt';
+ $('#loadNote').textContent=sphereLocked?'View locked · Options to unlock':coarse.matches?'Drag to explore · Tap an image':'Move to explore · Click an image';
 }
+function closeAtlasOptions(focus=false){$('#atlasOptions').open=false;if(focus)$('#atlasOptionsToggle').focus({preventScroll:true})}
 function initializeAtlasUx(){
  $('#lockSphere').addEventListener('click',()=>{
   sphereLocked=!sphereLocked;resetHoverMotion();hideSpherePreview();velocityX=velocityY=0;updateSphereControls();wake();
   $('#sphereStatus').textContent=sphereLocked?'View locked. Images remain available to open.':'View unlocked.';
+  closeAtlasOptions(true);
  });
  $('#resetSphere').addEventListener('click',()=>{
   resetHoverMotion();hideSpherePreview();velocityX=velocityY=0;yaw=0;pitch=-4;renderStamp='';wake();
   $('#sphereStatus').textContent='Initial angle restored.'+(sphereLocked?' View remains locked.':'');
+  closeAtlasOptions(true);
  });
+ const options=$('#atlasOptions');
+ options.addEventListener('toggle',()=>{if(options.open){hideSpherePreview();resetHoverMotion();velocityX=velocityY=0}});
+ document.addEventListener('click',event=>{if(options.open&&!options.contains(event.target))closeAtlasOptions()});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&options.open){event.preventDefault();event.stopPropagation();closeAtlasOptions(true)}});
  stage.addEventListener('pointermove',queueSpherePreview);
  stage.addEventListener('pointerleave',hideSpherePreview);stage.addEventListener('pointerdown',hideSpherePreview);
  stage.addEventListener('focus',()=>{resetHoverMotion();velocityX=velocityY=0;showSpherePreview(frontSphereCard(),true)});

@@ -8,7 +8,7 @@ const assert = require('node:assert/strict');
   page.on('pageerror', error => errors.push(error.message));
   try {
     await page.goto('http://127.0.0.1:4173');
-    await page.locator('#libraryNav').click();
+    await page.locator('#browsePrompts').click();
     await page.locator('.open-recipe img').first().waitFor();
     await page.waitForFunction(() => [...document.querySelectorAll('.recipe-card img')].slice(0, 4).every(image => image.complete && image.naturalWidth));
     await page.evaluate(() => document.fonts.ready);

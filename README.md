@@ -27,9 +27,9 @@ node scripts/build-static.cjs
 ## Features
 
 - 59 library recipes and 6 additional experiment recipes, all available on the 65-image globe; generated examples and reference studies are labelled separately.
-- Optional first-remix guide with skip/back routes; completion follows a successful save.
-- The globe follows actual mouse movement without holding a button, including on touch-capable computers. Reduced motion uses direct movement with no easing or inertia; overlays and view-lock pause rotation. Touch dragging remains available.
-- Dwell previews identify the image under the cursor. Lock/reset controls and arrow-key/Enter navigation offer direct control of the globe; touch selection resolves the image at the actual contact point.
+- An uncluttered home foregrounds the globe with one quiet library action; view controls live in a small options menu. The optional first-remix guide is available in the library, with skip/back routes and completion following a successful save.
+- The globe follows actual mouse movement without holding a button, including on touch-capable computers. Input settles with progressive damping; reduced motion uses a shorter settling time and disables free inertia. Overlays and view-lock pause rotation. Touch dragging remains available.
+- Dwell previews identify the image under the cursor without scaling the card. Lock/reset controls and arrow-key/Enter navigation offer direct control of the globe; touch selection resolves the image at the actual contact point.
 - The smaller globe fits between navigation and actions within one viewport. The home page has no vertical scroll; the library and editor keep their own scrolling areas.
 - Search and filters stay below the header on every screen size. Active filter chips can be removed individually; closing a recipe restores the library position, focus and last-viewed highlight.
 - Prompt DNA with exact-source reading notes and links to the relevant Studio field.
@@ -62,6 +62,7 @@ node tests/sphere-follow.cjs
 node tests/sphere-density.cjs
 node tests/atlas-ux.cjs
 node tests/viewport-fit.cjs
+node tests/sphere-polish.cjs
 ```
 
 Browser checks currently reference the bundled Playwright runtime and Edge executable on the development Windows machine. Adjust those two paths if running elsewhere. `tests/deployment-smoke.cjs` accepts `TEST_BASE_URL` for the deployed origin. Automated study-form checks are not participant research results; see `USABILITY-TEST.md`.

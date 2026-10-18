@@ -9,7 +9,7 @@ const assert=require('node:assert/strict');
   assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),base+'/');
   for(const asset of ['/favicon.svg','/social-preview.png','/assets/experiments/experiment-fox-ink-wash-thumb.webp','/try','/credits'])assert.equal((await page.request.get(base+asset)).status(),200,asset);
   for(const privatePath of ['/source/app.js','/.env','/qa/wildframe-home-desktop.png'])assert.equal((await page.request.get(base+privatePath)).status(),404,privatePath);
-  await page.locator('#startJourney').click();await page.locator('#journeyNext').click();await page.locator('#journeyNext').click();await page.locator('#journeyNext').click();await page.locator('#variationName').fill('Production QA only');await page.locator('#saveVariation').click();assert.match(await page.locator('#journeyTitle').textContent(),/saved/i);
+  await page.locator('#browsePrompts').click();await page.locator('#startJourneyLibrary').click();await page.locator('#journeyNext').click();await page.locator('#journeyNext').click();await page.locator('#journeyNext').click();await page.locator('#variationName').fill('Production QA only');await page.locator('#saveVariation').click();assert.match(await page.locator('#journeyTitle').textContent(),/saved/i);
   await page.screenshot({path:'qa/wildframe-live-smoke.png'});assert.deepEqual(errors,[]);
   console.log(JSON.stringify({publicSite:base,anonymousAccess:200,publicAssets:'pass',privatePaths:'404',guidedSave:'pass',errors},null,2));
  }finally{await browser.close()}

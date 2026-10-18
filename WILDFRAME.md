@@ -21,13 +21,13 @@ Tìm kiếm, lọc, sao chép masterprompt, lưu yêu thích, xuất bộ sưu t
 
 Prompt DNA giải thích các đoạn trích đúng từ masterprompt gốc và dẫn đến ô chỉnh tương ứng trong Studio. Từ thư viện, nút “Explore visual experiments” mở hai bài so sánh ba phong cách, với 6 ảnh AI riêng cho Lab; cả 6 prompt này cũng hỗ trợ Saved, chia sẻ và xuất JSON. Tổng cộng 65 ảnh và công thức đều xuất hiện trên quả cầu. 18 ảnh atlas mới được phân bố xen kẽ cùng ảnh cũ và Lab trên toàn bề mặt cầu.
 
-Nút “Try your first remix” mở hướng dẫn tùy chọn qua chọn phong cách, hiểu prompt và sửa/lưu. Người dùng có thể bỏ qua; thông báo hoàn thành chỉ xuất hiện sau khi lưu thành công. `/try` là bài dùng thử tự báo cáo, xuất JSON tại máy và không tự gửi phản hồi. Chưa có kết quả thử nghiệm với người thật.
+Hướng dẫn “Try a guided remix” nằm trong thư viện, đi qua chọn phong cách, hiểu prompt và sửa/lưu. Người dùng có thể bỏ qua; thông báo hoàn thành chỉ xuất hiện sau khi lưu thành công. `/try` là bài dùng thử tự báo cáo, xuất JSON tại máy và không tự gửi phản hồi. Chưa có kết quả thử nghiệm với người thật.
 
-Khối cầu xoay theo sự kiện chuột thực tế, không cần giữ nút, kể cả máy có màn hình cảm ứng. Khi bật reduced motion, chuyển động bám trực tiếp theo chuột, không làm mượt hoặc quán tính; chế độ thường vẫn dừng dần khi chuột đứng yên. Thư viện/modal và khóa góc nhìn tạm dừng xoay. Điện thoại vẫn kéo để xoay; nhấp ảnh vẫn mở đúng prompt. `tests/sphere-follow.cjs` kiểm tra năm nhóm hành vi này.
+Khối cầu xoay theo sự kiện chuột thực tế, không cần giữ nút, kể cả máy có màn hình cảm ứng. Chuyển động được làm mượt và giảm tốc dần về góc đích khi chuột dừng. Khi bật reduced motion, thời gian dừng ngắn hơn và không có quán tính tự do. Thư viện/modal và khóa góc nhìn tạm dừng xoay. Điện thoại vẫn kéo để xoay; nhấp ảnh vẫn mở đúng prompt. `tests/sphere-follow.cjs` kiểm tra năm nhóm hành vi này.
 
 Trang chủ nằm trọn trong một viewport và không cuộn. Kích thước cầu được giới hạn theo cả chiều rộng, chiều cao và khoảng trống thực tế giữa thanh điều hướng với các nút phía dưới. Độ nhạy theo chuột là 0,16°/px ngang và 0,12°/px dọc, có giới hạn nghiêng để ảnh dễ chọn. Đã bỏ hiệu ứng zoom theo cuộn; thư viện và trình chỉnh sửa vẫn cuộn trong vùng riêng để xem đủ nội dung. `tests/viewport-fit.cjs` kiểm tra 7 kích thước từ điện thoại 320×568 đến desktop 1440×1000, gồm cả màn hình ngang và khung xem trước 614×630.
 
-Khi chuột dừng trên ảnh, một thẻ nhỏ hiện tên và phong cách; ảnh được viền sáng và những ảnh khác tối nhẹ. “Lock view” khóa góc nhìn nhưng vẫn cho mở ảnh, “Reset angle” khôi phục góc ban đầu và giữ trạng thái khóa. Có thể Tab đến khối cầu, dùng phím mũi tên để xoay và Enter để mở ảnh phía trước. Trên điện thoại, ảnh được xác định theo tọa độ chạm để tránh trình duyệt chọn nhầm ảnh chồng lấn ở mép cầu.
+Trang chủ chỉ có một nút “Explore prompts” nhỏ, ưu tiên diện tích cho quả cầu. “Lock view” và “Reset angle” nằm trong menu dấu ba chấm ở góc dưới. Khi chuột dừng trên ảnh, một thẻ nhỏ hiện tên và phong cách; ảnh được viền sáng nhưng không phóng to. Có thể Tab đến khối cầu, dùng phím mũi tên để xoay và Enter để mở ảnh phía trước. Trên điện thoại, ảnh được xác định theo tọa độ chạm để tránh trình duyệt chọn nhầm ảnh chồng lấn ở mép cầu.
 
 Thanh tìm kiếm và bộ lọc được ghim ngay dưới header trên desktop, tablet và điện thoại. Các thẻ lọc đang áp dụng có nút xóa riêng. Đóng prompt giữ vị trí cuộn, trả focus về ảnh đã mở và đánh dấu ảnh đó bằng viền nhẹ. Phần chữ trung tâm và mô tả trang chủ có nền tối mềm để đọc rõ hơn giữa 65 ảnh.
 
@@ -52,6 +52,7 @@ Yêu thích và biến thể lưu trong trình duyệt. Chưa có tài khoản, 
 - `python scripts/validate-lab.py`: kiểm tra 41 prompt cũ không đổi, 65 bộ chú giải, nguồn/prompt của 6 ảnh Lab và 18 ảnh atlas mới, file ảnh và HTML/giấy phép nhúng.
 - `node tests/sphere-density.cjs`: kiểm tra 65 ảnh duy nhất trên quả cầu, tải ảnh, số lượng thư viện và prompt/DNA của ảnh mới.
 - `node tests/atlas-ux.cjs`: 6 nhóm kiểm tra khóa/khôi phục góc, preview ảnh, bàn phím, xóa bộ lọc riêng, vị trí quay lại, chọn ảnh bằng chạm và responsive.
+- `node tests/sphere-polish.cjs`: kiểm tra giảm tốc đều ở cả hai chế độ chuyển động, giữ độ nhạy, không đảo chiều hoặc chạy animation liên tục; kiểm tra menu công cụ và đường dẫn vào hướng dẫn từ thư viện.
 
 35 nhóm kiểm tra đã chạy thành công: 24 nhóm browser gốc, 4 nhóm hướng dẫn lần đầu, 1 nhóm biểu mẫu dùng thử và 6 nhóm logic. Browser dùng Playwright từ runtime cục bộ và Edge trên máy này; đường dẫn runtime được ghi trực tiếp trong file kiểm tra. Không có lỗi JavaScript trong các bài browser. Kiểm tra điện thoại bằng mô phỏng trình duyệt, chưa kiểm tra trên thiết bị vật lý. Ảnh chụp QA nằm trong `qa/wildframe-*.png`. Các bài kiểm tra portfolio cũ chỉ áp dụng cho các bản HTML sao lưu, giữ local và không thuộc bộ kiểm tra hiện tại.
 

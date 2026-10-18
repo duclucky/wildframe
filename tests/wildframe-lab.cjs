@@ -27,7 +27,7 @@ const catalog=require('../assets/prompt-catalog.json');
   await page.reload();await page.locator('#customizePrompt').click();assert.equal(await page.locator('[data-restore-version]').count(),1);
   await page.goto('http://127.0.0.1:4173/#prompt=ai-snow-leopard');await page.locator('#customizePrompt').click();assert.equal(await page.locator('[data-restore-version]').count(),2);
   passed.push('Named versions persist per recipe, restore fields and compare text without replacing originals');
-  await page.goto('http://127.0.0.1:4173');await page.locator('#libraryNav').click();await page.locator('#openExperiments').click();
+  await page.goto('http://127.0.0.1:4173');await page.locator('#browsePrompts').click();await page.locator('#openExperiments').click();
   assert.equal(await page.locator('[data-experiment-group]').count(),2);
   await page.locator('#experimentB').selectOption('ai-experiment-fox-ink-wash');
   assert.match(await page.locator('#experimentDifference').textContent(),/ink-wash/i);
