@@ -26,8 +26,9 @@ const base=process.env.TEST_BASE_URL||'http://127.0.0.1:4173';
    passed.push('Stationary hover previews the actual image and its style; a single click opens that exact prompt');
    await page.locator('#lockSphere').click();await page.locator('#stage').focus();const keyboardBefore=await pose(page);await page.keyboard.press('ArrowRight');await settle(page);assert.notEqual(await pose(page),keyboardBefore);
    const keyboardId=await page.locator('.sphere-card.is-previewed').getAttribute('data-id');await page.keyboard.press('Enter');assert.ok(page.url().includes(keyboardId));await page.keyboard.press('Escape');
-   await page.emulateMedia({reducedMotion:'reduce'});const reduced=await pose(page);await page.mouse.move(400,550);await page.mouse.move(950,450,{steps:16});await settle(page);assert.equal(await pose(page),reduced);
-   passed.push('Keyboard exploration and opening work; reduced motion continues to disable mouse-follow');await page.close();
+   await page.emulateMedia({reducedMotion:'reduce'});await page.mouse.move(400,550);const reduced=await pose(page);await page.mouse.move(950,450,{steps:16});await settle(page);assert.notEqual(await pose(page),reduced);
+   await page.locator('#lockSphere').click();const reducedLocked=await pose(page);await page.mouse.move(400,550);await page.mouse.move(950,450,{steps:16});await settle(page);assert.equal(await pose(page),reducedLocked);
+   passed.push('Keyboard exploration and opening work; reduced motion keeps mouse control while view-lock still stops it');await page.close();
   }
   if(!process.env.UX_CASE||process.env.UX_CASE==='library'){
    const page=watch(await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'}));await page.goto(base);await page.locator('#browsePrompts').click();

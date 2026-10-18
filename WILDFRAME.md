@@ -23,7 +23,9 @@ Prompt DNA giải thích các đoạn trích đúng từ masterprompt gốc và 
 
 Nút “Try your first remix” mở hướng dẫn tùy chọn qua chọn phong cách, hiểu prompt và sửa/lưu. Người dùng có thể bỏ qua; thông báo hoàn thành chỉ xuất hiện sau khi lưu thành công. `/try` là bài dùng thử tự báo cáo, xuất JSON tại máy và không tự gửi phản hồi. Chưa có kết quả thử nghiệm với người thật.
 
-Khối cầu trên desktop xoay nhẹ theo hướng di chuột, không cần giữ nút. Chuyển động dừng dần khi chuột đứng yên, tạm dừng trong thư viện/modal và tắt theo reduced motion. Điện thoại vẫn kéo để xoay; nhấp ảnh vẫn mở đúng prompt. `tests/sphere-follow.cjs` kiểm tra bốn nhóm hành vi này.
+Khối cầu xoay theo sự kiện chuột thực tế, không cần giữ nút, kể cả máy có màn hình cảm ứng. Khi bật reduced motion, chuyển động bám trực tiếp theo chuột, không làm mượt hoặc quán tính; chế độ thường vẫn dừng dần khi chuột đứng yên. Thư viện/modal và khóa góc nhìn tạm dừng xoay. Điện thoại vẫn kéo để xoay; nhấp ảnh vẫn mở đúng prompt. `tests/sphere-follow.cjs` kiểm tra năm nhóm hành vi này.
+
+Trang chủ nằm trọn trong một viewport và không cuộn. Quả cầu được thu nhỏ theo cả chiều rộng, chiều cao và khoảng trống thực tế giữa thanh điều hướng với các nút phía dưới. Đã bỏ hiệu ứng zoom theo cuộn; thư viện và trình chỉnh sửa vẫn cuộn trong vùng riêng để xem đủ nội dung. `tests/viewport-fit.cjs` kiểm tra 6 kích thước từ điện thoại 320×568 đến desktop 1440×1000, gồm cả màn hình ngang.
 
 Khi chuột dừng trên ảnh, một thẻ nhỏ hiện tên và phong cách; ảnh được viền sáng và những ảnh khác tối nhẹ. “Lock view” khóa góc nhìn nhưng vẫn cho mở ảnh, “Reset angle” khôi phục góc ban đầu và giữ trạng thái khóa. Có thể Tab đến khối cầu, dùng phím mũi tên để xoay và Enter để mở ảnh phía trước. Trên điện thoại, ảnh được xác định theo tọa độ chạm để tránh trình duyệt chọn nhầm ảnh chồng lấn ở mép cầu.
 

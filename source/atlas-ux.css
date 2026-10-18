@@ -1,4 +1,7 @@
 /* Atlas interaction tools inherit WildFrame's type, palette and icon family. */
+html{overflow:hidden;scrollbar-gutter:auto}body{height:100dvh;overflow:hidden}
+#world{top:var(--sphere-y,50%)}#headline{top:var(--sphere-y,50%);font-size:clamp(38px,5.6vw,80px)}
+#stage{cursor:default}#stage.dragging{cursor:grabbing}
 .atlas-controls{position:fixed;z-index:26;left:var(--pad);top:112px;display:flex;gap:8px}
 .atlas-controls .button{background:#10150ee8;backdrop-filter:blur(10px);font-size:12px;box-shadow:0 5px 22px #0004}
 .atlas-controls .button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink)}
@@ -37,6 +40,7 @@
  .library-discovery .search input{font-size:16px}
 }
 @media(max-width:520px){
+ #headline{font-size:clamp(32px,10vw,40px)}
  .atlas-controls{top:119px;gap:7px}.atlas-controls .button{padding:10px 14px;font-size:11px}
  .hero-cta p{font-size:12px;color:#d2d7c8}
  .library-heading{padding-top:105px}.library-discovery{padding:10px 0}.library-discovery .style-control{width:140px}
@@ -44,5 +48,6 @@
  .filter-chip{padding:7px 11px;font-size:11px}.filter-chip span:first-child{max-width:21ch}
  .active-filters{gap:6px;margin-top:6px}
 }
-@media(max-height:520px) and (min-width:521px){.atlas-controls{top:88px;left:var(--pad);transform:none}.sphere-preview{top:142px}}
+@media(max-height:650px) and (orientation:portrait){.hero-kicker,.hero-cta p{display:none}.atlas-controls{top:88px}.hero-cta{bottom:16px}}
+@media(max-height:520px) and (min-width:521px){.atlas-controls{top:88px;left:var(--pad);transform:none}.sphere-preview{top:142px}#headline{font-size:clamp(26px,8.5vh,36px)}}
 @media(prefers-reduced-motion:reduce){.sphere-card figure{transition:none}}

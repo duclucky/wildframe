@@ -43,7 +43,7 @@ function updateSphereControls(){
 }
 function updateAtlasHint(){
  if(loaded<sphereRecipes.length)return;
- $('#loadNote').textContent=sphereLocked?'View locked · Select an image, or unlock to turn':coarse.matches||reduced.matches?'Drag to explore · Tap an image for its prompt':'Move your mouse to explore · Click an image for its prompt';
+ $('#loadNote').textContent=sphereLocked?'View locked · Select an image, or unlock to turn':coarse.matches?'Drag to explore · Tap an image for its prompt':'Move your mouse to explore · Click an image for its prompt';
 }
 function initializeAtlasUx(){
  $('#lockSphere').addEventListener('click',()=>{
@@ -51,7 +51,7 @@ function initializeAtlasUx(){
   $('#sphereStatus').textContent=sphereLocked?'View locked. Images remain available to open.':'View unlocked.';
  });
  $('#resetSphere').addEventListener('click',()=>{
-  resetHoverMotion();hideSpherePreview();velocityX=velocityY=0;yaw=0;pitch=-4;camZ=0;scrollTo(0,0);renderStamp='';wake();
+  resetHoverMotion();hideSpherePreview();velocityX=velocityY=0;yaw=0;pitch=-4;renderStamp='';wake();
   $('#sphereStatus').textContent='Initial angle restored.'+(sphereLocked?' View remains locked.':'');
  });
  stage.addEventListener('pointermove',queueSpherePreview);

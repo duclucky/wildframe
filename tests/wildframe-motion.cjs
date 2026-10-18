@@ -8,13 +8,13 @@ const assert=require('node:assert/strict');
  try{
   await mobile.goto('http://127.0.0.1:4173');await mobile.waitForFunction(()=>[...document.querySelectorAll('.sphere-card img')].every(image=>image.complete&&image.naturalWidth>0));
   await mobile.screenshot({path:'qa/wildframe-home-mobile.png'});
-  const center=await mobile.evaluate(()=>{const a=document.querySelector('#headline .inner').getBoundingClientRect(),s=document.querySelector('#stage').getBoundingClientRect();return [Math.abs(a.x+a.width/2-s.width/2),Math.abs(a.y+a.height/2-s.height/2)]});assert.ok(center.every(n=>n<1));
+  const center=await mobile.evaluate(()=>{const a=document.querySelector('#headline .inner').getBoundingClientRect(),world=document.querySelector('#world');return [Math.abs(a.x+a.width/2-world.offsetLeft),Math.abs(a.y+a.height/2-world.offsetTop)]});assert.ok(center.every(n=>n<1));
   const idle=await mobile.evaluate(()=>new Promise(resolve=>{const before=window.__frames;setTimeout(()=>resolve(window.__frames-before),1000)}));assert.ok(idle<=1);
   const cdp=await mobile.context().newCDPSession(mobile),before=await mobile.locator('#world').getAttribute('style');
   const gesture=async(x,y,ex,ey)=>{await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y}]});for(let i=1;i<=8;i++){await mobile.evaluate(()=>new Promise(requestAnimationFrame));await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:x+(ex-x)*i/8,y:y+(ey-y)*i/8}]})}await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]})};
   await gesture(300,350,140,365);await mobile.waitForFunction(value=>document.querySelector('#world').getAttribute('style')!==value,before);assert.equal(await mobile.locator('#promptDialog').evaluate(e=>e.inert),true);
-  await gesture(190,650,190,320);await mobile.waitForFunction(()=>scrollY>0);assert.ok(await mobile.evaluate(()=>scrollY<=innerHeight*.16+1));
-  passed.push('Mobile title centered, camera rests, horizontal drag and vertical scroll');
+  await gesture(190,650,190,320);assert.equal(await mobile.evaluate(()=>scrollY),0);assert.ok(await mobile.evaluate(()=>document.documentElement.scrollHeight<=innerHeight));
+  passed.push('Mobile title stays centered on the fitted sphere, camera rests, drag rotates and the page does not scroll');
   await mobile.locator('#browsePrompts').tap();await mobile.locator('[data-category="Landscapes"]').tap();await mobile.waitForFunction(()=>[...document.querySelectorAll('.recipe-card img')].every(image=>image.complete&&image.naturalWidth>0));await mobile.waitForFunction(()=>document.getAnimations().every(animation=>animation.playState!=='running'));await mobile.screenshot({path:'qa/wildframe-library-mobile.png'});
   await mobile.locator('.open-recipe').first().tap();await mobile.waitForFunction(()=>document.querySelector('#promptImage').complete&&document.querySelector('#promptImage').naturalWidth>0);
   const copy=await mobile.locator('#copyMaster').boundingBox();assert.ok(copy.y>=0&&copy.y+copy.height<=844);

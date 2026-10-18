@@ -13,7 +13,7 @@ function writeStore(key,value){try{localStorage.setItem(key,JSON.stringify(value
 let saved=new Set();const savedData=readStore('wildframe:saved:v1',readStore('ethan-vale:saved',[]));if(Array.isArray(savedData))saved=new Set(savedData.filter(id=>byId.has(id)));
 let category='All',style='All',savedOnly=false,visibleIds=libraryRecipes.map(recipe=>recipe.id),activeId=null,browseIds=[],returnFocus=null,studioSeed=null,toastTimer=0;
 const vectors=[],sphereCards=[],thumbs=new Map(),blobURLs=[];
-let R=300,perspective=1150,yaw=0,pitch=-4,camZ=0,velocityX=0,velocityY=0,pointer=null,raf=0,lastFrame=0,lastWidth=0,lastHeight=0,renderStamp='',imageToken=0;
+let R=300,perspective=1150,yaw=0,pitch=-4,velocityX=0,velocityY=0,pointer=null,raf=0,lastFrame=0,lastWidth=0,lastHeight=0,renderStamp='',imageToken=0;
 let hoverPoint=null,hoverAim=null;
 function resetHoverMotion(){hoverPoint=null;hoverAim=null}
 const icon=name=>{const svg=document.createElementNS('http://www.w3.org/2000/svg','svg'),use=document.createElementNS('http://www.w3.org/2000/svg','use');svg.setAttribute('aria-hidden','true');use.setAttribute('href','#icon-'+name);svg.append(use);return svg};
@@ -126,23 +126,37 @@ sphereRecipes.forEach((recipe,i)=>{
  const card=document.createElement('div');card.className='sphere-card';card.dataset.id=recipe.id;card.tabIndex=-1;card.setAttribute('role','button');card.setAttribute('aria-label','Open masterprompt: '+recipe.title);const figure=document.createElement('figure'),image=document.createElement('img');image.alt=recipe.subject;image.draggable=false;figure.append(image);card.append(figure);orb.append(card);sphereCards.push(card);
 });
 function wake(){if(!raf&&!document.hidden)raf=requestAnimationFrame(frame)}
-function layout(force=false){const w=innerWidth,h=innerHeight;if(!force&&Math.abs(w-lastWidth)<20&&Math.abs(h-lastHeight)<20)return;lastWidth=w;lastHeight=h;R=Math.max(w<=380?108:w<=640?120:155,Math.min(480,h*(w<=380?.38:w<=640?.42:.46),w*(w<=380?.48:w<=640?.52:.58)));root.style.setProperty('--cw',Math.round(Math.max(68,R*(w<=640?.39:.42)))+'px');perspective=w<=380?620:w<=640?760:w<=900?920:1150;root.style.setProperty('--persp',perspective+'px');sphereCards.forEach((card,i)=>{const v=vectors[i];card.style.transform=`translate3d(${v.x*R}px,${-v.y*R}px,${v.z*R}px) rotateY(${v.lon}deg) rotateX(${v.lat}deg)`});renderStamp='';wake()}
+function layout(force=false){
+ const w=innerWidth,h=innerHeight;if(!force&&w===lastWidth&&h===lastHeight)return;lastWidth=w;lastHeight=h;
+ const controls=$('.atlas-controls').getBoundingClientRect(),kicker=$('.hero-kicker').getBoundingClientRect();
+ const top=Math.max($('header').getBoundingClientRect().bottom+16,kicker.height?kicker.bottom+16:0,controls.left<w/2&&controls.right>w/2?controls.bottom+16:0);
+ const bottom=$('.hero-cta').getBoundingClientRect().top-16;
+ // Leave room for perspective and tangent cards, with the whole atlas in view.
+ R=Math.max(44,Math.min(300,h*.28,w*.4,(bottom-top)/2/1.12));
+ root.style.setProperty('--sphere-y',((top+bottom)/2)+'px');
+ root.style.setProperty('--cw',Math.round(Math.max(68,R*(w<=640?.39:.42)))+'px');
+ perspective=w<=380?620:w<=640?760:w<=900?920:1150;root.style.setProperty('--persp',perspective+'px');
+ sphereCards.forEach((card,i)=>{const v=vectors[i];card.style.transform=`translate3d(${v.x*R}px,${-v.y*R}px,${v.z*R}px) rotateY(${v.lon}deg) rotateX(${v.lat}deg)`});renderStamp='';wake();
+}
 function frame(time){
  raf=0;const dt=lastFrame?clamp((time-lastFrame)/16.667,.25,2):1;lastFrame=time;const paused=sphereLocked||library.classList.contains('open')||dialog.classList.contains('open')||studio.classList.contains('open')||experiments.classList.contains('open');
  if(!pointer&&!paused){
-  if(reduced.matches){velocityX=velocityY=0;resetHoverMotion()}
+  if(reduced.matches){velocityX=velocityY=0;hoverAim=null}
   if(hoverAim){const follow=1-Math.pow(.84,dt);yaw+=(hoverAim.yaw-yaw)*follow;pitch+=(hoverAim.pitch-pitch)*follow;if(Math.abs(hoverAim.yaw-yaw)<.005&&Math.abs(hoverAim.pitch-pitch)<.005){yaw=hoverAim.yaw;pitch=hoverAim.pitch;hoverAim=null}}
   else{const decay=Math.pow(.94,dt),travel=(1-decay)/.06;yaw+=velocityX*travel;pitch+=velocityY*travel;velocityX*=decay;velocityY*=decay;if(Math.abs(velocityX)<.002)velocityX=0;if(Math.abs(velocityY)<.002)velocityY=0}
  }
- const bounded=clamp(pitch,-32,32);if(bounded!==pitch)velocityY=0;pitch=bounded;const p=clamp(scrollY/(innerHeight*.16),0,1),target=p*Math.min(64,R*.12);if(!paused){camZ=reduced.matches?target:camZ+(target-camZ)*(1-Math.pow(.925,dt));if(Math.abs(target-camZ)<.01)camZ=target}
- const stamp=[pitch.toFixed(4),yaw.toFixed(4),camZ.toFixed(4),R,p.toFixed(3),activeId].join('|');
- if(stamp!==renderStamp){renderStamp=stamp;world.style.transform=`translateZ(${camZ}px) rotateY(${yaw}deg) rotateX(${pitch}deg)`;headline.style.opacity=1-p*.4;const sinX=Math.sin(pitch*radians),cosX=Math.cos(pitch*radians),sinY=Math.sin(yaw*radians),cosY=Math.cos(yaw*radians);vectors.forEach((v,i)=>{const zf=-v.x*sinY+(-v.y*sinX+v.z*cosX)*cosY,base=.14+.86*Math.pow(clamp((zf+1)/2,0,1),.85);let dim=(1-Math.min(1,p*1.6))*(1-base);if(activeId)dim=Math.min(.95,dim+.72);const value=dim.toFixed(3);if(sphereCards[i]._d!==value){sphereCards[i].style.setProperty('--d',value);sphereCards[i]._d=value}})}
- if(!paused&&(hoverAim||Math.abs(velocityX)>0||Math.abs(velocityY)>0||Math.abs(target-camZ)>.01))wake();else lastFrame=0;
+ const bounded=clamp(pitch,-32,32);if(bounded!==pitch)velocityY=0;pitch=bounded;
+ const stamp=[pitch.toFixed(4),yaw.toFixed(4),R,activeId].join('|');
+ if(stamp!==renderStamp){renderStamp=stamp;world.style.transform=`translateZ(0px) rotateY(${yaw}deg) rotateX(${pitch}deg)`;const sinX=Math.sin(pitch*radians),cosX=Math.cos(pitch*radians),sinY=Math.sin(yaw*radians),cosY=Math.cos(yaw*radians);vectors.forEach((v,i)=>{const zf=-v.x*sinY+(-v.y*sinX+v.z*cosX)*cosY,base=.14+.86*Math.pow(clamp((zf+1)/2,0,1),.85);let dim=1-base;if(activeId)dim=Math.min(.95,dim+.72);const value=dim.toFixed(3);if(sphereCards[i]._d!==value){sphereCards[i].style.setProperty('--d',value);sphereCards[i]._d=value}})}
+ if(!paused&&(hoverAim||Math.abs(velocityX)>0||Math.abs(velocityY)>0))wake();else lastFrame=0;
 }
 function followMouse(event){
- if(event.pointerType!=='mouse'||event.buttons||coarse.matches||reduced.matches||sphereLocked||stage.inert)return;
+ if(event.pointerType!=='mouse'||event.buttons||sphereLocked||stage.inert)return;
  const current={x:event.clientX,y:event.clientY};
- if(hoverPoint){const dx=current.x-hoverPoint.x,dy=current.y-hoverPoint.y;if(dx||dy){hoverAim={yaw:(hoverAim?.yaw??yaw)+dx*.08,pitch:clamp((hoverAim?.pitch??pitch)-dy*.06,-32,32)};velocityX=velocityY=0;wake()}}
+ if(hoverPoint){const dx=current.x-hoverPoint.x,dy=current.y-hoverPoint.y;if(dx||dy){const aim={yaw:(hoverAim?.yaw??yaw)+dx*.08,pitch:clamp((hoverAim?.pitch??pitch)-dy*.06,-32,32)};
+  // Keep deliberate mouse input available with reduced motion, without easing.
+  if(reduced.matches){yaw=aim.yaw;pitch=aim.pitch;hoverAim=null}else hoverAim=aim;
+  velocityX=velocityY=0;wake()}}
  hoverPoint=current;
 }
 stage.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')hoverPoint={x:event.clientX,y:event.clientY}});
@@ -153,7 +167,7 @@ stage.addEventListener('pointermove',event=>{if(!pointer||pointer.id!==event.poi
 function endPointer(event,cancel=false){if(!pointer||pointer.id!==event.pointerId)return;const start=pointer;pointer=null;stage.classList.remove('dragging');if(stage.hasPointerCapture(event.pointerId))stage.releasePointerCapture(event.pointerId);if(cancel||reduced.matches||sphereLocked||event.timeStamp-start.time>100)velocityX=velocityY=0;if(!cancel&&start.distance<(coarse.matches?14:6)&&start.card){velocityX=velocityY=0;openPrompt(start.card.dataset.id,start.card)}wake()}
 stage.addEventListener('pointerup',event=>endPointer(event));stage.addEventListener('pointercancel',event=>endPointer(event,true));stage.addEventListener('lostpointercapture',event=>endPointer(event,true));
 addEventListener('blur',()=>{resetHoverMotion();velocityX=velocityY=0});
-addEventListener('scroll',()=>{hideSpherePreview();if(scrollY>innerHeight*.16+1)scrollTo(0,innerHeight*.16);wake()},{passive:true});addEventListener('resize',()=>layout());addEventListener('orientationchange',()=>setTimeout(()=>layout(true),220));if(window.visualViewport)visualViewport.addEventListener('resize',()=>layout());document.addEventListener('visibilitychange',()=>{resetHoverMotion();if(document.hidden){cancelAnimationFrame(raf);raf=0;lastFrame=0;velocityX=velocityY=0}else wake()});reduced.addEventListener('change',()=>{resetHoverMotion();velocityX=velocityY=0;wake()});
+addEventListener('resize',()=>layout());addEventListener('orientationchange',()=>setTimeout(()=>layout(true),220));if(window.visualViewport)visualViewport.addEventListener('resize',()=>layout());document.fonts?.ready.then(()=>layout(true));document.addEventListener('visibilitychange',()=>{resetHoverMotion();if(document.hidden){cancelAnimationFrame(raf);raf=0;lastFrame=0;velocityX=velocityY=0}else wake()});reduced.addEventListener('change',()=>{resetHoverMotion();velocityX=velocityY=0;wake()});
 function downscale(image,max){if(image.naturalWidth<=max)return Promise.resolve(image.src);return new Promise(resolve=>{try{const canvas=document.createElement('canvas');canvas.width=max;canvas.height=Math.round(image.naturalHeight*max/image.naturalWidth);canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);canvas.toBlob(blob=>{if(!blob)return resolve(image.src);const url=URL.createObjectURL(blob);blobURLs.push(url);resolve(url)},'image/webp',.86)}catch{resolve(image.src)}})}
 let loaded=0;const queue=sphereRecipes.map((recipe,i)=>i).sort((a,b)=>vectors[b].z-vectors[a].z);
 async function loadThumbnail(i){return new Promise(resolve=>{const recipe=sphereRecipes[i],image=new Image();image.crossOrigin='anonymous';image.decoding='async';let settled=false;const finish=url=>{if(settled)return;settled=true;clearTimeout(timer);thumbs.set(recipe.id,url);const cardImage=sphereCards[i].querySelector('img');cardImage.onload=()=>cardImage.classList.add('ready');cardImage.src=url;loaded++;if(loaded===sphereRecipes.length)updateAtlasHint();else $('#loadNote').textContent=`${loaded} / ${sphereRecipes.length} previews ready`;resolve()};const timer=setTimeout(()=>finish(recipe.thumb),8000);image.onload=async()=>finish(await downscale(image,innerWidth<=640?520:760));image.onerror=()=>finish(recipe.thumb);image.src=recipe.thumb})}
