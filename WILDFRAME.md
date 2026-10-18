@@ -25,6 +25,10 @@ Nút “Try your first remix” mở hướng dẫn tùy chọn qua chọn phong
 
 Khối cầu trên desktop xoay nhẹ theo hướng di chuột, không cần giữ nút. Chuyển động dừng dần khi chuột đứng yên, tạm dừng trong thư viện/modal và tắt theo reduced motion. Điện thoại vẫn kéo để xoay; nhấp ảnh vẫn mở đúng prompt. `tests/sphere-follow.cjs` kiểm tra bốn nhóm hành vi này.
 
+Khi chuột dừng trên ảnh, một thẻ nhỏ hiện tên và phong cách; ảnh được viền sáng và những ảnh khác tối nhẹ. “Lock view” khóa góc nhìn nhưng vẫn cho mở ảnh, “Reset angle” khôi phục góc ban đầu và giữ trạng thái khóa. Có thể Tab đến khối cầu, dùng phím mũi tên để xoay và Enter để mở ảnh phía trước. Trên điện thoại, ảnh được xác định theo tọa độ chạm để tránh trình duyệt chọn nhầm ảnh chồng lấn ở mép cầu.
+
+Thanh tìm kiếm và bộ lọc được ghim ngay dưới header trên desktop, tablet và điện thoại. Các thẻ lọc đang áp dụng có nút xóa riêng. Đóng prompt giữ vị trí cuộn, trả focus về ảnh đã mở và đánh dấu ảnh đó bằng viền nhẹ. Phần chữ trung tâm và mô tả trang chủ có nền tối mềm để đọc rõ hơn giữa 65 ảnh.
+
 Lịch sử dùng khóa `wildframe:remixes:v2`, tự chuyển biến thể cũ ở `wildframe:variation:v1` một lần, giữ nguyên khóa cũ. Dữ liệu không đọc được không bị ghi đè; khi không thể lưu, người dùng vẫn có thể sao chép hoặc tải file.
 
 Yêu thích và biến thể lưu trong trình duyệt. Chưa có tài khoản, backend cộng đồng hoặc đồng bộ giữa thiết bị. Liên kết chia sẻ dùng địa chỉ hiện tại; địa chỉ localhost cần được triển khai lên hosting trước khi chia sẻ cho người bên ngoài.
@@ -45,6 +49,7 @@ Yêu thích và biến thể lưu trong trình duyệt. Chưa có tài khoản, 
 - `node tests/lab-core.cjs`: 6 nhóm logic lắp prompt, đối chiếu, dữ liệu lỗi, quota và bảo toàn dữ liệu cũ.
 - `python scripts/validate-lab.py`: kiểm tra 41 prompt cũ không đổi, 65 bộ chú giải, nguồn/prompt của 6 ảnh Lab và 18 ảnh atlas mới, file ảnh và HTML/giấy phép nhúng.
 - `node tests/sphere-density.cjs`: kiểm tra 65 ảnh duy nhất trên quả cầu, tải ảnh, số lượng thư viện và prompt/DNA của ảnh mới.
+- `node tests/atlas-ux.cjs`: 6 nhóm kiểm tra khóa/khôi phục góc, preview ảnh, bàn phím, xóa bộ lọc riêng, vị trí quay lại, chọn ảnh bằng chạm và responsive.
 
 35 nhóm kiểm tra đã chạy thành công: 24 nhóm browser gốc, 4 nhóm hướng dẫn lần đầu, 1 nhóm biểu mẫu dùng thử và 6 nhóm logic. Browser dùng Playwright từ runtime cục bộ và Edge trên máy này; đường dẫn runtime được ghi trực tiếp trong file kiểm tra. Không có lỗi JavaScript trong các bài browser. Kiểm tra điện thoại bằng mô phỏng trình duyệt, chưa kiểm tra trên thiết bị vật lý. Ảnh chụp QA nằm trong `qa/wildframe-*.png`. Các bài kiểm tra portfolio cũ chỉ áp dụng cho các bản HTML sao lưu, giữ local và không thuộc bộ kiểm tra hiện tại.
 

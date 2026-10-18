@@ -173,14 +173,63 @@ header{background:linear-gradient(#080a08 10%,#080a08c0 65%,transparent)}
 @media(max-height:520px) and (orientation:landscape){.hero-cta{grid-template-columns:auto auto;width:auto;gap:8px;bottom:8px}.hero-cta>.primary{width:auto;min-height:40px;padding:9px 16px}.hero-cta #browsePrompts{min-height:40px}.hero-cta p{display:none}}
 @media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){#stage{cursor:default}#stage.dragging{cursor:grabbing}.load-note{font-size:10px}}
 
+/* Atlas interaction tools inherit WildFrame's type, palette and icon family. */
+.atlas-controls{position:fixed;z-index:26;left:var(--pad);top:112px;display:flex;gap:8px}
+.atlas-controls .button{background:#10150ee8;backdrop-filter:blur(10px);font-size:12px;box-shadow:0 5px 22px #0004}
+.atlas-controls .button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink)}
+.atlas-controls svg{width:15px;height:15px}
+#stage.view-locked{cursor:default}#stage:focus-visible{outline-offset:-5px}
+.sphere-card figure{transition:transform 180ms var(--ease),filter 180ms var(--ease),box-shadow 180ms}
+.sphere-card:hover figure{transform:none}
+.sphere-card.is-previewed figure{transform:scale(1.025);box-shadow:0 0 0 2px var(--accent),0 0 25px #d7e6a026}
+#orb.previewing .sphere-card:not(.is-previewed) figure{filter:brightness(.76)}
+.sphere-card.is-previewed figure::after{background:rgba(8,10,8,calc(var(--d,0)*.35))}
+.sphere-preview{position:fixed;z-index:25;left:var(--pad);top:174px;width:278px;padding:14px;display:flex;align-items:center;gap:12px;border:1px solid #d7e6a040;border-radius:12px;background:#10150ef2;box-shadow:0 12px 36px #0005;pointer-events:none}
+.sphere-preview img{width:62px;height:52px;object-fit:cover;border-radius:5px;flex-shrink:0}
+.sphere-preview p{font-size:10px;color:var(--accent);line-height:1.6}
+.sphere-preview h2{font:400 18px/1.25 var(--serif);margin:4px 0 6px;overflow-wrap:anywhere}
+.sphere-preview small{display:block;font-size:10px;line-height:1.6;color:var(--muted)}
+#headline .inner::before{inset:-38% -22%;background:radial-gradient(ellipse,#080a08df 0%,#080a08a3 36%,#080a0800 74%)}
+.hero-cta::before{content:'';position:absolute;z-index:-1;inset:-24px -40px;background:radial-gradient(ellipse,#080a08e6 15%,#080a0899 50%,transparent 74%);pointer-events:none}
+.hero-cta p{color:#d2d7c8;font-size:12px;line-height:1.65}
+#library{padding-top:0}.library-heading{padding-top:125px}
+.library-discovery{position:sticky;top:var(--library-top,86px);z-index:12;max-width:1680px;margin:auto;padding:12px 0;background:#080a08f7;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.library-discovery .library-tools{position:static;padding:0;border:0;background:none;backdrop-filter:none}
+.active-filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.filter-chip{display:inline-flex;align-items:center;gap:12px;min-height:44px;max-width:100%;padding:8px 13px;border:1px solid #d7e6a047;border-radius:999px;background:#d7e6a00b;color:var(--accent);font-size:12px}
+.filter-chip span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:32ch}
+.filter-chip span:last-child{font-size:18px;line-height:1}.filter-chip:hover{background:#d7e6a01a;border-color:var(--accent)}
+.recipe-card.last-viewed{border-color:#d7e6a075;box-shadow:0 0 0 1px #d7e6a01a}
+@media(max-width:850px){
+ .atlas-controls{left:50%;top:120px;transform:translateX(-50%);white-space:nowrap}
+ .sphere-preview{left:var(--pad);top:176px;width:min(278px,calc(100vw - 32px))}
+ .library-discovery .library-tools{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+ .library-discovery .search{min-width:0;max-width:none;width:100%;grid-column:1;grid-row:1}
+ .library-discovery .style-control{grid-column:2;grid-row:1;margin:0;width:138px}
+ .library-discovery .style-control select{width:100%;font-size:12px}
+ .library-discovery .category-tabs{grid-column:1/-1;grid-row:2;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:thin;gap:4px;max-width:100%;padding:2px 0 4px}
+ .library-discovery .category-tabs button{flex-shrink:0;padding:8px 12px}
+ .library-discovery .search input{font-size:16px}
+}
+@media(max-width:520px){
+ .atlas-controls{top:119px;gap:7px}.atlas-controls .button{padding:10px 14px;font-size:11px}
+ .hero-cta p{font-size:12px;color:#d2d7c8}
+ .library-heading{padding-top:105px}.library-discovery{padding:10px 0}.library-discovery .style-control{width:140px}
+ .library-discovery .search{padding:0 10px;gap:7px}
+ .filter-chip{padding:7px 11px;font-size:11px}.filter-chip span:first-child{max-width:21ch}
+ .active-filters{gap:6px;margin-top:6px}
+}
+@media(max-height:520px) and (min-width:521px){.atlas-controls{top:88px;left:var(--pad);transform:none}.sphere-preview{top:142px}}
+@media(prefers-reduced-motion:reduce){.sphere-card figure{transition:none}}
+
 </style>
 </head>
 <body>
-<svg class="sr-only" aria-hidden="true"><defs><symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></symbol><symbol id="icon-bookmark" viewBox="0 0 24 24"><path class="bookmark" d="M6 3h12v18l-6-4-6 4z"/></symbol><symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol><symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol><symbol id="icon-mark" viewBox="0 0 24 24"><path d="m3 17 6-11 5 8 3-5 4 8M7 17h11"/></symbol></defs></svg>
+<svg class="sr-only" aria-hidden="true"><defs><symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></symbol><symbol id="icon-bookmark" viewBox="0 0 24 24"><path class="bookmark" d="M6 3h12v18l-6-4-6 4z"/></symbol><symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol><symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol><symbol id="icon-mark" viewBox="0 0 24 24"><path d="m3 17 6-11 5 8 3-5 4 8M7 17h11"/></symbol><symbol id="icon-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol><symbol id="icon-unlock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 7-2m-3 10v2"/></symbol><symbol id="icon-reset" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></symbol></defs></svg>
 <a href="#library" class="skip-link" id="skipLibrary">Skip to prompt library</a>
 <header><a href="#" class="brand" id="homeLink" aria-label="WildFrame home"><span class="brand-mark"><svg aria-hidden="true"><use href="#icon-mark"/></svg></span><span class="brand-name">Wild<em>Frame</em></span><small>Prompt Atlas</small></a><nav class="main-nav" aria-label="Main navigation"><button id="exploreNav" class="nav-button" aria-current="true">Explore</button><button id="savedNav" class="nav-button"><span class="saved-label">Saved</span><span class="count" id="savedCount">0</span></button><button id="libraryNav" class="button small">The library <span aria-hidden="true">↗</span></button></nav><span class="header-note">Curated for the natural imagination.</span></header>
 <div id="scrolltrack"></div>
-<main id="stage" aria-label="Interactive visual prompt atlas"><div id="world"><div id="orb"></div></div><h1 id="headline"><span class="inner">Imagine<br>the <em>untamed.</em></span></h1></main>
+<main id="stage" aria-label="Interactive visual prompt atlas" aria-describedby="sphereHelp" tabindex="0"><div id="world"><div id="orb"></div></div><h1 id="headline"><span class="inner">Imagine<br>the <em>untamed.</em></span></h1></main>
 <div class="vignette"></div>
 <p class="hero-kicker hero-layer">Explore · Understand · Remix</p>
 <aside class="hero-description hero-layer"><p class="eyebrow">A little language.<br>A whole new wilderness.</p><p>Masterprompts for wildlife, wild places, and everything your imagination finds in between.</p></aside>
@@ -188,10 +237,14 @@ header{background:linear-gradient(#080a08 10%,#080a08c0 65%,transparent)}
 <div class="hero-cta hero-layer"><button class="button primary" id="startJourney">Try your first remix <svg aria-hidden="true"><use href="#icon-arrow"/></svg></button><button class="button" id="browsePrompts">Browse the prompt library →</button><p>AI wildlife &amp; landscape prompts.<br>Understand the words. Make the next image your own.</p></div>
 <aside class="hero-meta hero-layer"><strong id="heroCount">65</strong><p>visual prompt recipes</p><small>No sign-in. Just imagination.</small></aside>
 <p class="load-note hero-layer" id="loadNote" role="status">Preparing your atlas…</p>
+<div class="atlas-controls hero-layer" role="group" aria-label="Atlas view controls"><button class="button" id="lockSphere" aria-pressed="false"><svg aria-hidden="true"><use href="#icon-unlock"/></svg><span id="lockSphereLabel">Lock view</span></button><button class="button" id="resetSphere"><svg aria-hidden="true"><use href="#icon-reset"/></svg>Reset angle</button></div>
+<aside class="sphere-preview hero-layer" id="spherePreview" aria-hidden="true" hidden><img id="spherePreviewImage" alt="" width="62" height="52"><div><p id="spherePreviewMeta"></p><h2 id="spherePreviewTitle"></h2><small id="spherePreviewHint"></small></div></aside>
+<p class="sr-only" id="sphereHelp">Move your mouse or drag to turn the atlas. With the atlas focused, use arrow keys to turn and Enter to open the front image. Lock view holds the angle; Reset angle restores the initial view.</p><p class="sr-only" id="sphereStatus" role="status" aria-live="polite"></p>
+
 <section id="library" aria-labelledby="libraryTitle" inert><div class="library-heading"><div><p class="eyebrow" id="libraryEyebrow">The WildFrame Collection / Vol. 01</p><h1 id="libraryTitle" tabindex="-1">Find your next<br><em>what if.</em></h1></div><p>Start with an image. Find the words behind it.<br>Make the next version your own.</p><div class="library-stat"><div><strong>59</strong><span>curated prompts</span></div><div><strong>4</strong><span>ways to wander</span></div></div></div>
 <aside class="lab-teaser" aria-label="Explore and learn"><div class="lab-teaser-mark" aria-hidden="true">A ↔ B</div><div><p class="eyebrow">The WildFrame field lab</p><p>One idea. Three visual languages.</p><button id="startJourneyLibrary" class="text-button">New here? Try a guided remix →</button></div><button id="openExperiments" class="button">Explore visual experiments <span aria-hidden="true">↗</span></button></aside>
 
-<div class="library-tools"><label class="search"><svg aria-hidden="true"><use href="#icon-search"/></svg><span class="sr-only">Search prompts by subject, place or style</span><input id="promptSearch" type="search" placeholder="A fox, a forest, a feeling…" autocomplete="off"></label><div class="category-tabs" aria-label="Prompt categories"><button data-category="All" aria-pressed="true">All</button><button data-category="Wildlife" aria-pressed="false">Wildlife</button><button data-category="Landscapes" aria-pressed="false">Landscapes</button><button data-category="Macro" aria-pressed="false">Macro</button><button data-category="Underwater" aria-pressed="false">Underwater</button></div><label class="style-control"><span class="sr-only">Visual style</span><select id="styleFilter"><option value="All">Every style</option><option>Photography</option><option>Painterly</option><option>Ink wash</option><option>Dreamscape</option></select></label></div>
+<div class="library-discovery" id="libraryDiscovery"><div class="library-tools"><label class="search"><svg aria-hidden="true"><use href="#icon-search"/></svg><span class="sr-only">Search prompts by subject, place or style</span><input id="promptSearch" type="search" placeholder="A fox, a forest, a feeling…" autocomplete="off"></label><div class="category-tabs" aria-label="Prompt categories"><button data-category="All" aria-pressed="true">All</button><button data-category="Wildlife" aria-pressed="false">Wildlife</button><button data-category="Landscapes" aria-pressed="false">Landscapes</button><button data-category="Macro" aria-pressed="false">Macro</button><button data-category="Underwater" aria-pressed="false">Underwater</button></div><label class="style-control"><span class="sr-only">Visual style</span><select id="styleFilter"><option value="All">Every style</option><option>Photography</option><option>Painterly</option><option>Ink wash</option><option>Dreamscape</option></select></label></div><div class="active-filters" id="activeFilters" role="group" aria-label="Active filters" hidden></div></div>
 <div class="results-bar"><span id="resultCount" role="status">59 prompts, ready to make your own</span><div><button class="text-button" id="clearFilters" hidden>Clear filters</button><button class="text-button" id="exportSaved" hidden>Download saved prompts ↗</button></div></div><div class="recipe-grid" id="recipeGrid"></div><div class="empty-state" id="emptyState" hidden><p class="eyebrow">Room for a new direction</p><h2 id="emptyTitle">Nothing in this clearing.</h2><p id="emptyDescription">Try another subject or remove a filter. Your next idea may be one word away.</p><button class="button" id="emptyReset">Explore all prompts →</button></div><footer class="library-footer"><p>A platform-curated library. Generated examples show the prompt used; reference studies offer newly written prompts inspired by an existing image. Outputs vary between image tools.</p><p>WildFrame / Made for curious image makers.<br>Saved prompts and variations stay in this browser.<br><a href="/credits" target="_blank" rel="noopener">Sources &amp; credits ↗</a> · <a href="/try" target="_blank" rel="noopener">Help test WildFrame ↗</a></p></footer></section>
 <section id="promptDialog" class="overlay" role="dialog" aria-modal="true" aria-labelledby="promptTitle" inert><div class="dialog-shell"><div class="dialog-top"><p class="eyebrow">WildFrame / Inside the masterprompt</p><button class="button close-button" id="promptClose">Close <span aria-hidden="true">×</span></button></div><div class="dialog-body"><div class="prompt-visual"><img id="promptImage" alt=""><div class="visual-caption"><span id="visualType">AI-generated example</span><a id="fullImageLink" target="_blank" rel="noopener noreferrer">Open image ↗</a></div><p class="visual-note" id="visualNote"></p><dl class="visual-parameters"><div><dt>Category</dt><dd id="parameterCategory"></dd></div><div><dt>Visual language</dt><dd id="parameterStyle"></dd></div><div><dt>Example ratio</dt><dd>3:2 landscape</dd></div></dl><div class="insight"><h3>Make it yours</h3><p>Keep the composition. Change the subject. Or let the light take the same idea somewhere completely different.</p></div></div><div class="prompt-content"><p class="eyebrow" id="promptCategory"></p><h2 id="promptTitle"></h2><span class="badge" id="sourceBadge"></span><p class="source-note" id="sourceNote"></p><label class="section-label" for="masterText"><span>The masterprompt</span><span id="promptLength"></span></label><div class="prompt-view-switch" role="group" aria-label="Prompt reading mode">
  <button id="rawMode" class="button small" aria-pressed="true">Original prompt</button>
@@ -1419,6 +1472,115 @@ function initializeVisuals() {
   window.visualViewport?.addEventListener('resize', () => requestAnimationFrame(keepFocusedControlVisible));
 }
 
+// Pointer previews use one short dwell timer, never a permanent animation loop.
+let sphereLocked=false,previewCard=null,previewTimer=0,previewPoint=null,libraryReturn=null,lastViewedId=null;
+
+function hideSpherePreview(){
+ clearTimeout(previewTimer);previewTimer=0;previewPoint=null;
+ previewCard?.classList.remove('is-previewed');previewCard=null;
+ $('#orb').classList.remove('previewing');$('#spherePreview').hidden=true;
+}
+function showSpherePreview(card,keyboard=false){
+ if(!card||stage.inert)return;
+ const recipe=byId.get(card.dataset.id);if(!recipe)return;
+ previewCard?.classList.remove('is-previewed');previewCard=card;card.classList.add('is-previewed');$('#orb').classList.add('previewing');
+ $('#spherePreviewTitle').textContent=recipe.title;$('#spherePreviewMeta').textContent=recipe.category+' / '+recipe.style;
+ $('#spherePreviewHint').textContent=keyboard?'Arrow keys to turn · Enter to open':'Click the image to explore its prompt';
+ const image=$('#spherePreviewImage');image.src=thumbs.get(recipe.id)||recipe.thumb;image.hidden=false;image.onerror=()=>{image.hidden=true};
+ $('#spherePreview').hidden=false;
+ if(keyboard)$('#sphereStatus').textContent=recipe.title+'. '+recipe.style+'. Press Enter to open the prompt.';
+}
+function queueSpherePreview(event){
+ hideSpherePreview();
+ if(event.pointerType!=='mouse'||event.buttons||pointer||stage.inert)return;
+ previewPoint={x:event.clientX,y:event.clientY};
+ const reveal=()=>{
+  previewTimer=0;if(!previewPoint||stage.inert||pointer)return;
+  // Resolve the image after the camera settles: it may have moved under the cursor.
+  if(hoverAim){previewTimer=setTimeout(reveal,80);return}
+  const card=document.elementFromPoint(previewPoint.x,previewPoint.y)?.closest('.sphere-card');
+  showSpherePreview(card);
+ };
+ previewTimer=setTimeout(reveal,220);
+}
+function frontSphereCard(){
+ const sinX=Math.sin(pitch*radians),cosX=Math.cos(pitch*radians),sinY=Math.sin(yaw*radians),cosY=Math.cos(yaw*radians);
+ let index=0,depth=-Infinity;
+ vectors.forEach((v,i)=>{const z=-v.x*sinY+(-v.y*sinX+v.z*cosX)*cosY;if(z>depth){depth=z;index=i}});
+ return sphereCards[index];
+}
+function updateSphereControls(){
+ $('#lockSphere').setAttribute('aria-pressed',sphereLocked);
+ $('#lockSphereLabel').textContent=sphereLocked?'Unlock view':'Lock view';
+ $('#lockSphere use').setAttribute('href',sphereLocked?'#icon-lock':'#icon-unlock');
+ stage.classList.toggle('view-locked',sphereLocked);updateAtlasHint();
+}
+function updateAtlasHint(){
+ if(loaded<sphereRecipes.length)return;
+ $('#loadNote').textContent=sphereLocked?'View locked · Select an image, or unlock to turn':coarse.matches||reduced.matches?'Drag to explore · Tap an image for its prompt':'Move your mouse to explore · Click an image for its prompt';
+}
+function initializeAtlasUx(){
+ $('#lockSphere').addEventListener('click',()=>{
+  sphereLocked=!sphereLocked;resetHoverMotion();hideSpherePreview();velocityX=velocityY=0;updateSphereControls();wake();
+  $('#sphereStatus').textContent=sphereLocked?'View locked. Images remain available to open.':'View unlocked.';
+ });
+ $('#resetSphere').addEventListener('click',()=>{
+  resetHoverMotion();hideSpherePreview();velocityX=velocityY=0;yaw=0;pitch=-4;camZ=0;scrollTo(0,0);renderStamp='';wake();
+  $('#sphereStatus').textContent='Initial angle restored.'+(sphereLocked?' View remains locked.':'');
+ });
+ stage.addEventListener('pointermove',queueSpherePreview);
+ stage.addEventListener('pointerleave',hideSpherePreview);stage.addEventListener('pointerdown',hideSpherePreview);
+ stage.addEventListener('focus',()=>{resetHoverMotion();velocityX=velocityY=0;showSpherePreview(frontSphereCard(),true)});
+ stage.addEventListener('blur',hideSpherePreview);
+ stage.addEventListener('keydown',event=>{
+  if(event.target!==stage||event.altKey||event.ctrlKey||event.metaKey||stage.inert)return;
+  if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key)){
+   event.preventDefault();if(sphereLocked){$('#sphereStatus').textContent='View locked. Use Unlock view to turn the atlas.';return}
+   resetHoverMotion();velocityX=velocityY=0;
+   if(event.key==='ArrowLeft')yaw-=12;if(event.key==='ArrowRight')yaw+=12;
+   if(event.key==='ArrowUp')pitch=clamp(pitch+10,-32,32);if(event.key==='ArrowDown')pitch=clamp(pitch-10,-32,32);
+   wake();showSpherePreview(frontSphereCard(),true);
+  }else if(event.key==='Enter'||event.key===' '){event.preventDefault();const card=previewCard||frontSphereCard();openPrompt(card.dataset.id,stage)}
+  else if(event.key==='Escape')hideSpherePreview();
+ });
+ addEventListener('blur',hideSpherePreview);addEventListener('resize',hideSpherePreview);
+ document.addEventListener('visibilitychange',hideSpherePreview);
+ reduced.addEventListener('change',()=>{hideSpherePreview();updateAtlasHint()});
+ const discovery=$('#libraryDiscovery'),header=$('header');
+ const measure=()=>{
+  const top=Math.ceil(header.getBoundingClientRect().bottom)+6;
+  root.style.setProperty('--library-top',top+'px');
+  library.style.scrollPaddingTop=top+Math.ceil(discovery.getBoundingClientRect().height)+16+'px';
+ };
+ if('ResizeObserver' in window){const observer=new ResizeObserver(measure);observer.observe(header);observer.observe(discovery)}
+ addEventListener('resize',measure);measure();
+}
+
+function renderFilterChips(){
+ const items=[],query=$('#promptSearch').value.trim();
+ if(query)items.push({key:'search',label:query,remove:()=>$('#promptSearch').value='',fallback:$('#promptSearch')});
+ if(category!=='All')items.push({key:'category',label:category,remove:()=>category='All',fallback:$('[data-category="All"]')});
+ if(style!=='All')items.push({key:'style',label:style,remove:()=>{style='All';$('#styleFilter').value='All'},fallback:$('#styleFilter')});
+ if(savedOnly)items.push({key:'collection',label:'Saved',remove:()=>{savedOnly=false;$('#savedNav').setAttribute('aria-current',false);$('#libraryNav').setAttribute('aria-current',true)},fallback:$('#savedNav')});
+ const list=$('#activeFilters');list.replaceChildren();list.hidden=!items.length;
+ items.forEach((item,index)=>{
+  const button=document.createElement('button'),text=document.createElement('span'),close=document.createElement('span');
+  button.className='filter-chip';button.setAttribute('aria-label','Remove '+item.key+' filter: '+item.label);button.title=item.label;
+  text.textContent=item.label;close.textContent='×';close.setAttribute('aria-hidden','true');button.append(text,close);
+  button.addEventListener('click',()=>{item.remove();renderLibrary();const remaining=$$('#activeFilters button');(remaining[Math.min(index,remaining.length-1)]||item.fallback).focus({preventScroll:true})});
+  list.append(button);
+ });
+}
+function rememberLibraryPosition(){
+ libraryReturn=library.classList.contains('open')?{top:library.scrollTop,id:activeId}:null;
+}
+function restoreLibraryPosition(){
+ if(!library.classList.contains('open')||!libraryReturn)return;
+ lastViewedId=libraryReturn.id;
+ $$('.recipe-card').forEach(card=>card.classList.toggle('last-viewed',card.dataset.id===lastViewedId));
+ library.scrollTop=libraryReturn.top;libraryReturn=null;
+}
+
 const $=selector=>document.querySelector(selector),$$=selector=>[...document.querySelectorAll(selector)],body=document.body,root=document.documentElement;
 const stage=$('#stage'),world=$('#world'),orb=$('#orb'),headline=$('#headline'),library=$('#library'),dialog=$('#promptDialog'),studio=$('#studio'),experiments=$('#experiments');
 const reduced=matchMedia('(prefers-reduced-motion:reduce)'),coarse=matchMedia('(pointer:coarse)'),clamp=(v,a,b)=>Math.min(b,Math.max(a,v)),radians=Math.PI/180;
@@ -1457,7 +1619,7 @@ function renderLibrary(){
  const query=normalize($('#promptSearch').value.trim());const filtered=(savedOnly?allRecipes:libraryRecipes).filter(recipe=>(category==='All'||recipe.category===category)&&(style==='All'||recipe.style===style)&&(!savedOnly||saved.has(recipe.id))&&normalize([recipe.title,recipe.subject,recipe.setting,recipe.category,recipe.style,...recipe.tags].join(' ')).includes(query));
  visibleIds=filtered.map(recipe=>recipe.id);const grid=$('#recipeGrid');grid.replaceChildren();
  for(const recipe of filtered){
-  const article=document.createElement('article');article.className='recipe-card';article.dataset.id=recipe.id;
+  const article=document.createElement('article');article.className='recipe-card'+(recipe.id===lastViewedId?' last-viewed':'');article.dataset.id=recipe.id;
   const media=document.createElement('div');media.className='image-wrap';
   const open=document.createElement('button');open.className='open-recipe';open.dataset.id=recipe.id;open.setAttribute('aria-label','Open masterprompt: '+recipe.title);
   const image=document.createElement('img');image.src=thumbs.get(recipe.id)||recipe.thumb;image.alt=recipe.subject;image.width=760;image.height=507;image.loading='lazy';image.decoding='async';image.addEventListener('error',()=>{image.hidden=true;open.classList.add('preview-unavailable');const fallback=document.createElement('span');fallback.className='preview-message';fallback.textContent='Preview unavailable · Prompt ready to explore';open.append(fallback)},{once:true});open.append(image);open.addEventListener('click',()=>openPrompt(recipe.id,open));
@@ -1474,7 +1636,7 @@ function renderLibrary(){
  $('#libraryEyebrow').textContent=savedOnly?'Your collection / Kept close':'The WildFrame Collection / Vol. 01';$('#emptyState').hidden=filtered.length>0;
  $('#libraryTitle').innerHTML=savedOnly?'Your <em>saved prompts.</em>':'Find your next<br><em>what if.</em>';
  $('#emptyTitle').textContent=savedOnly&&!saved.size?'Your collection starts with a spark.':'Nothing in this clearing.';$('#emptyDescription').textContent=savedOnly&&!saved.size?'Tap the bookmark on a prompt you love. It will be waiting here when you come back.':'Try another subject or remove a filter. Your next idea may be one word away.';
- updateSaved();refreshLibraryVisuals();
+ updateSaved();renderFilterChips();refreshLibraryVisuals();
 }
 $('#browsePrompts').addEventListener('click',()=>setLibrary(true,{onlySaved:false}));$('#libraryNav').addEventListener('click',()=>setLibrary(true,{onlySaved:false}));$('#savedNav').addEventListener('click',()=>{resetFilters();setLibrary(true,{onlySaved:true})});$('#exploreNav').addEventListener('click',()=>setLibrary(false));$('#homeLink').addEventListener('click',event=>{event.preventDefault();setLibrary(false)});$('#skipLibrary').addEventListener('click',event=>{event.preventDefault();setLibrary(true,{onlySaved:false})});
 $$('[data-category]').forEach(button=>button.addEventListener('click',()=>{category=button.dataset.category;renderLibrary()}));$$('[data-topic]').forEach(button=>button.addEventListener('click',()=>{category=button.dataset.topic;style='All';$('#styleFilter').value='All';$('#promptSearch').value='';setLibrary(true,{onlySaved:false})}));$('#promptSearch').addEventListener('input',renderLibrary);$('#styleFilter').addEventListener('change',event=>{style=event.target.value;renderLibrary()});for(const id of ['clearFilters','emptyReset'])$('#'+id).addEventListener('click',()=>{resetFilters();$('#promptSearch').focus({preventScroll:true})});
@@ -1482,12 +1644,13 @@ $$('[data-category]').forEach(button=>button.addEventListener('click',()=>{categ
 function syncLayers(){
  const promptOpen=dialog.classList.contains('open'),studioOpen=studio.classList.contains('open'),labOpen=experiments.classList.contains('open'),flat=library.classList.contains('open');
  body.style.overflow=promptOpen||studioOpen||labOpen||flat?'hidden':'';stage.inert=promptOpen||studioOpen||labOpen||flat;library.inert=promptOpen||studioOpen||labOpen||!flat;$('header').inert=promptOpen||studioOpen||labOpen;
- $$('.hero-layer').forEach(element=>element.inert=promptOpen||studioOpen||labOpen||flat);$('#skipLibrary').inert=promptOpen||studioOpen||labOpen;dialog.inert=!promptOpen||studioOpen;studio.inert=!studioOpen;experiments.inert=!labOpen||promptOpen||studioOpen;resetHoverMotion();velocityX=velocityY=0;wake();
+ $$('.hero-layer').forEach(element=>element.inert=promptOpen||studioOpen||labOpen||flat);$('#skipLibrary').inert=promptOpen||studioOpen||labOpen;dialog.inert=!promptOpen||studioOpen;studio.inert=!studioOpen;experiments.inert=!labOpen||promptOpen||studioOpen;resetHoverMotion();hideSpherePreview();velocityX=velocityY=0;wake();
  renderJourney();
 }
 function setRecipeHash(id){history.pushState(null,'','#prompt='+encodeURIComponent(id))}
 function openPrompt(id,trigger=null,{route=true,keepBrowse=false}={}){
  if(!byId.has(id))return;activeId=id;returnFocus=trigger||$('#browsePrompts');if(!keepBrowse)browseIds=experiments.classList.contains('open')?groupRecipes().map(recipe=>recipe.id):library.classList.contains('open')?[...visibleIds]:sphereRecipes.map(recipe=>recipe.id);if(!browseIds.includes(id)){const group=experimentData.groups.find(group=>group.variants.includes(id));browseIds=group?[...group.variants]:libraryRecipes.map(recipe=>recipe.id)}
+ if(!dialog.classList.contains('open'))rememberLibraryPosition();
  dialog.classList.add('open');dialog.scrollTop=0;renderPrompt();syncLayers();if(route)setRecipeHash(id);$('#promptClose').focus({preventScroll:true});
 }
 function renderPrompt(){
@@ -1500,6 +1663,7 @@ function renderPrompt(){
 }
 function closePrompt({route=true,restore=true}={}){
  if(studio.classList.contains('open'))closeStudio();imageToken++;dialog.classList.remove('open');activeId=null;syncLayers();if(route&&location.hash.startsWith('#prompt='))history.replaceState(null,'',location.pathname+location.search);
+ restoreLibraryPosition();
  if(restore){let target=returnFocus;if(!target?.isConnected||target.closest('[inert]'))target=library.classList.contains('open')?$('#promptSearch'):$('#browsePrompts');target.focus({preventScroll:true})}
 }
 function navigatePrompt(direction){if(!activeId||browseIds.length<2)return;const index=browseIds.indexOf(activeId);activeId=browseIds[(index+direction+browseIds.length)%browseIds.length];renderPrompt();dialog.scrollTop=0;history.replaceState(null,'','#prompt='+encodeURIComponent(activeId));if(!dialog.contains(document.activeElement))$('#promptClose').focus({preventScroll:true})}
@@ -1546,7 +1710,7 @@ sphereRecipes.forEach((recipe,i)=>{
 function wake(){if(!raf&&!document.hidden)raf=requestAnimationFrame(frame)}
 function layout(force=false){const w=innerWidth,h=innerHeight;if(!force&&Math.abs(w-lastWidth)<20&&Math.abs(h-lastHeight)<20)return;lastWidth=w;lastHeight=h;R=Math.max(w<=380?108:w<=640?120:155,Math.min(480,h*(w<=380?.38:w<=640?.42:.46),w*(w<=380?.48:w<=640?.52:.58)));root.style.setProperty('--cw',Math.round(Math.max(68,R*(w<=640?.39:.42)))+'px');perspective=w<=380?620:w<=640?760:w<=900?920:1150;root.style.setProperty('--persp',perspective+'px');sphereCards.forEach((card,i)=>{const v=vectors[i];card.style.transform=`translate3d(${v.x*R}px,${-v.y*R}px,${v.z*R}px) rotateY(${v.lon}deg) rotateX(${v.lat}deg)`});renderStamp='';wake()}
 function frame(time){
- raf=0;const dt=lastFrame?clamp((time-lastFrame)/16.667,.25,2):1;lastFrame=time;const paused=library.classList.contains('open')||dialog.classList.contains('open')||studio.classList.contains('open')||experiments.classList.contains('open');
+ raf=0;const dt=lastFrame?clamp((time-lastFrame)/16.667,.25,2):1;lastFrame=time;const paused=sphereLocked||library.classList.contains('open')||dialog.classList.contains('open')||studio.classList.contains('open')||experiments.classList.contains('open');
  if(!pointer&&!paused){
   if(reduced.matches){velocityX=velocityY=0;resetHoverMotion()}
   if(hoverAim){const follow=1-Math.pow(.84,dt);yaw+=(hoverAim.yaw-yaw)*follow;pitch+=(hoverAim.pitch-pitch)*follow;if(Math.abs(hoverAim.yaw-yaw)<.005&&Math.abs(hoverAim.pitch-pitch)<.005){yaw=hoverAim.yaw;pitch=hoverAim.pitch;hoverAim=null}}
@@ -1558,7 +1722,7 @@ function frame(time){
  if(!paused&&(hoverAim||Math.abs(velocityX)>0||Math.abs(velocityY)>0||Math.abs(target-camZ)>.01))wake();else lastFrame=0;
 }
 function followMouse(event){
- if(event.pointerType!=='mouse'||event.buttons||coarse.matches||reduced.matches||stage.inert)return;
+ if(event.pointerType!=='mouse'||event.buttons||coarse.matches||reduced.matches||sphereLocked||stage.inert)return;
  const current={x:event.clientX,y:event.clientY};
  if(hoverPoint){const dx=current.x-hoverPoint.x,dy=current.y-hoverPoint.y;if(dx||dy){hoverAim={yaw:(hoverAim?.yaw??yaw)+dx*.08,pitch:clamp((hoverAim?.pitch??pitch)-dy*.06,-32,32)};velocityX=velocityY=0;wake()}}
  hoverPoint=current;
@@ -1566,17 +1730,17 @@ function followMouse(event){
 stage.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')hoverPoint={x:event.clientX,y:event.clientY}});
 stage.addEventListener('pointerleave',()=>{hoverPoint=null});
 stage.addEventListener('pointermove',event=>{if(!pointer)followMouse(event)});
-stage.addEventListener('pointerdown',event=>{if(event.button!==0||pointer||activeId)return;resetHoverMotion();pointer={id:event.pointerId,x:event.clientX,y:event.clientY,lastX:event.clientX,lastY:event.clientY,time:event.timeStamp,card:event.target.closest('.sphere-card'),touch:event.pointerType==='touch',decided:event.pointerType!=='touch',distance:0};velocityX=velocityY=0;stage.classList.add('dragging');if(!pointer.touch){stage.setPointerCapture(event.pointerId);event.preventDefault()}});
-stage.addEventListener('pointermove',event=>{if(!pointer||pointer.id!==event.pointerId)return;const dx=event.clientX-pointer.x,dy=event.clientY-pointer.y;pointer.distance=Math.max(pointer.distance,Math.hypot(dx,dy));if(pointer.touch&&!pointer.decided){if(pointer.distance<10)return;if(Math.abs(dy)>Math.abs(dx)*1.15){pointer=null;stage.classList.remove('dragging');return}pointer.decided=true;stage.setPointerCapture(event.pointerId)}const vx=(event.clientX-pointer.lastX)*.13,vy=-(event.clientY-pointer.lastY)*.13,dt=Math.max(8,event.timeStamp-pointer.time)/16.667;yaw+=vx;pitch=clamp(pitch+vy,-32,32);velocityX=clamp(vx/dt,-4,4);velocityY=clamp(vy/dt,-4,4);pointer.lastX=event.clientX;pointer.lastY=event.clientY;pointer.time=event.timeStamp;wake()});
-function endPointer(event,cancel=false){if(!pointer||pointer.id!==event.pointerId)return;const start=pointer;pointer=null;stage.classList.remove('dragging');if(stage.hasPointerCapture(event.pointerId))stage.releasePointerCapture(event.pointerId);if(cancel||reduced.matches||event.timeStamp-start.time>100)velocityX=velocityY=0;if(!cancel&&start.distance<(coarse.matches?14:6)&&start.card){velocityX=velocityY=0;openPrompt(start.card.dataset.id,start.card)}wake()}
+stage.addEventListener('pointerdown',event=>{if(event.button!==0||pointer||activeId)return;resetHoverMotion();pointer={id:event.pointerId,x:event.clientX,y:event.clientY,lastX:event.clientX,lastY:event.clientY,time:event.timeStamp,card:document.elementFromPoint(event.clientX,event.clientY)?.closest('.sphere-card')||null,touch:event.pointerType==='touch',decided:event.pointerType!=='touch',distance:0};velocityX=velocityY=0;if(!sphereLocked)stage.classList.add('dragging');if(!pointer.touch){stage.setPointerCapture(event.pointerId);event.preventDefault()}});
+stage.addEventListener('pointermove',event=>{if(!pointer||pointer.id!==event.pointerId)return;const dx=event.clientX-pointer.x,dy=event.clientY-pointer.y;pointer.distance=Math.max(pointer.distance,Math.hypot(dx,dy));if(pointer.touch&&!pointer.decided){if(pointer.distance<10)return;if(Math.abs(dy)>Math.abs(dx)*1.15){pointer=null;stage.classList.remove('dragging');return}pointer.decided=true;stage.setPointerCapture(event.pointerId)}if(sphereLocked)return;const vx=(event.clientX-pointer.lastX)*.13,vy=-(event.clientY-pointer.lastY)*.13,dt=Math.max(8,event.timeStamp-pointer.time)/16.667;yaw+=vx;pitch=clamp(pitch+vy,-32,32);velocityX=clamp(vx/dt,-4,4);velocityY=clamp(vy/dt,-4,4);pointer.lastX=event.clientX;pointer.lastY=event.clientY;pointer.time=event.timeStamp;wake()});
+function endPointer(event,cancel=false){if(!pointer||pointer.id!==event.pointerId)return;const start=pointer;pointer=null;stage.classList.remove('dragging');if(stage.hasPointerCapture(event.pointerId))stage.releasePointerCapture(event.pointerId);if(cancel||reduced.matches||sphereLocked||event.timeStamp-start.time>100)velocityX=velocityY=0;if(!cancel&&start.distance<(coarse.matches?14:6)&&start.card){velocityX=velocityY=0;openPrompt(start.card.dataset.id,start.card)}wake()}
 stage.addEventListener('pointerup',event=>endPointer(event));stage.addEventListener('pointercancel',event=>endPointer(event,true));stage.addEventListener('lostpointercapture',event=>endPointer(event,true));
 addEventListener('blur',()=>{resetHoverMotion();velocityX=velocityY=0});
-addEventListener('scroll',()=>{if(scrollY>innerHeight*.16+1)scrollTo(0,innerHeight*.16);wake()},{passive:true});addEventListener('resize',()=>layout());addEventListener('orientationchange',()=>setTimeout(()=>layout(true),220));if(window.visualViewport)visualViewport.addEventListener('resize',()=>layout());document.addEventListener('visibilitychange',()=>{resetHoverMotion();if(document.hidden){cancelAnimationFrame(raf);raf=0;lastFrame=0;velocityX=velocityY=0}else wake()});reduced.addEventListener('change',()=>{resetHoverMotion();velocityX=velocityY=0;wake()});
+addEventListener('scroll',()=>{hideSpherePreview();if(scrollY>innerHeight*.16+1)scrollTo(0,innerHeight*.16);wake()},{passive:true});addEventListener('resize',()=>layout());addEventListener('orientationchange',()=>setTimeout(()=>layout(true),220));if(window.visualViewport)visualViewport.addEventListener('resize',()=>layout());document.addEventListener('visibilitychange',()=>{resetHoverMotion();if(document.hidden){cancelAnimationFrame(raf);raf=0;lastFrame=0;velocityX=velocityY=0}else wake()});reduced.addEventListener('change',()=>{resetHoverMotion();velocityX=velocityY=0;wake()});
 function downscale(image,max){if(image.naturalWidth<=max)return Promise.resolve(image.src);return new Promise(resolve=>{try{const canvas=document.createElement('canvas');canvas.width=max;canvas.height=Math.round(image.naturalHeight*max/image.naturalWidth);canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);canvas.toBlob(blob=>{if(!blob)return resolve(image.src);const url=URL.createObjectURL(blob);blobURLs.push(url);resolve(url)},'image/webp',.86)}catch{resolve(image.src)}})}
 let loaded=0;const queue=sphereRecipes.map((recipe,i)=>i).sort((a,b)=>vectors[b].z-vectors[a].z);
-async function loadThumbnail(i){return new Promise(resolve=>{const recipe=sphereRecipes[i],image=new Image();image.crossOrigin='anonymous';image.decoding='async';let settled=false;const finish=url=>{if(settled)return;settled=true;clearTimeout(timer);thumbs.set(recipe.id,url);const cardImage=sphereCards[i].querySelector('img');cardImage.onload=()=>cardImage.classList.add('ready');cardImage.src=url;loaded++;$('#loadNote').textContent=loaded===sphereRecipes.length?(coarse.matches||reduced.matches?'Drag to explore the atlas':'Move your mouse to explore · Click an image for its prompt'):`${loaded} / ${sphereRecipes.length} previews ready`;resolve()};const timer=setTimeout(()=>finish(recipe.thumb),8000);image.onload=async()=>finish(await downscale(image,innerWidth<=640?520:760));image.onerror=()=>finish(recipe.thumb);image.src=recipe.thumb})}
+async function loadThumbnail(i){return new Promise(resolve=>{const recipe=sphereRecipes[i],image=new Image();image.crossOrigin='anonymous';image.decoding='async';let settled=false;const finish=url=>{if(settled)return;settled=true;clearTimeout(timer);thumbs.set(recipe.id,url);const cardImage=sphereCards[i].querySelector('img');cardImage.onload=()=>cardImage.classList.add('ready');cardImage.src=url;loaded++;if(loaded===sphereRecipes.length)updateAtlasHint();else $('#loadNote').textContent=`${loaded} / ${sphereRecipes.length} previews ready`;resolve()};const timer=setTimeout(()=>finish(recipe.thumb),8000);image.onload=async()=>finish(await downscale(image,innerWidth<=640?520:760));image.onerror=()=>finish(recipe.thumb);image.src=recipe.thumb})}
 async function thumbnailWorker(){while(queue.length)await loadThumbnail(queue.shift())}
-initializeVisuals();initializeLab();initializeJourney();layout(true);updateSaved();syncLayers();handleRoute();for(let i=0;i<4;i++)thumbnailWorker();
+initializeVisuals();initializeLab();initializeJourney();initializeAtlasUx();layout(true);updateSaved();syncLayers();handleRoute();for(let i=0;i<4;i++)thumbnailWorker();
 addEventListener('pagehide',event=>{cancelAnimationFrame(raf);raf=0;if(!event.persisted)blobURLs.forEach(url=>URL.revokeObjectURL(url))});addEventListener('pageshow',()=>{layout(true);wake()});
 
 </script>

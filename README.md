@@ -29,6 +29,8 @@ node scripts/build-static.cjs
 - 59 library recipes and 6 additional experiment recipes, all available on the 65-image globe; generated examples and reference studies are labelled separately.
 - Optional first-remix guide with skip/back routes; completion follows a successful save.
 - The globe follows mouse movement without holding a button on desktop, settles when the mouse stops, pauses in overlays and respects reduced motion. Touch dragging remains available.
+- Dwell previews identify the image under the cursor. Lock/reset controls and arrow-key/Enter navigation offer direct control of the globe; touch selection resolves the image at the actual contact point.
+- Search and filters stay below the header on every screen size. Active filter chips can be removed individually; closing a recipe restores the library position, focus and last-viewed highlight.
 - Prompt DNA with exact-source reading notes and links to the relevant Studio field.
 - Two visual studies, each with photography, oil-painting and ink-wash examples.
 - Search, filters, saved collections, direct recipe links, clipboard fallback and JSON export.
@@ -57,6 +59,7 @@ node tests/wildframe-journey.cjs
 node tests/study-kit.cjs
 node tests/sphere-follow.cjs
 node tests/sphere-density.cjs
+node tests/atlas-ux.cjs
 ```
 
 Browser checks currently reference the bundled Playwright runtime and Edge executable on the development Windows machine. Adjust those two paths if running elsewhere. `tests/deployment-smoke.cjs` accepts `TEST_BASE_URL` for the deployed origin. Automated study-form checks are not participant research results; see `USABILITY-TEST.md`.

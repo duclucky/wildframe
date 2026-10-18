@@ -16,9 +16,9 @@ shell=shell.replace('/* LAB_DATA */','const experimentData='+json.dumps(experime
 shell=shell.replace('/* ATLAS_DATA */','const atlasRecipes='+json.dumps(atlas,ensure_ascii=False)+';')
 shell=shell.replace('<!-- SPHERE_COUNT -->',str(len(catalog)+len(atlas)+len(experiments['recipes'])))
 shell=shell.replace('<!-- LIBRARY_COUNT -->',str(len(catalog)+len(atlas)))
-for token,filename in [('LAB_CORE','lab-core.js'),('LAB_UI','lab-ui.js'),('LAB_STYLES','lab.css'),('JOURNEY_SCRIPT','journey.js'),('JOURNEY_STYLES','journey.css')]:
+for token,filename in [('LAB_CORE','lab-core.js'),('LAB_UI','lab-ui.js'),('LAB_STYLES','lab.css'),('JOURNEY_SCRIPT','journey.js'),('JOURNEY_STYLES','journey.css'),('ATLAS_UX','atlas-ux.js'),('ATLAS_STYLES','atlas-ux.css')]:
     shell=shell.replace('/* '+token+' */',(ROOT/'source'/filename).read_text(encoding='utf-8'))
-for name in ['dna','history','experiments','teaser']:
+for name in ['dna','history','experiments','teaser','atlas']:
     shell=shell.replace('<!-- '+name.upper()+'_PANEL -->',(ROOT/'source/panels'/f'{name}.html').read_text(encoding='utf-8'))
 notice=(ROOT/'THIRD_PARTY_NOTICES.md').read_text(encoding='utf-8')
 shell=shell.replace('<head>','<!--\n'+notice+'\n-->\n<head>',1)
