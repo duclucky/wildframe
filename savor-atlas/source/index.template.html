@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore 12 signature dishes from 12 countries. Turn the globe, discover a recipe and cook it step by step.">
+<meta name="theme-color" content="#080a08"><title>Savor Atlas — A world of recipes</title>
+<link rel="icon" href="assets/cooking/favicon.svg" type="image/svg+xml">
+<script>/* MOTION_PREFERENCE */</script>
+<style>/* HOME_CSS */</style>
+</head>
+<body>
+<a class="skip-link" href="#menu" id="skipMenu">Skip to recipes</a>
+<header><a class="brand" href="#" id="homeLink" aria-label="Savor Atlas — Home"><span class="brand-mark" aria-hidden="true">S<span>A</span></span><span class="brand-name">Savor <em>Atlas</em></span></a></header>
+<main id="stage" tabindex="0" aria-label="Interactive food globe" aria-describedby="sphereHelp"><div id="world"><div id="orb"></div></div><h1 id="headline"><span class="inner">A world<br><em>of flavor.</em></span></h1></main>
+<div class="vignette" aria-hidden="true"></div>
+<div class="hero-cta hero-layer"><button class="button" id="browseRecipes">Explore recipes <span aria-hidden="true">→</span></button></div>
+<p id="loadNote" class="load-note hero-layer" role="status">Preparing something delicious…</p>
+<details class="atlas-controls hero-layer" id="atlasOptions"><summary id="atlasOptionsToggle" aria-label="Globe settings"><span aria-hidden="true">⋯</span></summary><div class="atlas-options-panel"><button class="button" id="lockSphere" aria-pressed="false">Lock view</button><button class="button" id="resetSphere">Reset angle</button><button class="button" id="motionToggle" data-motion-toggle aria-label="Enable effects" aria-pressed="false"><span data-motion-label>Effects: Auto</span></button></div></details>
+<div id="spherePreview" class="sphere-preview" hidden><img id="spherePreviewImage" alt=""><div><p id="spherePreviewMeta"></p><h2 id="spherePreviewTitle"></h2><small id="spherePreviewHint"></small></div></div>
+<p class="sr-only" id="sphereHelp">Move your mouse or drag to turn the globe. Use arrow keys to rotate and Enter to open a recipe. Explore recipes opens the complete collection.</p><p class="sr-only" id="sphereStatus" role="status"></p>
+<section id="recipeView" aria-label="Discover world recipes" hidden inert><iframe id="recipeFrame" title="Savor Atlas — Recipes and cooking guides" src="about:blank"></iframe><div id="viewLoading" role="status">Opening the kitchen…</div><button id="loadingBack" class="button">← Back to globe</button></section>
+<script>/* RECIPE_DATA */
+/* HOME_JS */
+/* SPHERE_JS */</script>
+</body></html>

@@ -1,0 +1,7 @@
+.git
+.env*
+qa
+tests
+assets/**/*.png
+node_modules
+dist

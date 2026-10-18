@@ -1,0 +1,1492 @@
+{
+  "dishes": [
+    {
+      "id": "teriyaki-salmon",
+      "name": "Salmon Teriyaki",
+      "country": "Japan",
+      "category": "Japan",
+      "region": "East Asia",
+      "description": "Glossy soy-and-mirin salmon, fluffy short-grain rice and crisp green vegetables. A little Japanese comfort for your dinner table.",
+      "image": "teriyaki-salmon.webp",
+      "prepMinutes": 10,
+      "cookMinutes": 20,
+      "totalMinutes": 30,
+      "time": "30 min",
+      "servings": 2,
+      "difficulty": "Home-kitchen friendly",
+      "quantities": [
+        [
+          "Salmon fillets",
+          350,
+          "g"
+        ],
+        [
+          "Short-grain rice, dry",
+          150,
+          "g"
+        ],
+        [
+          "Water for rice",
+          180,
+          "ml"
+        ],
+        [
+          "Broccolini or green beans",
+          150,
+          "g"
+        ],
+        [
+          "Soy sauce",
+          2,
+          "tbsp"
+        ],
+        [
+          "Mirin",
+          2,
+          "tbsp"
+        ],
+        [
+          "Sake",
+          1,
+          "tbsp"
+        ],
+        [
+          "Sugar",
+          1,
+          "tsp"
+        ],
+        [
+          "Neutral oil",
+          1,
+          "tbsp"
+        ],
+        [
+          "Sesame seeds",
+          1,
+          "tsp"
+        ],
+        [
+          "Scallion",
+          1,
+          "stalk"
+        ]
+      ],
+      "ingredients": [
+        "salmon",
+        "rice",
+        "soy",
+        "seeds"
+      ],
+      "tags": [
+        "Japan",
+        "East Asia",
+        "Step-by-step"
+      ],
+      "steps": [
+        [
+          "Cook the rice",
+          "Rinse the rice until the water is mostly clear. Add the measured rice water, or follow your rice cooker’s guidance for the rice you use. Cook, then let it stand covered for 10 minutes."
+        ],
+        [
+          "Mix the teriyaki sauce",
+          "Stir together soy sauce, mirin, sake and sugar. Pat the salmon dry and check for pin bones. Thinly slice the scallion."
+        ],
+        [
+          "Cook the vegetables",
+          "Steam the broccolini or green beans for 3–5 minutes until bright and tender. Set aside while you cook the fish."
+        ],
+        [
+          "Sear and glaze the salmon",
+          "Heat the oil over medium heat. Place the salmon skin-side down for about 4–5 minutes, turn and cook the other side. Add the sauce and simmer gently, spooning it over the fish. Check the thickest part reaches 63°C / 145°F."
+        ],
+        [
+          "Bring it to the table",
+          "Serve the glazed salmon with rice and vegetables. Spoon over a little reduced sauce and finish with sesame seeds and scallion."
+        ]
+      ],
+      "tip": "Reduce the glaze gently: soy sauce can become too salty if boiled down too far.",
+      "safety": "Cook fish and shellfish to 63°C / 145°F, checked with a food thermometer. Cooking times vary with the thickness of the food.",
+      "safetySource": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+      "safetySourceLabel": "Safe cooking temperatures — USDA FSIS"
+    },
+    {
+      "id": "argentine-steak",
+      "name": "Bife de Chorizo",
+      "country": "Argentina",
+      "category": "Argentina",
+      "region": "South America",
+      "description": "Argentine striploin steak with parsley chimichurri and golden potato wedges. Despite its name, this is a steak, not a sausage.",
+      "image": "argentine-steak.webp",
+      "prepMinutes": 15,
+      "cookMinutes": 30,
+      "totalMinutes": 45,
+      "time": "45 min",
+      "servings": 2,
+      "difficulty": "Home-kitchen friendly",
+      "quantities": [
+        [
+          "Striploin steak",
+          400,
+          "g"
+        ],
+        [
+          "Potatoes",
+          350,
+          "g"
+        ],
+        [
+          "Flat-leaf parsley",
+          20,
+          "g"
+        ],
+        [
+          "Garlic",
+          2,
+          "cloves"
+        ],
+        [
+          "Olive oil",
+          3,
+          "tbsp"
+        ],
+        [
+          "Red wine vinegar",
+          1,
+          "tbsp"
+        ],
+        [
+          "Dried oregano",
+          0.5,
+          "tsp"
+        ],
+        [
+          "Chili flakes",
+          0.25,
+          "tsp"
+        ],
+        [
+          "Salt",
+          0.5,
+          "tsp"
+        ],
+        [
+          "Black pepper",
+          0.25,
+          "tsp"
+        ]
+      ],
+      "ingredients": [
+        "beef",
+        "potato",
+        "herbs",
+        "garlic"
+      ],
+      "tags": [
+        "Argentina",
+        "South America",
+        "Step-by-step"
+      ],
+      "steps": [
+        [
+          "Roast the potatoes",
+          "Heat the oven to 220°C / 425°F. Cut potatoes into wedges and toss with one third of the oil and a little salt. Roast for 25–30 minutes, turning once, until tender and golden."
+        ],
+        [
+          "Make the chimichurri",
+          "Finely chop parsley and garlic. Mix with the remaining olive oil, vinegar, oregano, chili flakes and a little salt. Let it sit while the steak cooks."
+        ],
+        [
+          "Sear the steak",
+          "Pat the steak dry and season with the remaining salt and pepper. Heat a heavy pan over medium-high heat. Sear for roughly 3–4 minutes per side; adjust for thickness and reduce the heat if the surface darkens too quickly."
+        ],
+        [
+          "Check and rest",
+          "Use a food thermometer: the middle of a whole-cut steak should reach at least 63°C / 145°F. Rest on a clean plate for at least 3 minutes before slicing."
+        ],
+        [
+          "Serve with the herbs",
+          "Slice across the grain, spoon chimichurri over the steak and add the potato wedges. Put any extra chimichurri on the table."
+        ]
+      ],
+      "tip": "Chop the herbs by hand for a loose, bright chimichurri rather than a smooth puree.",
+      "safety": "For whole-cut beef, reach at least 63°C / 145°F and rest for at least 3 minutes before slicing. Use a food thermometer rather than color alone.",
+      "safetySource": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+      "safetySourceLabel": "Safe cooking temperatures — USDA FSIS"
+    },
+    {
+      "id": "thai-green-curry",
+      "name": "Thai Green Curry",
+      "country": "Thailand",
+      "category": "Thailand",
+      "region": "Southeast Asia",
+      "description": "Fragrant green curry with chicken, coconut milk, tender eggplant and Thai basil. A home-kitchen version of gaeng khiao wan gai.",
+      "image": "thai-green-curry.webp",
+      "prepMinutes": 15,
+      "cookMinutes": 20,
+      "totalMinutes": 35,
+      "time": "35 min",
+      "servings": 2,
+      "difficulty": "Home-kitchen friendly",
+      "quantities": [
+        [
+          "Boneless chicken thigh",
+          300,
+          "g"
+        ],
+        [
+          "Coconut milk",
+          400,
+          "ml"
+        ],
+        [
+          "Thai green curry paste",
+          1.5,
+          "tbsp"
+        ],
+        [
+          "Thai eggplants or small eggplant",
+          200,
+          "g"
+        ],
+        [
+          "Water or unsalted stock",
+          100,
+          "ml"
+        ],
+        [
+          "Fish sauce",
+          1,
+          "tbsp"
+        ],
+        [
+          "Palm or brown sugar",
+          1,
+          "tsp"
+        ],
+        [
+          "Thai basil",
+          10,
+          "g"
+        ],
+        [
+          "Makrut lime leaves",
+          3,
+          "leaves"
+        ],
+        [
+          "Red chili",
+          0.5,
+          "piece"
+        ],
+        [
+          "Neutral oil",
+          1,
+          "tbsp"
+        ],
+        [
+          "Jasmine rice, dry",
+          150,
+          "g"
+        ]
+      ],
+      "ingredients": [
+        "chicken",
+        "coconut",
+        "eggplant",
+        "herbs"
+      ],
+      "tags": [
+        "Thailand",
+        "Southeast Asia",
+        "Step-by-step"
+      ],
+      "steps": [
+        [
+          "Prepare the rice and vegetables",
+          "Cook jasmine rice according to its package instructions. Cut eggplant into bite-size pieces, slice the chili and tear the lime leaves. Slice the chicken using a separate board."
+        ],
+        [
+          "Bloom the curry paste",
+          "Heat the oil over medium heat. Stir in the green curry paste for about 1 minute until fragrant; lower the heat if it catches."
+        ],
+        [
+          "Build the coconut sauce",
+          "Stir in a little coconut milk until the paste loosens, then add the rest along with the stock or water and lime leaves. Bring to a gentle simmer."
+        ],
+        [
+          "Simmer the chicken and eggplant",
+          "Add chicken and eggplant. Simmer gently for 10–15 minutes, until the eggplant is tender and the thickest chicken pieces reach 74°C / 165°F."
+        ],
+        [
+          "Balance and finish",
+          "Add fish sauce and sugar a little at a time, tasting as you go because curry pastes vary in saltiness. Stir in Thai basil and chili, remove the lime leaves and serve with rice."
+        ]
+      ],
+      "tip": "Start with less curry paste if you are sensitive to heat; you can add more before the chicken goes in.",
+      "safety": "Cook chicken to 74°C / 165°F at its thickest point, checked with a food thermometer. Keep raw poultry and its utensils separate from ready-to-eat ingredients.",
+      "safetySource": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+      "safetySourceLabel": "Safe cooking temperatures — USDA FSIS"
+    },
+    {
+      "id": "chicken-pho",
+      "name": "Chicken Pho",
+      "country": "Vietnam",
+      "category": "Vietnam",
+      "region": "Southeast Asia",
+      "description": "A weeknight take on Vietnam’s pho ga: clear, ginger-scented broth, tender chicken, rice noodles and a generous handful of herbs.",
+      "image": "chicken-pho.webp",
+      "prepMinutes": 15,
+      "cookMinutes": 30,
+      "totalMinutes": 45,
+      "time": "45 min",
+      "servings": 2,
+      "difficulty": "Home-kitchen friendly",
+      "quantities": [
+        [
+          "Boneless chicken breast",
+          300,
+          "g"
+        ],
+        [
+          "Unsalted chicken stock",
+          1200,
+          "ml"
+        ],
+        [
+          "Dried flat rice noodles",
+          160,
+          "g"
+        ],
+        [
+          "Onion",
+          1,
+          "piece"
+        ],
+        [
+          "Fresh ginger",
+          30,
+          "g"
+        ],
+        [
+          "Star anise",
+          2,
+          "pieces"
+        ],
+        [
+          "Cinnamon stick",
+          0.5,
+          "piece"
+        ],
+        [
+          "Fish sauce",
+          1.5,
+          "tbsp"
+        ],
+        [
+          "Sugar",
+          1,
+          "tsp"
+        ],
+        [
+          "Scallions",
+          2,
+          "stalks"
+        ],
+        [
+          "Cilantro and Thai basil",
+          20,
+          "g"
+        ],
+        [
+          "Lime",
+          1,
+          "piece"
+        ]
+      ],
+      "ingredients": [
+        "chicken",
+        "noodles",
+        "ginger",
+        "herbs"
+      ],
+      "tags": [
+        "Vietnam",
+        "Southeast Asia",
+        "Step-by-step"
+      ],
+      "steps": [
+        [
+          "Toast the aromatics",
+          "Halve the onion and ginger. Place cut-side down in a dry pan over medium-high heat for a few minutes until lightly charred. Briefly toast star anise and cinnamon until fragrant."
+        ],
+        [
+          "Infuse the broth",
+          "Add stock, onion, ginger and spices to a pot. Bring to a simmer and infuse for 10 minutes. This shortcut uses prepared stock rather than a long-simmered bone broth."
+        ],
+        [
+          "Poach the chicken",
+          "Add chicken and maintain a gentle simmer for about 12–18 minutes. Check the thickest part reaches 74°C / 165°F, then transfer to a clean plate and shred or slice."
+        ],
+        [
+          "Prepare the noodles",
+          "Cook rice noodles according to the packet, drain and divide between warm bowls. Thinly slice scallions and rinse the herbs."
+        ],
+        [
+          "Season and assemble",
+          "Strain the broth and season with fish sauce and sugar to taste. Add chicken to the noodles, pour over piping-hot broth, and finish with scallions, herbs and lime wedges."
+        ]
+      ],
+      "tip": "A gentle simmer keeps the broth clear. Taste before adding more fish sauce because prepared stocks differ.",
+      "safety": "Cook chicken to 74°C / 165°F at its thickest point, checked with a food thermometer. Keep raw poultry and its utensils separate from ready-to-eat ingredients.",
+      "safetySource": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+      "safetySourceLabel": "Safe cooking temperatures — USDA FSIS"
+    },
+    {
+      "id": "carbonara",
+      "name": "Spaghetti Carbonara",
+      "country": "Italy",
+      "category": "Italy",
+      "region": "Southern Europe",
+      "description": "A Roman classic of spaghetti, guanciale, Pecorino and black pepper. The silky sauce comes from eggs and pasta water, not cream.",
+      "image": "carbonara.webp",
+      "prepMinutes": 10,
+      "cookMinutes": 15,
+      "totalMinutes": 25,
+      "time": "25 min",
+      "servings": 2,
+      "difficulty": "Home-kitchen friendly",
+      "quantities": [
+        [
+          "Spaghetti",
+          180,
+          "g"
+        ],
+        [
+          "Guanciale",
+          80,
+          "g"
+        ],
+        [
+          "Pasteurized whole egg",
+          1,
+          "piece"
+        ],
+        [
+          "Pasteurized egg yolks",
+          2,
+          "pieces"
+        ],
+        [
+          "Pecorino Romano, grated",
+          45,
+          "g"
+        ],
+        [
+          "Black pepper",
+          0.5,
+          "tsp"
+        ],
+        [
+          "Salt for pasta water",
+          1,
+          "tsp"
+        ],
+        [
+          "Reserved pasta water",
+          120,
+          "ml"
+        ]
+      ],
+      "ingredients": [
+        "pasta",
+        "egg",
+        "pecorino",
+        "pepper"
+      ],
+      "tags": [
+        "Italy",
+        "Southern Europe",
+        "Step-by-step"
+      ],
+      "steps": [
+        [
+          "Start the pasta",
+          "Bring a pot of water to a boil and add a modest amount of salt. Cook spaghetti until al dente, following its package timing. Reserve the measured pasta water before draining."
+        ],
+        [
+          "Render the guanciale",
+          "Cut guanciale into small strips or cubes. Place in a cool skillet, bring to medium heat and cook for about 5–8 minutes until golden and its fat has rendered."
+        ],
+        [
+          "Whisk the egg mixture",
+          "In a bowl, whisk pasteurized egg and yolks with Pecorino and most of the black pepper. Add a spoonful of warm pasta water to loosen the mixture."
+        ],
+        [
+          "Toss away from direct heat",
+          "Toss drained pasta with guanciale and its fat. Take the pan completely off the heat and wait briefly so it is not sizzling, then add the egg mixture while tossing constantly."
+        ],
+        [
+          "Make it silky",
+          "Add reserved pasta water a little at a time until the sauce is glossy and coats the strands. Serve immediately with remaining pepper and a little extra cheese if desired."
+        ]
+      ],
+      "tip": "Keep the pan off direct heat when adding the eggs. A hot, dry pan will scramble the sauce.",
+      "safety": "Use pasteurized eggs for this gently heated sauce. Residual pasta heat does not reliably make an ordinary raw egg safe.",
+      "safetySource": "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety",
+      "safetySourceLabel": "Egg safety — FDA"
+    },
+    {
+      "id": "seafood-paella",
+      "name": "Seafood Paella",
+      "country": "Spain",
+      "category": "Spain",
+      "region": "Southern Europe",
+      "description": "Saffron-gold rice, shrimp, mussels and sweet pepper, cooked in a wide pan. A seafood paella adapted for a home stovetop.",
+      "image": "seafood-paella.webp",
+      "prepMinutes": 15,
+      "cookMinutes": 30,
+      "totalMinutes": 45,
+      "time": "45 min",
+      "servings": 2,
+      "difficulty": "Home-kitchen friendly",
+      "quantities": [
+        [
+          "Bomba or other paella rice",
+          180,
+          "g"
+        ],
+        [
+          "Raw shrimp",
+          200,
+          "g"
+        ],
+        [
+          "Fresh mussels, scrubbed",
+          250,
+          "g"
+        ],
+        [
+          "Hot seafood stock",
+          650,
+          "ml"
+        ],
+        [
+          "Tomato, grated",
+          120,
+          "g"
+        ],
+        [
+          "Red bell pepper",
+          100,
+          "g"
+        ],
+        [
+          "Garlic",
+          2,
+          "cloves"
+        ],
+        [
+          "Olive oil",
+          2,
+          "tbsp"
+        ],
+        [
+          "Smoked paprika",
+          0.5,
+          "tsp"
+        ],
+        [
+          "Saffron",
+          0.1,
+          "g"
+        ],
+        [
+          "Lemon",
+          1,
+          "piece"
+        ],
+        [
+          "Salt",
+          0.25,
+          "tsp"
+        ]
+      ],
+      "ingredients": [
+        "rice",
+        "shrimp",
+        "saffron",
+        "tomato"
+      ],
+      "tags": [
+        "Spain",
+        "Southern Europe",
+        "Step-by-step"
+      ],
+      "steps": [
+        [
+          "Prepare the seafood",
+          "Clean the shrimp and scrub and debeard the mussels. Discard cracked mussels and any open ones that do not close when tapped. Warm the stock and add saffron."
+        ],
+        [
+          "Build the sofrito",
+          "Heat oil in a wide skillet. Soften sliced pepper for 4–5 minutes. Add minced garlic, grated tomato and paprika; cook for 3–4 minutes until the tomato thickens."
+        ],
+        [
+          "Add the rice",
+          "Stir in the dry rice for 1 minute. Pour in hot saffron stock, spread the rice into an even layer and bring to a steady simmer. Taste the liquid and adjust salt if needed."
+        ],
+        [
+          "Cook without constant stirring",
+          "Simmer for about 10 minutes, then arrange the seafood on top. Cook another 8–12 minutes, adding a little hot water if needed. Seafood should reach 63°C / 145°F; discard mussels that remain closed after cooking."
+        ],
+        [
+          "Rest and serve",
+          "When the rice is tender and the liquid absorbed, remove from heat and cover loosely for 5 minutes. Serve with lemon wedges. Avoid scraping the pan if the bottom has burned."
+        ]
+      ],
+      "tip": "The rice should simmer in a thin, even layer. Use a wider pan, rather than a deeper pot, when scaling up.",
+      "safety": "Cook fish and shellfish to 63°C / 145°F, checked with a food thermometer. Cooking times vary with the thickness of the food.",
+      "safetySource": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+      "safetySourceLabel": "Safe cooking temperatures — USDA FSIS"
+    },
+    {
+      "id": "butter-chicken",
+      "name": "Butter Chicken",
+      "country": "India",
+      "category": "India",
+      "region": "South Asia",
+      "description": "A home-style murgh makhani with tender chicken, spiced tomato sauce, butter and a swirl of cream. Rich, fragrant and gently warming.",
+      "image": "butter-chicken.webp",
+      "prepMinutes": 25,
+      "cookMinutes": 25,
+      "totalMinutes": 50,
+      "time": "50 min",
+      "servings": 2,
+      "difficulty": "Home-kitchen friendly",
+      "quantities": [
+        [
+          "Boneless chicken thigh",
+          350,
+          "g"
+        ],
+        [
+          "Plain yogurt",
+          80,
+          "g"
+        ],
+        [
+          "Crushed tomatoes",
+          300,
+          "g"
+        ],
+        [
+          "Butter",
+          25,
+          "g"
+        ],
+        [
+          "Heavy cream",
+          60,
+          "ml"
+        ],
+        [
+          "Garlic",
+          3,
+          "cloves"
+        ],
+        [
+          "Fresh ginger",
+          15,
+          "g"
+        ],
+        [
+          "Garam masala",
+          1,
+          "tsp"
+        ],
+        [
+          "Ground cumin",
+          0.5,
+          "tsp"
+        ],
+        [
+          "Kashmiri chili powder",
+          0.5,
+          "tsp"
+        ],
+        [
+          "Dried fenugreek leaves",
+          1,
+          "tsp"
+        ],
+        [
+          "Salt",
+          0.5,
+          "tsp"
+        ],
+        [
+          "Basmati rice, dry",
+          150,
+          "g"
+        ]
+      ],
+      "ingredients": [
+        "chicken",
+        "tomato",
+        "butter",
+        "spices"
+      ],
+      "tags": [
+        "India",
+        "South Asia",
+        "Step-by-step"
+      ],
+      "steps": [
+        [
+          "Marinate the chicken",
+          "Cut chicken into bite-size pieces. Mix with yogurt, half the grated garlic and ginger, half the garam masala, cumin, chili powder and a little salt. Cover and refrigerate for 20 minutes."
+        ],
+        [
+          "Prepare the rice",
+          "Cook basmati rice according to its packet instructions while the chicken marinates. Keep it covered until serving."
+        ],
+        [
+          "Brown the chicken",
+          "Heat half the butter in a skillet over medium heat. Lift chicken from the marinade and brown for 2–3 minutes per side. It will finish cooking in the sauce. Discard leftover raw marinade."
+        ],
+        [
+          "Make the tomato sauce",
+          "Add remaining butter, garlic and ginger to a clean section of the pan. Stir briefly, then add tomatoes and remaining garam masala. Simmer for 10 minutes; add a splash of water if too thick."
+        ],
+        [
+          "Finish gently",
+          "Return chicken to the sauce and simmer until every piece reaches 74°C / 165°F. Lower the heat and stir in cream and crushed fenugreek. Taste, adjust salt and serve with rice."
+        ]
+      ],
+      "tip": "Do not boil hard after adding cream. A longer refrigerated marinade is optional; the stated time includes a short 20-minute marinade.",
+      "safety": "Cook chicken to 74°C / 165°F at its thickest point, checked with a food thermometer. Keep raw poultry and its utensils separate from ready-to-eat ingredients.",
+      "safetySource": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+      "safetySourceLabel": "Safe cooking temperatures — USDA FSIS"
+    },
+    {
+      "id": "ratatouille",
+      "name": "Ratatouille",
+      "country": "France",
+      "category": "France",
+      "region": "Western Europe",
+      "description": "A rustic Provençal vegetable stew of eggplant, zucchini, peppers and ripe tomatoes. Simple ingredients, softened slowly into something generous.",
+      "image": "ratatouille.webp",
+      "prepMinutes": 15,
+      "cookMinutes": 35,
+      "totalMinutes": 50,
+      "time": "50 min",
+      "servings": 2,
+      "difficulty": "Home-kitchen friendly",
+      "quantities": [
+        [
+          "Eggplant",
+          250,
+          "g"
+        ],
+        [
+          "Zucchini",
+          200,
+          "g"
+        ],
+        [
+          "Bell pepper",
+          150,
+          "g"
+        ],
+        [
+          "Ripe tomatoes",
+          300,
+          "g"
+        ],
+        [
+          "Onion",
+          1,
+          "piece"
+        ],
+        [
+          "Garlic",
+          2,
+          "cloves"
+        ],
+        [
+          "Olive oil",
+          3,
+          "tbsp"
+        ],
+        [
+          "Fresh basil",
+          10,
+          "g"
+        ],
+        [
+          "Dried thyme",
+          0.5,
+          "tsp"
+        ],
+        [
+          "Salt",
+          0.5,
+          "tsp"
+        ],
+        [
+          "Black pepper",
+          0.25,
+          "tsp"
+        ]
+      ],
+      "ingredients": [
+        "eggplant",
+        "zucchini",
+        "tomato",
+        "herbs"
+      ],
+      "tags": [
+        "France",
+        "Western Europe",
+        "Step-by-step"
+      ],
+      "steps": [
+        [
+          "Cut the vegetables",
+          "Dice eggplant, zucchini, pepper and tomatoes into similar bite-size pieces. Chop onion and garlic. Keep each vegetable separate."
+        ],
+        [
+          "Brown the eggplant",
+          "Heat half the oil in a wide, heavy pot over medium heat. Brown eggplant for 6–8 minutes, working in batches if necessary. Transfer to a bowl."
+        ],
+        [
+          "Soften the base",
+          "Add the remaining oil and soften onion and pepper for 5 minutes. Stir in garlic, then zucchini, and cook for another 3–4 minutes."
+        ],
+        [
+          "Simmer slowly",
+          "Return eggplant and add tomatoes, thyme, salt and pepper. Cover and simmer gently for 20–25 minutes, stirring occasionally. Uncover toward the end if the stew is too watery."
+        ],
+        [
+          "Finish with basil",
+          "Taste and adjust seasoning. Tear basil over the vegetables and let the pot rest for a few minutes before serving with bread, rice or on its own."
+        ]
+      ],
+      "tip": "Browning the eggplant separately adds flavor and keeps the vegetables from collapsing into a puree.",
+      "safety": "",
+      "safetySource": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+      "safetySourceLabel": "Safe cooking temperatures — USDA FSIS"
+    },
+    {
+      "id": "bibimbap",
+      "name": "Bibimbap",
+      "country": "South Korea",
+      "category": "South Korea",
+      "region": "East Asia",
+      "description": "A colorful rice bowl with separately cooked vegetables, savory beef, gochujang and a fried egg. Mix everything together just before eating.",
+      "image": "bibimbap.webp",
+      "prepMinutes": 20,
+      "cookMinutes": 20,
+      "totalMinutes": 40,
+      "time": "40 min",
+      "servings": 2,
+      "difficulty": "Home-kitchen friendly",
+      "quantities": [
+        [
+          "Short-grain rice, dry",
+          150,
+          "g"
+        ],
+        [
+          "Water for rice",
+          180,
+          "ml"
+        ],
+        [
+          "Beef sirloin, thinly sliced",
+          180,
+          "g"
+        ],
+        [
+          "Carrot",
+          100,
+          "g"
+        ],
+        [
+          "Spinach",
+          100,
+          "g"
+        ],
+        [
+          "Bean sprouts",
+          100,
+          "g"
+        ],
+        [
+          "Shiitake mushrooms",
+          100,
+          "g"
+        ],
+        [
+          "Eggs",
+          2,
+          "pieces"
+        ],
+        [
+          "Gochujang",
+          1,
+          "tbsp"
+        ],
+        [
+          "Soy sauce",
+          1,
+          "tbsp"
+        ],
+        [
+          "Sesame oil",
+          2,
+          "tsp"
+        ],
+        [
+          "Neutral oil",
+          1,
+          "tbsp"
+        ],
+        [
+          "Sesame seeds",
+          1,
+          "tsp"
+        ],
+        [
+          "Garlic",
+          1,
+          "clove"
+        ]
+      ],
+      "ingredients": [
+        "rice",
+        "beef",
+        "egg",
+        "gochujang"
+      ],
+      "tags": [
+        "South Korea",
+        "East Asia",
+        "Step-by-step"
+      ],
+      "steps": [
+        [
+          "Cook rice and prepare the toppings",
+          "Rinse and cook rice with its measured water, following your rice cooker’s guidance. Julienne carrots, slice mushrooms and mince garlic. Rinse spinach and bean sprouts."
+        ],
+        [
+          "Cook the vegetables separately",
+          "Blanch spinach and bean sprouts until tender, drain well and season with a little sesame oil. Sauté carrots and mushrooms separately in small portions of neutral oil."
+        ],
+        [
+          "Cook the beef",
+          "Toss beef with soy sauce and garlic. Stir-fry over medium-high heat until cooked through. For whole-cut beef, check 63°C / 145°F and allow at least 3 minutes of rest before serving."
+        ],
+        [
+          "Prepare sauce and eggs",
+          "Loosen gochujang with a little water and remaining sesame oil. Fry the eggs in the remaining neutral oil until the whites and yolks are firm."
+        ],
+        [
+          "Arrange, then mix",
+          "Divide rice between bowls. Arrange each vegetable and beef in separate sections. Add the eggs, gochujang sauce and sesame seeds. Mix thoroughly at the table so every bite gets a little of everything."
+        ]
+      ],
+      "tip": "Cook each topping separately so its flavor and color stay distinct. Add gochujang gradually to control the heat.",
+      "safety": "For whole-cut beef, reach at least 63°C / 145°F and rest for at least 3 minutes before slicing. Use a food thermometer rather than color alone. Cook eggs until both whites and yolks are firm.",
+      "safetySource": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+      "safetySourceLabel": "Safe cooking temperatures — USDA FSIS"
+    },
+    {
+      "id": "chicken-tacos",
+      "name": "Chicken Tacos",
+      "country": "Mexico",
+      "category": "Mexico",
+      "region": "North America",
+      "description": "Soft corn tortillas with lime-marinated chicken, white onion, cilantro and salsa. Bright, simple tacos made for sharing.",
+      "image": "chicken-tacos.webp",
+      "prepMinutes": 20,
+      "cookMinutes": 15,
+      "totalMinutes": 35,
+      "time": "35 min",
+      "servings": 2,
+      "difficulty": "Home-kitchen friendly",
+      "quantities": [
+        [
+          "Boneless chicken thigh",
+          350,
+          "g"
+        ],
+        [
+          "Small corn tortillas",
+          6,
+          "pieces"
+        ],
+        [
+          "Limes",
+          2,
+          "pieces"
+        ],
+        [
+          "White onion",
+          0.5,
+          "piece"
+        ],
+        [
+          "Cilantro",
+          15,
+          "g"
+        ],
+        [
+          "Red salsa",
+          4,
+          "tbsp"
+        ],
+        [
+          "Neutral oil",
+          1,
+          "tbsp"
+        ],
+        [
+          "Ground cumin",
+          0.5,
+          "tsp"
+        ],
+        [
+          "Smoked paprika",
+          0.5,
+          "tsp"
+        ],
+        [
+          "Dried oregano",
+          0.5,
+          "tsp"
+        ],
+        [
+          "Garlic",
+          2,
+          "cloves"
+        ],
+        [
+          "Salt",
+          0.5,
+          "tsp"
+        ]
+      ],
+      "ingredients": [
+        "chicken",
+        "tortilla",
+        "lime",
+        "herbs"
+      ],
+      "tags": [
+        "Mexico",
+        "North America",
+        "Step-by-step"
+      ],
+      "steps": [
+        [
+          "Marinate the chicken",
+          "Mix the oil, juice from half the limes, minced garlic, cumin, paprika, oregano and salt. Coat chicken and refrigerate for 15 minutes. Reserve the remaining limes for serving."
+        ],
+        [
+          "Prepare the fresh toppings",
+          "Finely chop onion and cilantro. Put them in separate bowls with the salsa. Keep this work surface separate from raw chicken preparation."
+        ],
+        [
+          "Sear the chicken",
+          "Heat a skillet over medium-high heat. Lift chicken from the marinade and cook for about 5–7 minutes per side, adjusting heat for thickness. Check the thickest part reaches 74°C / 165°F. Discard leftover raw marinade."
+        ],
+        [
+          "Rest and warm the tortillas",
+          "Rest chicken on a clean board for 3 minutes, then chop into small pieces. Warm corn tortillas briefly on both sides in a dry pan and keep wrapped in a clean towel."
+        ],
+        [
+          "Build your tacos",
+          "Fill the warm tortillas with chicken. Add onion, cilantro and salsa, then squeeze lime over each taco. Serve immediately while the tortillas are soft."
+        ]
+      ],
+      "tip": "Warm tortillas one at a time and keep them covered; cold corn tortillas are more likely to split.",
+      "safety": "Cook chicken to 74°C / 165°F at its thickest point, checked with a food thermometer. Keep raw poultry and its utensils separate from ready-to-eat ingredients.",
+      "safetySource": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+      "safetySourceLabel": "Safe cooking temperatures — USDA FSIS"
+    },
+    {
+      "id": "greek-salad",
+      "name": "Horiatiki Salad",
+      "country": "Greece",
+      "category": "Greece",
+      "region": "Southern Europe",
+      "description": "Greece’s village salad: ripe tomatoes, cucumber, olives and a generous piece of feta. No lettuce needed—let the vegetables do the talking.",
+      "image": "greek-salad.webp",
+      "prepMinutes": 15,
+      "cookMinutes": 0,
+      "totalMinutes": 15,
+      "time": "15 min",
+      "servings": 2,
+      "difficulty": "Home-kitchen friendly",
+      "quantities": [
+        [
+          "Ripe tomatoes",
+          300,
+          "g"
+        ],
+        [
+          "Cucumber",
+          200,
+          "g"
+        ],
+        [
+          "Green bell pepper",
+          100,
+          "g"
+        ],
+        [
+          "Red onion",
+          0.5,
+          "piece"
+        ],
+        [
+          "Feta cheese",
+          120,
+          "g"
+        ],
+        [
+          "Kalamata olives",
+          60,
+          "g"
+        ],
+        [
+          "Extra-virgin olive oil",
+          2,
+          "tbsp"
+        ],
+        [
+          "Red wine vinegar",
+          1,
+          "tbsp"
+        ],
+        [
+          "Dried oregano",
+          0.5,
+          "tsp"
+        ],
+        [
+          "Salt",
+          0.25,
+          "tsp"
+        ]
+      ],
+      "ingredients": [
+        "tomato",
+        "cucumber",
+        "feta",
+        "olive"
+      ],
+      "tags": [
+        "Greece",
+        "Southern Europe",
+        "Step-by-step"
+      ],
+      "steps": [
+        [
+          "Prepare the vegetables",
+          "Wash and dry tomatoes, cucumber and pepper. Cut tomatoes into wedges and cucumber into chunky half-moons. Slice pepper into thin strips."
+        ],
+        [
+          "Slice the onion",
+          "Thinly slice the red onion. If you prefer a milder flavor, soak it in cold water for 5 minutes, then drain thoroughly."
+        ],
+        [
+          "Dress lightly",
+          "Combine vegetables and olives in a bowl. Add olive oil, vinegar and a small pinch of salt. Toss gently; remember feta and olives will add salt too."
+        ],
+        [
+          "Add the feta",
+          "Place the feta on top in one generous piece or a few large chunks. Sprinkle with oregano and spoon a little dressing over it."
+        ],
+        [
+          "Serve straight away",
+          "Let the salad stand for 5 minutes so the tomatoes release some juice, then serve. A piece of bread is lovely for the dressing left in the bowl."
+        ]
+      ],
+      "tip": "Use the ripest tomatoes you can find, and keep the feta in generous pieces rather than crumbling it finely.",
+      "safety": "",
+      "safetySource": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+      "safetySourceLabel": "Safe cooking temperatures — USDA FSIS"
+    },
+    {
+      "id": "nasi-goreng",
+      "name": "Nasi Goreng",
+      "country": "Indonesia",
+      "category": "Indonesia",
+      "region": "Southeast Asia",
+      "description": "Indonesian fried rice with sweet kecap manis, savory chicken and a fried egg. Cucumber, tomato and crackers bring freshness and crunch.",
+      "image": "nasi-goreng.webp",
+      "prepMinutes": 15,
+      "cookMinutes": 15,
+      "totalMinutes": 30,
+      "time": "30 min",
+      "servings": 2,
+      "difficulty": "Home-kitchen friendly",
+      "quantities": [
+        [
+          "Cooked, chilled rice",
+          400,
+          "g"
+        ],
+        [
+          "Boneless chicken thigh",
+          180,
+          "g"
+        ],
+        [
+          "Eggs",
+          2,
+          "pieces"
+        ],
+        [
+          "Shallots",
+          2,
+          "pieces"
+        ],
+        [
+          "Garlic",
+          2,
+          "cloves"
+        ],
+        [
+          "Kecap manis",
+          1.5,
+          "tbsp"
+        ],
+        [
+          "Sambal oelek",
+          1,
+          "tsp"
+        ],
+        [
+          "Fish sauce",
+          1,
+          "tsp"
+        ],
+        [
+          "Neutral oil",
+          1.5,
+          "tbsp"
+        ],
+        [
+          "Scallions",
+          2,
+          "stalks"
+        ],
+        [
+          "Cucumber",
+          100,
+          "g"
+        ],
+        [
+          "Tomato",
+          100,
+          "g"
+        ],
+        [
+          "Shrimp crackers",
+          4,
+          "pieces"
+        ]
+      ],
+      "ingredients": [
+        "rice",
+        "chicken",
+        "egg",
+        "kecap"
+      ],
+      "tags": [
+        "Indonesia",
+        "Southeast Asia",
+        "Step-by-step"
+      ],
+      "steps": [
+        [
+          "Prepare cold rice and aromatics",
+          "Use rice that was cooled promptly and refrigerated, not rice left at room temperature overnight. Break up clumps. Mince shallots and garlic and dice the chicken on a separate board."
+        ],
+        [
+          "Fry the eggs",
+          "Heat a little oil in a skillet. Fry eggs until both whites and yolks are firm, then transfer to a clean plate and keep warm."
+        ],
+        [
+          "Cook the chicken",
+          "Add remaining oil and soften shallots and garlic for 1 minute. Add chicken and stir-fry until it reaches 74°C / 165°F in the thickest pieces."
+        ],
+        [
+          "Fry the rice",
+          "Add sambal, then rice. Toss over medium-high heat, breaking up clumps. Stir in kecap manis and fish sauce. Reheat the rice thoroughly to 74°C / 165°F, then fold in sliced scallions."
+        ],
+        [
+          "Plate with a fresh finish",
+          "Divide fried rice between plates, top with the eggs, and add sliced cucumber, tomato and shrimp crackers. Serve immediately."
+        ]
+      ],
+      "tip": "Cold, separate rice grains fry better than freshly cooked wet rice. Scale up by cooking in batches, not by overcrowding the pan.",
+      "safety": "Use promptly cooled, refrigerated cooked rice and reheat it to 74°C / 165°F. Cook chicken to 74°C / 165°F and eggs until both whites and yolks are firm.",
+      "safetySource": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety",
+      "safetySourceLabel": "Safe cooking temperatures — USDA FSIS"
+    }
+  ],
+  "ingredientCatalog": {
+    "salmon": [
+      "Salmon",
+      0
+    ],
+    "beef": [
+      "Beef",
+      1
+    ],
+    "chicken": [
+      "Chicken",
+      2
+    ],
+    "rice": [
+      "Rice",
+      3
+    ],
+    "asparagus": [
+      "Asparagus",
+      5
+    ],
+    "potato": [
+      "Potatoes",
+      6
+    ],
+    "garlic": [
+      "Garlic",
+      7
+    ],
+    "butter": [
+      "Butter",
+      9
+    ],
+    "herbs": [
+      "Fresh herbs",
+      13
+    ],
+    "seeds": [
+      "Sesame",
+      19,
+      "world"
+    ],
+    "lemon": [
+      "Lemon",
+      16
+    ],
+    "pepper": [
+      "Black pepper",
+      17
+    ],
+    "tomato": [
+      "Tomatoes",
+      18
+    ],
+    "soy": [
+      "Soy sauce",
+      0,
+      "world"
+    ],
+    "coconut": [
+      "Coconut milk",
+      1,
+      "world"
+    ],
+    "eggplant": [
+      "Eggplant",
+      2,
+      "world"
+    ],
+    "noodles": [
+      "Rice noodles",
+      3,
+      "world"
+    ],
+    "ginger": [
+      "Ginger",
+      4,
+      "world"
+    ],
+    "pasta": [
+      "Spaghetti",
+      5,
+      "world"
+    ],
+    "egg": [
+      "Eggs",
+      6,
+      "world"
+    ],
+    "pecorino": [
+      "Pecorino",
+      7,
+      "world"
+    ],
+    "shrimp": [
+      "Shrimp",
+      8,
+      "world"
+    ],
+    "saffron": [
+      "Saffron",
+      9,
+      "world"
+    ],
+    "spices": [
+      "Spice blend",
+      10,
+      "world"
+    ],
+    "zucchini": [
+      "Zucchini",
+      11,
+      "world"
+    ],
+    "gochujang": [
+      "Gochujang",
+      12,
+      "world"
+    ],
+    "tortilla": [
+      "Corn tortillas",
+      13,
+      "world"
+    ],
+    "lime": [
+      "Lime",
+      14,
+      "world"
+    ],
+    "cucumber": [
+      "Cucumber",
+      15,
+      "world"
+    ],
+    "feta": [
+      "Feta",
+      16,
+      "world"
+    ],
+    "olive": [
+      "Olives",
+      17,
+      "world"
+    ],
+    "kecap": [
+      "Kecap manis",
+      18,
+      "world"
+    ]
+  }
+}

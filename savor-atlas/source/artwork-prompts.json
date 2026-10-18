@@ -1,0 +1,106 @@
+{
+  "method": "Built-in image_gen",
+  "assets": [
+    {
+      "id": "teriyaki-salmon",
+      "prompt": "Use case: photorealistic-natural. Asset: an isolated premium food photograph for an international cooking website. Subject: authentic Japanese salmon teriyaki on one round ivory ceramic dinner plate, glossy dark soy-mirin glaze, sesame seeds, finely sliced scallions, a small neat portion of Japanese short grain white rice and tender green vegetables. Strictly straight overhead flat lay, entire round plate visible and centered with 8 percent clear margin on all four sides. True transparent background outside the plate. Natural soft daylight, appetizing real food textures, refined editorial food photography, accurate ingredients, warm natural colors. Square composition. No text, labels, flags, logos, watermark, hands, utensils or surrounding props. One complete plated dish only, no collage.",
+      "image": "assets/cooking/teriyaki-salmon.webp",
+      "thumbnail": "assets/cooking/globe-teriyaki-salmon.webp"
+    },
+    {
+      "id": "argentine-steak",
+      "prompt": "Use case: photorealistic-natural. Asset: isolated food photograph for an international recipe website. Strict straight overhead flat lay. One complete round ivory ceramic plate or round ivory serving bowl centered in a square frame with 8 percent clear margin. Entire vessel visible, true transparent background outside it. Soft natural daylight, premium editorial food photography, realistic appetizing textures, warm natural colors, culturally recognizable food. No text, labels, flags, logos, watermark, hands, cutlery, table or surrounding props. One dish only; no collage. Subject: Argentinian bife de chorizo: a beautifully seared thick striploin steak, partly sliced to show a cooked medium center, bright parsley chimichurri, golden roasted potato wedges on one ivory plate. No sausage.",
+      "image": "assets/cooking/argentine-steak.webp",
+      "thumbnail": "assets/cooking/globe-argentine-steak.webp"
+    },
+    {
+      "id": "thai-green-curry",
+      "prompt": "Use case: photorealistic-natural. Asset: isolated food photograph for an international recipe website. Strict straight overhead flat lay. One complete round ivory ceramic plate or round ivory serving bowl centered in a square frame with 8 percent clear margin. Entire vessel visible, true transparent background outside it. Soft natural daylight, premium editorial food photography, realistic appetizing textures, warm natural colors, culturally recognizable food. No text, labels, flags, logos, watermark, hands, cutlery, table or surrounding props. One dish only; no collage. Subject: Thai green chicken curry, gaeng khiao wan gai: pale green coconut curry in a round ivory bowl with chicken pieces, Thai eggplant, red chili slices, Thai basil leaves, glossy green curry sauce. No rice in the bowl.",
+      "image": "assets/cooking/thai-green-curry.webp",
+      "thumbnail": "assets/cooking/globe-thai-green-curry.webp"
+    },
+    {
+      "id": "chicken-pho",
+      "prompt": "Use case: photorealistic-natural. Asset: isolated food photograph for an international recipe website. Strict straight overhead flat lay. One complete round ivory ceramic plate or round ivory serving bowl centered in a square frame with 8 percent clear margin. Entire vessel visible, true transparent background outside it. Soft natural daylight, premium editorial food photography, realistic appetizing textures, warm natural colors, culturally recognizable food. No text, labels, flags, logos, watermark, hands, cutlery, table or surrounding props. One dish only; no collage. Subject: Vietnamese pho ga: a round ivory bowl of clear golden aromatic chicken broth, white flat rice noodles, sliced poached chicken breast, thin onion, scallions and coriander. A few Thai basil leaves and a lime wedge on the rim. Recognizably pho, no ramen egg.",
+      "image": "assets/cooking/chicken-pho.webp",
+      "thumbnail": "assets/cooking/globe-chicken-pho.webp"
+    },
+    {
+      "id": "carbonara",
+      "prompt": "Use case: photorealistic-natural. Asset: isolated food photograph for an international recipe website. Strict straight overhead flat lay. One complete round ivory ceramic plate or round ivory serving bowl centered in a square frame with 8 percent clear margin. Entire vessel visible, true transparent background outside it. Soft natural daylight, premium editorial food photography, realistic appetizing textures, warm natural colors, culturally recognizable food. No text, labels, flags, logos, watermark, hands, cutlery, table or surrounding props. One dish only; no collage. Subject: Roman spaghetti alla carbonara from Italy: glossy golden spaghetti coated in an egg and Pecorino Romano emulsion, crispy guanciale cubes, cracked black pepper, finely grated cheese. Twirled loosely on one round ivory plate. No cream, no tomato, no parsley garnish.",
+      "image": "assets/cooking/carbonara.webp",
+      "thumbnail": "assets/cooking/globe-carbonara.webp"
+    },
+    {
+      "id": "seafood-paella",
+      "prompt": "Use case: photorealistic-natural. Asset: isolated food photograph for an international recipe website. Strict straight overhead flat lay. One complete round ivory ceramic plate or round ivory serving bowl centered in a square frame with 8 percent clear margin. Entire vessel visible, true transparent background outside it. Soft natural daylight, premium editorial food photography, realistic appetizing textures, warm natural colors, culturally recognizable food. No text, labels, flags, logos, watermark, hands, cutlery, table or surrounding props. One dish only; no collage. Subject: Spanish seafood paella: golden saffron short grain rice with peeled shrimp, a few whole shell-on shrimp, open mussels and red pepper strips, lemon wedges, presented in one shallow round ivory serving dish. Distinct dry rice grains, no soupy risotto.",
+      "image": "assets/cooking/seafood-paella.webp",
+      "thumbnail": "assets/cooking/globe-seafood-paella.webp"
+    },
+    {
+      "id": "butter-chicken",
+      "prompt": "Use case: photorealistic-natural. Asset: isolated food photograph for an international recipe website. Strict straight overhead flat lay. One complete round ivory ceramic plate or round ivory serving bowl centered in a square frame with 8 percent clear margin. Entire vessel visible, true transparent background outside it. Soft natural daylight, premium editorial food photography, realistic appetizing textures, warm natural colors, culturally recognizable food. No text, labels, flags, logos, watermark, hands, cutlery, table or surrounding props. One dish only; no collage. Subject: Indian butter chicken, murgh makhani: tender pieces of chicken in rich orange tomato-butter sauce, a light cream swirl, crushed dried fenugreek, in one round ivory bowl. No rice or bread in the bowl.",
+      "image": "assets/cooking/butter-chicken.webp",
+      "thumbnail": "assets/cooking/globe-butter-chicken.webp"
+    },
+    {
+      "id": "ratatouille",
+      "prompt": "Use case: photorealistic-natural. Asset: isolated food photograph for an international recipe website. Strict straight overhead flat lay. One complete round ivory ceramic plate or round ivory serving bowl centered in a square frame with 8 percent clear margin. Entire vessel visible, true transparent background outside it. Soft natural daylight, premium editorial food photography, realistic appetizing textures, warm natural colors, culturally recognizable food. No text, labels, flags, logos, watermark, hands, cutlery, table or surrounding props. One dish only; no collage. Subject: French Provencal ratatouille: jewel-like cooked chunks of eggplant, zucchini, bell peppers, ripe tomatoes and onion, fresh basil, olive oil sheen, in a shallow round ivory bowl. Rustic authentic vegetable stew, not an artificially striped tian.",
+      "image": "assets/cooking/ratatouille.webp",
+      "thumbnail": "assets/cooking/globe-ratatouille.webp"
+    },
+    {
+      "id": "bibimbap",
+      "prompt": "Use case: photorealistic-natural. Asset: isolated food photograph for an international recipe website. Strict straight overhead flat lay. One complete round ivory ceramic plate or round ivory serving bowl centered in a square frame with 8 percent clear margin. Entire vessel visible, true transparent background outside it. Soft natural daylight, premium editorial food photography, realistic appetizing textures, warm natural colors, culturally recognizable food. No text, labels, flags, logos, watermark, hands, cutlery, table or surrounding props. One dish only; no collage. Subject: South Korean bibimbap: one round ivory bowl of white rice with separate colorful sections of sauteed carrots, spinach, bean sprouts, shiitake mushrooms, cooked sliced beef, red gochujang, toasted sesame, and one fully cooked egg on top. Crisp clear food sections and realistic textures.",
+      "image": "assets/cooking/bibimbap.webp",
+      "thumbnail": "assets/cooking/globe-bibimbap.webp"
+    },
+    {
+      "id": "chicken-tacos",
+      "prompt": "Use case: photorealistic-natural. Asset: isolated food photograph for an international recipe website. Strict straight overhead flat lay. One complete round ivory ceramic plate or round ivory serving bowl centered in a square frame with 8 percent clear margin. Entire vessel visible, true transparent background outside it. Soft natural daylight, premium editorial food photography, realistic appetizing textures, warm natural colors, culturally recognizable food. No text, labels, flags, logos, watermark, hands, cutlery, table or surrounding props. One dish only; no collage. Subject: Mexican chicken tacos: three small soft corn tortillas filled with juicy grilled chicken, finely chopped white onion, cilantro and a little red salsa, lime wedges, arranged on one round ivory dinner plate. No hard taco shells, no yellow cheese.",
+      "image": "assets/cooking/chicken-tacos.webp",
+      "thumbnail": "assets/cooking/globe-chicken-tacos.webp"
+    },
+    {
+      "id": "greek-salad",
+      "prompt": "Use case: photorealistic-natural. Asset: isolated food photograph for an international recipe website. Strict straight overhead flat lay. One complete round ivory ceramic plate or round ivory serving bowl centered in a square frame with 8 percent clear margin. Entire vessel visible, true transparent background outside it. Soft natural daylight, premium editorial food photography, realistic appetizing textures, warm natural colors, culturally recognizable food. No text, labels, flags, logos, watermark, hands, cutlery, table or surrounding props. One dish only; no collage. Subject: Greek horiatiki salad: chunky ripe red tomatoes, cucumber, green bell pepper, thin red onion rings, Kalamata olives and one thick block of white feta sprinkled with dried oregano and olive oil. One shallow round ivory bowl. No lettuce, no avocado.",
+      "image": "assets/cooking/greek-salad.webp",
+      "thumbnail": "assets/cooking/globe-greek-salad.webp"
+    },
+    {
+      "id": "nasi-goreng",
+      "prompt": "Use case: photorealistic-natural. Asset: isolated food photograph for an international recipe website. Strict straight overhead flat lay. One complete round ivory ceramic plate or round ivory serving bowl centered in a square frame with 8 percent clear margin. Entire vessel visible, true transparent background outside it. Soft natural daylight, premium editorial food photography, realistic appetizing textures, warm natural colors, culturally recognizable food. No text, labels, flags, logos, watermark, hands, cutlery, table or surrounding props. One dish only; no collage. Subject: Indonesian nasi goreng: savory dark golden fried rice with kecap manis, small chicken pieces, scallions, a fully cooked fried egg, cucumber slices, tomato slices and a few airy shrimp crackers, served on one round ivory plate. Recognizably Indonesian fried rice.",
+      "image": "assets/cooking/nasi-goreng.webp",
+      "thumbnail": "assets/cooking/globe-nasi-goreng.webp"
+    },
+    {
+      "id": "world-ingredients",
+      "prompt": "Use case: product-mockup. Asset type: ONE food ingredient sprite atlas for an English cooking website. Create a precise rectangular image with aspect ratio 5:4, arranged as exactly FIVE columns and FOUR rows of equally sized SQUARE cells, no visible borders, no grid lines. The background is an uninterrupted pale warm ivory (#f5f3ec). Each cell contains one separate photorealistic ingredient still life, centered fully within its cell with a generous 15% margin on every side. All twenty cells have consistent soft daylight, realistic food textures, a slightly overhead three-quarter viewpoint, subtle contact shadows and matching scale. These will be cropped as small website thumbnails, so keep silhouettes clear and do not let any item cross its cell.\nStrict order left-to-right:\nROW 1: (1) a small white ceramic bowl containing thin dark brown soy sauce; (2) a small bowl of white coconut milk beside a small coconut half; (3) a shiny purple eggplant with green stem; (4) a nest of white flat rice noodles; (5) fresh beige ginger root with a cut section.\nROW 2: (1) a short bundle of dry golden yellow spaghetti; (2) two whole brown eggs with one cracked egg showing yolk in a tiny dish; (3) a wedge of hard aged pale ivory Pecorino Romano cheese with its natural rind and a few cheese shavings, NOT a soft cheese; (4) three raw peeled gray-pink shrimp with tails; (5) a tiny white saucer of thin deep red saffron threads.\nROW 3: (1) a small mound of rust-gold Indian ground spice blend in a white saucer; (2) a dark green zucchini with two pale-centered slices; (3) a white bowl of thick deep red Korean gochujang chili paste; (4) a small stack of round yellow corn tortillas; (5) a whole bright GREEN lime with a cut half showing pale green juicy flesh, NOT a yellow lemon.\nROW 4: (1) a fresh green cucumber with two watery-centered slices; (2) a white crumbly Feta cheese block and cubes; (3) a white bowl of shiny dark purple Kalamata olives; (4) thick glossy nearly black Indonesian kecap manis sweet soy sauce in a tiny pouring dish with a slow syrupy drip from its spout, visually different from thin soy sauce; (5) a neat little heap of tiny ivory SESAME SEEDS, only sesame seeds, no nuts or large seeds.\nConstraints: exactly twenty evenly spaced cells, five columns and four rows. Every object stays inside its assigned cell. No text, no labels, no numbers, no packaging, no logos, no watermarks, no decorative borders, no utensils except the specified vessels. Professional realistic food photography, not an illustration.\n\nFinal spacing edit: Use case: precise-object-edit. This image is a 5-column by 4-row food ingredient sprite atlas. Keep all twenty ingredients, their photographic style, order and ivory background. Correct ONLY spacing and layout for precise CSS sprite cropping. The canvas has exactly five equal columns and four equal rows. Each ingredient still life must be SHRUNK to fit inside the CENTRAL 58% width and 58% height of its assigned square cell, centered at that cell's exact center. This means at least 21% empty ivory space on EVERY side of EVERY ingredient, including vessels, shadows and tiny crumbs. Especially keep coconut fully inside row1 column2, eggplant inside row1 column3, zucchini inside row3 column2, feta and all its crumbs inside row4 column2. All twenty still lifes must be separated by wide clean empty ivory gutters. No object, shadow or crumb may extend toward a neighboring cell. Use consistent small scale so ingredient silhouettes are easily readable. No text, no grid lines, no labels, no dividers. Exact 5:4 canvas ratio with SQUARE cells. Order unchanged: soy sauce, coconut milk, eggplant, rice noodles, ginger; spaghetti, eggs, Pecorino, shrimp, saffron; spice blend, zucchini, gochujang, tortillas, green lime; cucumber, feta, Kalamata olives, kecap manis, sesame seeds.",
+      "image": "assets/cooking/ingredients-world-atlas.webp",
+      "columns": 5,
+      "rows": 4,
+      "cells": [
+        "soy",
+        "coconut",
+        "eggplant",
+        "noodles",
+        "ginger",
+        "pasta",
+        "egg",
+        "pecorino",
+        "shrimp",
+        "saffron",
+        "spices",
+        "zucchini",
+        "gochujang",
+        "tortilla",
+        "lime",
+        "cucumber",
+        "feta",
+        "olive",
+        "kecap",
+        "seeds"
+      ]
+    }
+  ]
+}

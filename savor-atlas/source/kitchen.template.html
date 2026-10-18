@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-table="walnut">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="theme-color" content="#f5f1e8" />
+        <meta
+            name="description"
+            content="Explore iconic dishes from around the world, with measured ingredients and step-by-step cooking guides."
+        />
+        <title>Savor Atlas — Recipes from around the world</title>
+        <script>/* MOTION_PREFERENCE */</script>
+        <link rel="stylesheet" href="../assets/cooking/table-presets.css" />
+        <link rel="stylesheet" href="../assets/cooking/table.css" />
+    <link rel="stylesheet" href="../assets/cooking/cooking.css"><link rel="icon" href="../assets/cooking/favicon.svg" type="image/svg+xml"></head>
+    <body>
+        <header class="site-header">
+            <a class="brand" id="kitchenHome" href="../" aria-label="Savor Atlas — Back to the food globe"
+                ><img class="brand-logo" src="../assets/cooking/logo-savor-atlas.svg" alt="" width="224" height="60" /></a
+            ><span class="header-note">A world of home cooking</span
+            ><div class="kitchen-actions"><button class="motion-toggle" id="kitchenMotionToggle" data-motion-toggle aria-label="Enable effects" aria-pressed="false"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 4l12 8-12 8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span data-motion-label>Effects: Auto</span></button><button class="back-to-sphere" id="backToSphere" type="button">← Back to globe</button></div>
+        </header>
+
+        <main class="experience">
+            <section
+                class="stage"
+                aria-label="Open the selected recipe"
+                aria-haspopup="dialog"
+                role="button"
+                tabindex="0"
+                id="stage"
+            >
+                <div class="table-wheel" id="wheel"><div class="table-surface"></div></div>
+                <div class="table-caption">
+                    <b>Good food.<br />New horizons.</b>Simple ingredients.<br />Stories worth sharing.
+                </div>
+                <div class="orbit-hint">
+                    <img class="icon" src="../assets/cooking/icons/rotate.svg" alt="" aria-hidden="true" /><span>Tap the table.<br />Open the recipe.</span>
+                </div>
+            </section>
+            <section class="details" id="details" aria-live="polite" aria-atomic="true">
+                <div class="eyebrow" id="category"></div>
+                <h1 id="dish-name"></h1>
+                <p class="description" id="description"></p>
+                <div class="dish-meta">
+                    <span class="price" id="price"></span><span class="meta-divider"></span
+                    ><span class="preparation"
+                        ><img class="icon" src="../assets/cooking/icons/clock.svg" alt="" aria-hidden="true" /><span id="time"></span></span
+                    ><span class="preparation">2 servings</span>
+                </div>
+                <div class="ingredient-tags" id="tags"></div>
+            </section>
+            <section class="menu-section" id="recipe-menu" aria-label="Choose a recipe">
+                <div class="menu-heading">
+                    <h2>Where shall we <b>cook today?</b></h2>
+                    <span class="menu-counter" id="counter" aria-live="polite">PAGE 01 / 03</span>
+                </div>
+                <div class="carousel">
+                    <button class="arrow-button" id="previous" aria-label="Previous recipe page">
+                        <img class="icon" src="../assets/cooking/icons/chevron-left.svg" alt="" aria-hidden="true" />
+                    </button>
+                    <div class="menu-track" id="menu-track" aria-label="Recipe collection"></div>
+                    <button class="arrow-button" id="next" aria-label="Next recipe page">
+                        <img class="icon" src="../assets/cooking/icons/chevron-right.svg" alt="" aria-hidden="true" />
+                    </button>
+                </div>
+                <div class="pager" id="pager" aria-label="Choose recipe page"></div>
+            </section>
+        </main>
+
+        <footer>
+            <span class="footer-mark">Good food. New places. Your kitchen.</span
+            ><span>SAVOR ATLAS · THE WORLD, ONE RECIPE AT A TIME</span>
+        </footer>
+
+        <dialog class="dish-dialog" id="dish-dialog" aria-labelledby="modal-name" tabindex="-1">
+            <div class="flying-plate" id="flying-plate" aria-hidden="true">
+                <img alt="" /><span class="plate-solid"></span>
+            </div>
+            <span class="sr-only" id="detail-status" role="status"></span>
+            <article class="detail-panel" id="detail-panel" hidden>
+                <div class="recipe-top"><span>SAVOR ATLAS / THE RECIPE</span><button type="button" class="dialog-close" aria-label="Close recipe">×</button></div>
+                <div class="recipe-scroll" id="recipe-scroll">
+                <div class="detail-kicker" id="modal-category"></div>
+                <h2 id="modal-name"></h2>
+                <p class="detail-copy" id="modal-description"></p>
+                <section class="detail-section">
+                    <h3 id="ingredients-heading">At the heart of the dish</h3>
+                    <ul class="detail-ingredients" id="modal-ingredients" aria-labelledby="ingredients-heading"></ul>
+                </section>
+                <section class="detail-section recipe-preparation">
+                    <div class="ingredients-heading"><h3>Gather your ingredients</h3><label>Servings <select id="servings" aria-label="Number of servings"><option value="1">1 person</option><option value="2" selected>2 people</option><option value="4">4 people</option></select></label></div>
+                    <p class="recipe-help">Check off ingredients as you prepare them. 1 tbsp = 15 ml; 1 tsp = 5 ml. Amounts scale with servings; cooking times do not.</p>
+                    <ul class="ingredient-checklist" id="recipe-ingredients"></ul>
+                </section>
+                <section class="detail-section" id="cooking-guide"><h3>Let’s cook, step by step</h3><ol class="recipe-steps" id="recipe-steps"></ol><p id="cooking-status" role="status" aria-live="polite"></p></section>
+                <aside class="recipe-tip"><h3>A little kitchen wisdom</h3><p id="recipe-tip"></p></aside>
+                <p id="recipe-safety" class="recipe-safety"></p><a id="safety-source" class="safety-source" target="_blank" rel="noopener noreferrer">Safe cooking temperatures — USDA FSIS ↗</a>
+                <div class="detail-facts">
+                    <div><small>Total time</small><strong id="modal-time"></strong></div>
+                    <div><small>Servings</small><strong id="modal-servings">2 servings</strong></div>
+                </div>
+                </div>
+                <div class="detail-bottom">
+                    <div class="cooking-controls" id="cooking-controls" hidden><button type="button" id="previous-step">← Previous</button><span id="step-count"></span><button type="button" id="next-step">Done, next →</button></div>
+                    <div class="cooking-actionline" id="cooking-actionline">
+                    <div>
+                        <span class="detail-price-label">Ready in</span>
+                        <div class="detail-price" id="modal-price"></div>
+                    </div>
+<button type="button" class="order-button" id="start-cooking">Start cooking <span aria-hidden="true">→</span></button>
+                    </div>
+                </div>
+            </article>
+        </dialog>
+
+<script>/* RECIPE_DATA */
+/* TABLE_APP */</script>
+    </body>
+</html>

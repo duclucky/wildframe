@@ -1,0 +1,8 @@
+/qa/
+/dist/
+/node_modules/
+/.vercel/
+/.env*
+
+.vercel
+.env*
