@@ -26,7 +26,7 @@ node scripts/build-static.cjs
 
 ## Features
 
-- 41 original library recipes and 6 additional experiment recipes; generated examples and reference studies are labelled separately.
+- 59 library recipes and 6 additional experiment recipes, all available on the 65-image globe; generated examples and reference studies are labelled separately.
 - Optional first-remix guide with skip/back routes; completion follows a successful save.
 - The globe follows mouse movement without holding a button on desktop, settles when the mouse stops, pauses in overlays and respects reduced motion. Touch dragging remains available.
 - Prompt DNA with exact-source reading notes and links to the relevant Studio field.
@@ -56,12 +56,13 @@ node tests/wildframe-visuals.cjs
 node tests/wildframe-journey.cjs
 node tests/study-kit.cjs
 node tests/sphere-follow.cjs
+node tests/sphere-density.cjs
 ```
 
 Browser checks currently reference the bundled Playwright runtime and Edge executable on the development Windows machine. Adjust those two paths if running elsewhere. `tests/deployment-smoke.cjs` accepts `TEST_BASE_URL` for the deployed origin. Automated study-form checks are not participant research results; see `USABILITY-TEST.md`.
 
 ## Sources
 
-27 example images were made with the built-in ImageGen tool. Exact prompts and original paths are recorded in `assets/*/manifest.json`. Reference-study prompts do not claim to be the original prompts behind the supplied reference images. Public source credits are available at `/credits`.
+45 example images were made with the built-in ImageGen tool, including 18 new atlas scenes in photography, oil painting, ink wash and dreamscape styles. Exact prompts and original paths are recorded in `assets/*/manifest.json`. Reference-study prompts do not claim to be the original prompts behind the supplied reference images. Public source credits are available at `/credits`.
 
 SpotlightCard and FadeContent are adapted from [React Bits](https://github.com/DavidHDev/react-bits); its MIT + Commons Clause terms are preserved in `THIRD_PARTY_NOTICES.md` and the generated HTML. No blanket license is asserted over third-party reference images.

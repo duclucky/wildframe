@@ -71,7 +71,7 @@
     {
       "field": "style",
       "label": "Visual language",
-      "quote": "editorial fine-art landscape photography",
+      "quote": "An ancient temperate forest at dawn, towering dark conifers fading through layers of soft mist, a narrow emerald river curling through mossy rocks in the foreground, delicate shafts of natural early light, realistic forest textures, muted deep green and slate palette, editorial fine-art landscape photography, calm and spacious, no people or buildings.",
       "note": "Describes the medium, texture and rendering qualities to explore."
     },
     {
@@ -145,6 +145,12 @@
       "note": "Guides framing, visual hierarchy and the space around the focal point."
     },
     {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "A minimal fine-art photograph of vast sculptural desert dunes viewed from an elevated angle just after sunrise. One elegant S-curve of pale ochre sand divides warm light and deep umber shadow. Fine wind ripples in the near foreground, soft distant ridges, restrained amber and charcoal colours, enormous negative space, no footprints, no people, no sun disk, quietly abstract but photorealistic.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
       "field": "negative",
       "label": "Constraints",
       "quote": "no text, no watermark, no typography, no border or collage.",
@@ -213,6 +219,12 @@
       "label": "Composition",
       "quote": "intentional composition",
       "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "A still alpine lake beneath steep dark mountains at blue hour, a slender shore of weathered stone and one bent pine on the left, a distant pale snow ridge reflected in the glassy water, low translucent ribbons of mist, realistic subtle natural light and intricate rock detail, restrained deep blue-green and ivory colours, wide photographic composition, no cabins or people.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
     },
     {
       "field": "negative",
@@ -293,7 +305,7 @@
     {
       "field": "style",
       "label": "Visual language",
-      "quote": "contemporary oil painting on linen",
+      "quote": "A sweeping rugged sea coast and headland beneath a clearing storm, painted as a refined contemporary oil painting on linen. Warm late light touches the top edge of the cliffs, deep petrol-blue waves below, atmospheric grey clouds, expressive but controlled brushwork, subtle visible canvas texture, elegant muted palette, no people, buildings, boats, or lettering. Gallery-quality painterly landscape with a strong diagonal coast.",
       "note": "Describes the medium, texture and rendering qualities to explore."
     },
     {
@@ -363,7 +375,7 @@
     {
       "field": "style",
       "label": "Visual language",
-      "quote": "contemporary East Asian ink-wash inspired mountain landscape on warm ivory rice paper",
+      "quote": "A contemporary East Asian ink-wash inspired mountain landscape on warm ivory rice paper, layered charcoal mountains emerging from broad areas of pale mist, one delicate dark pine on a rocky foreground ledge, a very small waterfall suggested with empty paper. Masterful expressive brush texture and subtle ink bleeding, restrained black, warm grey and ivory, generous negative space, no calligraphy, no seal, no text, no people.",
       "note": "Describes the medium, texture and rendering qualities to explore."
     },
     {
@@ -435,6 +447,12 @@
       "label": "Composition",
       "quote": "intentional composition",
       "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "A dreamlike fine-art nocturnal coastal landscape, small natural-looking turquoise luminous waves washing around dark volcanic rocks, a broad deep indigo sky scattered with faint stars and thin silver cloud, subtle light from the water on wet sand. Cinematic photographic realism mixed with restrained magical atmosphere, deep blacks with detail, soft highlights, no exaggerated neon, no people, buildings, boats or text.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
     },
     {
       "field": "negative",
@@ -1860,6 +1878,522 @@
       "field": "negative",
       "label": "Constraints",
       "quote": "no people, buildings, text, lettering, watermark, logo, border or collage. This is an imagined scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-lynx": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a Eurasian lynx sitting beside a fallen silver birch in a snowy forest.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft diffuse daylight",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "cold early morning mist, amber eyes, complete animal visible, soft diffuse daylight, muted silver and warm tawny fur, fine-art photographic realism.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-elephants": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "two elephants walking across a vast misty grassland.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "distant tree silhouettes, dawn backlight, complete bodies and natural anatomy, spacious framing with a low horizon, restrained documentary-style fine-art photography.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-otter": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a river otter resting on a smooth mossy stone at the edge of a quiet river.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft overcast woodland light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "wet whiskers, fine natural fur, pale green reflections, soft overcast woodland light, intimate fine-art wildlife photography with breathing room.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-flamingos": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "four flamingos wading in a still salt lagoon.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft early light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "pale blush reflections, a long indigo horizon, delicate oil painting on linen, expressive controlled brushwork, spacious horizontal composition, soft early light.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-arctic-fox": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "one arctic fox standing on a snowy ridge with its tail curled near its paws.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "warm ivory rice paper, charcoal ink contours, faint blue-grey washes, generous negative space, subtle paper texture, delicate East Asian ink-wash aesthetic, full fox visible.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-chameleon": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a small chameleon walking along a slender rain-wet branch.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft diffused light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "delicate curled tail, natural olive and ochre skin, tiny dew beads, dark soft forest bokeh, side-on close wildlife photograph, believable anatomy, soft diffused light.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-dragonfly": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a single dragonfly perched at the tip of a reed above a pond.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft early side light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "crisp transparent wings, delicate dew, pale sage and charcoal bokeh, macro fine-art photograph, realistic wing structure, soft early side light, entire insect visible.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-jellyfish": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "three translucent moon jellyfish suspended in dark blue water.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "delicate luminous edges, tiny drifting plankton, spacious composition, realistic transparent textures with restrained magical glow, deep teal and indigo dreamscape, no overly neon colours.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-manta": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a manta ray gliding above a pale rippled sand seabed.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "full wide body and fins visible, distant natural sunbeams from the sea surface, luminous cyan fading into deep navy, calm fine-art underwater photograph, anatomically plausible.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-seahorse": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "one seahorse gently holding a fine strand of seagrass with its curled tail.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "warm side light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "muted teal water, burnt orange and soft ivory, exquisite miniature oil painting with controlled brush strokes, large breathing room, delicate warm side light.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-waterfall": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a narrow waterfall dropping down a moss-covered basalt ravine.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "fine pale mist, dark layered rock, ferns in the foreground, overcast emerald forest, natural leading lines, refined fine-art landscape photograph, no people.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-lavender": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a quiet lavender field rolling towards distant hills at dusk.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "gentle curved paths, dusty violet and warm ivory, peach sky fading to slate, contemporary impressionist oil painting on linen, no buildings, composed and spacious.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-rice-terraces": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "layered rice terraces filled with still water along a misty mountain slope.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "soft gold reflected sky, jade ridges, distant grey mountains, elegant rhythmic composition from an elevated viewpoint, fine-art landscape photograph, no people or buildings.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-ice-cave": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "the interior of a translucent blue ice cave opening towards a pale northern sky.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "sculpted flowing ice, a shallow still pool reflecting turquoise light, mineral textures, restrained dreamlike luminous atmosphere, no people, intentional spacious composition.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-bamboo": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a grove of slender bamboo trunks beside a quiet stream.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "black and grey ink on warm rice paper, restrained jade green washes, faint distant mist, expressive delicate brushwork, vertical trunks balanced in a spacious horizontal scene.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-volcanic-coast": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a remote black volcanic sea coast with a solitary sea stack.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "soft slate ocean, thin white surf, low cloud, a break of pale evening light, strong natural texture and generous negative space, fine-art landscape photography.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-moon-garden": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "a wild meadow with pale flowers beside a still woodland pond at moonrise.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft silver light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "soft silver light, dark indigo sky reflected in water, tiny restrained firefly glows, realistic leaves and petals, quietly magical spacious landscape, no buildings or people.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
+      "note": "States what to leave out. Exclusions are guidance, not a guarantee."
+    }
+  ],
+  "ai-atlas-redwoods": [
+    {
+      "field": "subject",
+      "label": "Subject",
+      "quote": "ancient redwood trunks rising through a calm misty forest.",
+      "note": "Names the focal subject and the details that make it recognisable."
+    },
+    {
+      "field": "light",
+      "label": "Light & atmosphere",
+      "quote": "soft dawn light",
+      "note": "Describes how the light and atmosphere shape the mood and visible detail."
+    },
+    {
+      "field": "composition",
+      "label": "Composition",
+      "quote": "an intentional focal point, breathing room and refined gallery-quality detail.",
+      "note": "Guides framing, visual hierarchy and the space around the focal point."
+    },
+    {
+      "field": "style",
+      "label": "Visual language",
+      "quote": "a narrow mossy path curling between roots, copper bark and slate-green ferns, delicate shafts of soft dawn light, atmospheric fine-art oil painting on linen, no people.",
+      "note": "Describes the medium, texture and rendering qualities to explore."
+    },
+    {
+      "field": "negative",
+      "label": "Constraints",
+      "quote": "no text, lettering, watermark, logo, border, collage or humans. This is a fictional AI-generated scene, not documentary evidence.",
       "note": "States what to leave out. Exclusions are guidance, not a guarantee."
     }
   ]

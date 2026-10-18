@@ -2,11 +2,16 @@
 const $=selector=>document.querySelector(selector),$$=selector=>[...document.querySelectorAll(selector)],body=document.body,root=document.documentElement;
 const stage=$('#stage'),world=$('#world'),orb=$('#orb'),headline=$('#headline'),library=$('#library'),dialog=$('#promptDialog'),studio=$('#studio'),experiments=$('#experiments');
 const reduced=matchMedia('(prefers-reduced-motion:reduce)'),coarse=matchMedia('(pointer:coarse)'),clamp=(v,a,b)=>Math.min(b,Math.max(a,v)),radians=Math.PI/180;
-const allRecipes=[...catalog,...experimentData.recipes],byId=new Map(allRecipes.map(recipe=>[recipe.id,recipe]));
+const libraryRecipes=[...catalog,...atlasRecipes],allRecipes=[...libraryRecipes,...experimentData.recipes],byId=new Map(allRecipes.map(recipe=>[recipe.id,recipe]));
+// Spread the extra artworks through the original atlas instead of clustering
+// all new styles at one pole of the sphere.
+const sphereRecipes=[],sphereExtras=[...atlasRecipes,...experimentData.recipes];
+let extraCursor=0;
+catalog.forEach((recipe,index)=>{sphereRecipes.push(recipe);const through=Math.round((index+1)*sphereExtras.length/catalog.length);while(extraCursor<through)sphereRecipes.push(sphereExtras[extraCursor++])});
 function readStore(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}}
 function writeStore(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch{return false}}
 let saved=new Set();const savedData=readStore('wildframe:saved:v1',readStore('ethan-vale:saved',[]));if(Array.isArray(savedData))saved=new Set(savedData.filter(id=>byId.has(id)));
-let category='All',style='All',savedOnly=false,visibleIds=catalog.map(recipe=>recipe.id),activeId=null,browseIds=[],returnFocus=null,studioSeed=null,toastTimer=0;
+let category='All',style='All',savedOnly=false,visibleIds=libraryRecipes.map(recipe=>recipe.id),activeId=null,browseIds=[],returnFocus=null,studioSeed=null,toastTimer=0;
 const vectors=[],sphereCards=[],thumbs=new Map(),blobURLs=[];
 let R=300,perspective=1150,yaw=0,pitch=-4,camZ=0,velocityX=0,velocityY=0,pointer=null,raf=0,lastFrame=0,lastWidth=0,lastHeight=0,renderStamp='',imageToken=0;
 let hoverPoint=null,hoverAim=null;
@@ -29,7 +34,7 @@ function setLibrary(on,{focus=true,onlySaved=savedOnly}={}){
 }
 function resetFilters(){category='All';style='All';savedOnly=false;$('#promptSearch').value='';$('#styleFilter').value='All';renderLibrary();$('#savedNav').setAttribute('aria-current',false);$('#libraryNav').setAttribute('aria-current',true)}
 function renderLibrary(){
- const query=normalize($('#promptSearch').value.trim());const filtered=(savedOnly?allRecipes:catalog).filter(recipe=>(category==='All'||recipe.category===category)&&(style==='All'||recipe.style===style)&&(!savedOnly||saved.has(recipe.id))&&normalize([recipe.title,recipe.subject,recipe.setting,recipe.category,recipe.style,...recipe.tags].join(' ')).includes(query));
+ const query=normalize($('#promptSearch').value.trim());const filtered=(savedOnly?allRecipes:libraryRecipes).filter(recipe=>(category==='All'||recipe.category===category)&&(style==='All'||recipe.style===style)&&(!savedOnly||saved.has(recipe.id))&&normalize([recipe.title,recipe.subject,recipe.setting,recipe.category,recipe.style,...recipe.tags].join(' ')).includes(query));
  visibleIds=filtered.map(recipe=>recipe.id);const grid=$('#recipeGrid');grid.replaceChildren();
  for(const recipe of filtered){
   const article=document.createElement('article');article.className='recipe-card';article.dataset.id=recipe.id;
@@ -62,7 +67,7 @@ function syncLayers(){
 }
 function setRecipeHash(id){history.pushState(null,'','#prompt='+encodeURIComponent(id))}
 function openPrompt(id,trigger=null,{route=true,keepBrowse=false}={}){
- if(!byId.has(id))return;activeId=id;returnFocus=trigger||$('#browsePrompts');if(!keepBrowse)browseIds=library.classList.contains('open')?[...visibleIds]:catalog.map(recipe=>recipe.id);if(!browseIds.includes(id)){const group=experimentData.groups.find(group=>group.variants.includes(id));browseIds=group?[...group.variants]:catalog.map(recipe=>recipe.id)}
+ if(!byId.has(id))return;activeId=id;returnFocus=trigger||$('#browsePrompts');if(!keepBrowse)browseIds=experiments.classList.contains('open')?groupRecipes().map(recipe=>recipe.id):library.classList.contains('open')?[...visibleIds]:sphereRecipes.map(recipe=>recipe.id);if(!browseIds.includes(id)){const group=experimentData.groups.find(group=>group.variants.includes(id));browseIds=group?[...group.variants]:libraryRecipes.map(recipe=>recipe.id)}
  dialog.classList.add('open');dialog.scrollTop=0;renderPrompt();syncLayers();if(route)setRecipeHash(id);$('#promptClose').focus({preventScroll:true});
 }
 function renderPrompt(){
@@ -114,8 +119,8 @@ function handleRoute(){let id;try{const hash=new URLSearchParams(location.hash.s
 addEventListener('hashchange',handleRoute);addEventListener('popstate',handleRoute);
 
 // The original CSS 3D atlas now opens masterprompts instead of field notes.
-catalog.forEach((recipe,i)=>{
- const y=1-i/(catalog.length-1)*2,r=Math.sqrt(Math.max(0,1-y*y)),angle=i*Math.PI*(3-Math.sqrt(5)),x=Math.cos(angle)*r,z=Math.sin(angle)*r;vectors.push({x,y,z,lat:Math.asin(y)/radians,lon:Math.atan2(x,z)/radians});
+sphereRecipes.forEach((recipe,i)=>{
+ const y=1-i/(sphereRecipes.length-1)*2,r=Math.sqrt(Math.max(0,1-y*y)),angle=i*Math.PI*(3-Math.sqrt(5)),x=Math.cos(angle)*r,z=Math.sin(angle)*r;vectors.push({x,y,z,lat:Math.asin(y)/radians,lon:Math.atan2(x,z)/radians});
  const card=document.createElement('div');card.className='sphere-card';card.dataset.id=recipe.id;card.tabIndex=-1;card.setAttribute('role','button');card.setAttribute('aria-label','Open masterprompt: '+recipe.title);const figure=document.createElement('figure'),image=document.createElement('img');image.alt=recipe.subject;image.draggable=false;figure.append(image);card.append(figure);orb.append(card);sphereCards.push(card);
 });
 function wake(){if(!raf&&!document.hidden)raf=requestAnimationFrame(frame)}
@@ -148,8 +153,8 @@ stage.addEventListener('pointerup',event=>endPointer(event));stage.addEventListe
 addEventListener('blur',()=>{resetHoverMotion();velocityX=velocityY=0});
 addEventListener('scroll',()=>{if(scrollY>innerHeight*.16+1)scrollTo(0,innerHeight*.16);wake()},{passive:true});addEventListener('resize',()=>layout());addEventListener('orientationchange',()=>setTimeout(()=>layout(true),220));if(window.visualViewport)visualViewport.addEventListener('resize',()=>layout());document.addEventListener('visibilitychange',()=>{resetHoverMotion();if(document.hidden){cancelAnimationFrame(raf);raf=0;lastFrame=0;velocityX=velocityY=0}else wake()});reduced.addEventListener('change',()=>{resetHoverMotion();velocityX=velocityY=0;wake()});
 function downscale(image,max){if(image.naturalWidth<=max)return Promise.resolve(image.src);return new Promise(resolve=>{try{const canvas=document.createElement('canvas');canvas.width=max;canvas.height=Math.round(image.naturalHeight*max/image.naturalWidth);canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);canvas.toBlob(blob=>{if(!blob)return resolve(image.src);const url=URL.createObjectURL(blob);blobURLs.push(url);resolve(url)},'image/webp',.86)}catch{resolve(image.src)}})}
-let loaded=0;const queue=catalog.map((recipe,i)=>i).sort((a,b)=>vectors[b].z-vectors[a].z);
-async function loadThumbnail(i){return new Promise(resolve=>{const recipe=catalog[i],image=new Image();image.crossOrigin='anonymous';image.decoding='async';let settled=false;const finish=url=>{if(settled)return;settled=true;clearTimeout(timer);thumbs.set(recipe.id,url);const cardImage=sphereCards[i].querySelector('img');cardImage.onload=()=>cardImage.classList.add('ready');cardImage.src=url;loaded++;$('#loadNote').textContent=loaded===catalog.length?(coarse.matches||reduced.matches?'Drag to explore the atlas':'Move your mouse to explore · Click an image for its prompt'):`${loaded} / ${catalog.length} previews ready`;resolve()};const timer=setTimeout(()=>finish(recipe.thumb),8000);image.onload=async()=>finish(await downscale(image,innerWidth<=640?520:760));image.onerror=()=>finish(recipe.thumb);image.src=recipe.thumb})}
+let loaded=0;const queue=sphereRecipes.map((recipe,i)=>i).sort((a,b)=>vectors[b].z-vectors[a].z);
+async function loadThumbnail(i){return new Promise(resolve=>{const recipe=sphereRecipes[i],image=new Image();image.crossOrigin='anonymous';image.decoding='async';let settled=false;const finish=url=>{if(settled)return;settled=true;clearTimeout(timer);thumbs.set(recipe.id,url);const cardImage=sphereCards[i].querySelector('img');cardImage.onload=()=>cardImage.classList.add('ready');cardImage.src=url;loaded++;$('#loadNote').textContent=loaded===sphereRecipes.length?(coarse.matches||reduced.matches?'Drag to explore the atlas':'Move your mouse to explore · Click an image for its prompt'):`${loaded} / ${sphereRecipes.length} previews ready`;resolve()};const timer=setTimeout(()=>finish(recipe.thumb),8000);image.onload=async()=>finish(await downscale(image,innerWidth<=640?520:760));image.onerror=()=>finish(recipe.thumb);image.src=recipe.thumb})}
 async function thumbnailWorker(){while(queue.length)await loadThumbnail(queue.shift())}
 initializeVisuals();initializeLab();initializeJourney();layout(true);updateSaved();syncLayers();handleRoute();for(let i=0;i<4;i++)thumbnailWorker();
 addEventListener('pagehide',event=>{cancelAnimationFrame(raf);raf=0;if(!event.persisted)blobURLs.forEach(url=>URL.revokeObjectURL(url))});addEventListener('pageshow',()=>{layout(true);wake()});

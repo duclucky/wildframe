@@ -4,6 +4,7 @@ import json,re
 root=Path(__file__).resolve().parent.parent
 recipes=json.loads((root/'assets/prompt-catalog.json').read_text(encoding='utf-8'))
 recipes+=json.loads((root/'assets/visual-experiments.json').read_text(encoding='utf-8'))['recipes']
+recipes+=json.loads((root/'assets/atlas-recipes.json').read_text(encoding='utf-8'))
 result={}
 notes={
  'subject':('Subject','Names the focal subject and the details that make it recognisable.'),
@@ -38,7 +39,7 @@ for recipe in recipes:
       'light':[r'Lighting: ([^\n]+)',r'(?:cinematic but believable )?natural overcast side light',r'soft directional light',r'delicate shafts of natural early light',r'(?:soft|warm|cold|golden|moonlit|early|natural)[^,.]{0,65}light[^,.]*'],
       'palette':[r'Palette: ([^\n]+)',r'subdued slate and ivory palette',r'muted organic colours',r'(?:muted|subdued|organic)[^,.]{0,65}palette'],
       'composition':[r'Composition: ([^\n]+)',r'Build the composition[^.]+\.',r'generous breathing room[^,.]+',r'generous negative space',r'intentional composition'],
-      'style':[r'Visual language: ([^\n]+)',r'Use realistic textures[^.]+\.',r'restrained documentary-style photographic aesthetic',r'Naturalistic anatomy[^,]+',r'editorial fine-art landscape photography',r'contemporary[^,.]*(?:oil painting|ink-wash)[^,.]*',r'(?:oil painting|ink-wash|dreamscape)[^,.]*'],
+      'style':[r'Visual language: ([^\n]+)',r'Art direction: ([^\n]+)',r'Use realistic textures[^.]+\.',r'restrained documentary-style photographic aesthetic',r'Naturalistic anatomy[^,]+',r'editorial fine-art landscape photography',r'contemporary[^,.]*(?:oil painting|ink-wash)[^,.]*',r'(?:oil painting|ink-wash|dreamscape)[^,.]*'],
       'negative':[r'Constraints: ([^\n]+)',r'No text[^.]+\.',r'The image itself must contain no text[^.]+\.']}
     annotations=[]
     for field,choices in patterns.items():

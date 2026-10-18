@@ -14,7 +14,7 @@ const sharp=require('C:/Users/TBC/.cache/codex-runtimes/codex-primary-runtime/de
   await sharp(original).resize({width:760,withoutEnlargement:true}).webp({quality:84,effort:5}).toFile(path.join(directory,record.slug+'-thumb.webp'));
   await sharp(original).webp({quality:92,effort:5}).toFile(path.join(directory,record.slug+'-full.webp'));
   const meta=await sharp(original).metadata();
-  manifest.push({id:'ai-'+record.slug,title:record.title,place:(record.place||'Imagined landscape')+' · AI study',note:record.note,category:record.category,style:record.style,tags:record.tags,source:'AI-generated',thumb:'assets/'+folder+'/'+record.slug+'-thumb.webp',full:'assets/'+folder+'/'+record.slug+'-full.webp',original:'assets/'+folder+'/originals/'+record.slug+'.png',width:meta.width,height:meta.height,prompt:record.prompt,generation:'Built-in ImageGen',generated:'2026-10-17'});
+  manifest.push({id:'ai-'+record.slug,title:record.title,place:(record.place||'Imagined landscape')+' · AI study',note:record.note,category:record.category,style:record.style,tags:record.tags,source:'AI-generated',thumb:'assets/'+folder+'/'+record.slug+'-thumb.webp',full:'assets/'+folder+'/'+record.slug+'-full.webp',original:'assets/'+folder+'/originals/'+record.slug+'.png',width:meta.width,height:meta.height,prompt:record.prompt,generation:'Built-in ImageGen',generated:record.generated||new Date().toISOString().slice(0,10)});
  }
  await fs.writeFile(path.join(directory,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
  const sizes=await Promise.all(manifest.map(async r=>({thumb:(await fs.stat(path.join(root,r.thumb))).size,full:(await fs.stat(path.join(root,r.full))).size})));

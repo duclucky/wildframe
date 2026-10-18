@@ -13,11 +13,12 @@ if (root/'index.before-lab.html').is_file():
     assert original==catalog,'Existing masterprompts must remain unchanged'
 experiments=read('assets/visual-experiments.json')
 annotations=read('assets/prompt-annotations.json')
-manifest=read('assets/experiments/manifest.json')
-all_recipes=catalog+experiments['recipes']
+atlas=read('assets/atlas-recipes.json')
+manifest=read('assets/experiments/manifest.json')+read('assets/atlas/manifest.json')
+all_recipes=catalog+atlas+experiments['recipes']
 by_id={recipe['id']:recipe for recipe in all_recipes}
-assert len(catalog)==41 and len(by_id)==47
-assert len(manifest)==6
+assert len(catalog)==41 and len(atlas)==18 and len(by_id)==65
+assert len(manifest)==24
 for item in manifest:
     assert item['prompt']==by_id[item['id']]['prompt']
     assert item['generation']=='Built-in ImageGen'
@@ -38,4 +39,4 @@ assert 'PLACEHOLDER' not in html and '<!-- DNA_PANEL -->' not in html and '/* LA
 license_path=root/'references/react-bits/LICENSE.md'
 license_text=license_path.read_text(encoding='utf-8') if license_path.is_file() else (root/'THIRD_PARTY_NOTICES.md').read_text(encoding='utf-8').split('## Upstream license (verbatim)\n\n',1)[1]
 assert license_text.strip() in html
-print('PASS: 41 original recipes, 6 real generated experiments, 47 exact-source DNA records, shared scene instructions and bundled source/license integrity.')
+print('PASS: 41 unchanged original recipes, 18 new atlas images, 6 generated experiments, 65 exact-source DNA records, shared scene instructions and bundled source/license integrity.')
