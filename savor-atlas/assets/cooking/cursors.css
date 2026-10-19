@@ -1,0 +1,13 @@
+/* Native cursors stay in sync with the mouse without a JavaScript follower. */
+@media (any-hover:hover) and (any-pointer:fine) and (forced-colors:none){
+  :root{
+    --cursor-fork:url("icons/cursor-fork.svg") 6 3,default;
+    --cursor-action:url("icons/cursor-fork-action.svg") 6 3,pointer;
+    --cursor-drag:url("icons/cursor-fork-drag.svg") 6 3,grabbing;
+  }
+  html,body,body>#stage,.sphere-card,.sphere-card figure{cursor:var(--cursor-fork)}
+  a[href],button:not(:disabled),summary,select:not(:disabled),input[type="checkbox"]:not(:disabled),.ingredient-checklist label,.stage[role="button"],.plate-position,.plate-position img{cursor:var(--cursor-action)}
+  body>#stage.dragging,body>#stage.dragging *{cursor:var(--cursor-drag)}
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="button"]):not([type="submit"]),textarea,[contenteditable="true"]{cursor:text}
+  button:disabled,select:disabled,input:disabled,[aria-disabled="true"]{cursor:not-allowed}
+}
