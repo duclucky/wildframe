@@ -2228,6 +2228,7 @@
   function initializeCookingNavigation() {
     const fitTable=()=>{
       const height=stage.clientHeight,width=stage.clientWidth;
+      stage.classList.toggle('compact-table',height<220||width<1000);
       const table=Math.max(600,Math.min(1100,width*(width<=600?2:1.05)));
       const plate=Math.max(40,Math.min(330,height*.9,width*.7));
       stage.style.setProperty('--table',table+'px');stage.style.setProperty('--plate',plate+'px');

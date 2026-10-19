@@ -4,6 +4,7 @@ body{height:100dvh;min-height:0;overflow:hidden;display:flex;flex-direction:colu
 .experience{flex:1;min-height:0;width:100%;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(100px,1fr) auto auto}
 .stage{height:auto;min-height:0}
 .table-caption,.orbit-hint{top:50%;transform:translateY(-50%)}
+.compact-table .table-caption,.compact-table .orbit-hint{display:none}
 .table-caption b{font-size:28px;line-height:1.35;margin-bottom:10px}
 .details{width:min(800px,100%);padding:4px 24px 0}
 .details h1{font-size:clamp(34px,5.4vh,52px);line-height:1.08;margin:8px 0;text-wrap:balance}
