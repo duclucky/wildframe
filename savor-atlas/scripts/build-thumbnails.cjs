@@ -1,4 +1,4 @@
-// Preserve the entire plated dish inside each landscape globe tile.
+// Preserve the entire plated dish and its original transparent background.
 const fs=require('node:fs/promises'),path=require('node:path');
 const sharp=require('C:/Users/TBC/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
 (async()=>{
@@ -6,8 +6,8 @@ const sharp=require('C:/Users/TBC/.cache/codex-runtimes/codex-primary-runtime/de
  let before=0,after=0;
  for(const dish of dishes){
   const output=path.join(root,'assets/cooking/globe-'+dish.id+'.webp');before+=(await fs.stat(output)).size;
-  await sharp(path.join(root,'assets/cooking',dish.image)).resize(480,320,{fit:'contain',background:'#eee8dc'}).flatten({background:'#eee8dc'}).webp({quality:84}).toFile(output);
+  await sharp(path.join(root,'assets/cooking',dish.image)).resize(480,320,{fit:'contain',background:{r:0,g:0,b:0,alpha:0}}).webp({quality:84,alphaQuality:100}).toFile(output);
   after+=(await fs.stat(output)).size;
  }
- console.log(JSON.stringify({thumbnails:dishes.length,beforeBytes:before,afterBytes:after,composition:'full plate, no crop'},null,2));
+ console.log(JSON.stringify({thumbnails:dishes.length,beforeBytes:before,afterBytes:after,composition:'full plate, transparent background, no crop'},null,2));
 })().catch(e=>{console.error(e);process.exitCode=1});

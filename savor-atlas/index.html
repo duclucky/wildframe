@@ -86,8 +86,12 @@ html[data-motion="reduced"] *,html[data-motion="reduced"] *::before,html[data-mo
 
 /* Each tile shows the complete plate; one-finger rotation still permits pinch zoom. */
 #stage{touch-action:pinch-zoom}
-.sphere-card img,.sphere-preview img{object-fit:contain;background:#eee8dc}
-.sphere-card figure{border-radius:7px}
+.sphere-card img,.sphere-preview img{object-fit:contain;background:transparent}
+.sphere-card figure{background:transparent;border-radius:0;overflow:visible}
+.sphere-card figure::after{content:none}
+.sphere-card img.ready{opacity:calc(1 - var(--d,0))}
+.sphere-card.is-previewed figure{box-shadow:none}
+.sphere-card.is-previewed img{opacity:1;filter:drop-shadow(0 0 7px #d7e6a080)}
 .button:active,.atlas-controls summary:active{background:#d7e6a022}
 </style>
 </head>

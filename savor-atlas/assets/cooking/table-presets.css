@@ -8,6 +8,10 @@
 
 html[data-table="walnut"] .table-surface  {
   background-image: url('table-walnut.webp');
+  /* Sample the interior wood grain; the source photograph has its own rim. */
+  background-size: 140% 140%;
+  background-position: center;
+  background-repeat: no-repeat;
   filter: saturate(.82) brightness(.94) drop-shadow(0 7px 3px #38271918) drop-shadow(0 17px 25px #3e35261a);
 }
 

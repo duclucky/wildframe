@@ -6,15 +6,22 @@ const base=process.env.TEST_BASE_URL||'http://127.0.0.1:4174',root=path.resolve(
  const {dishes}=JSON.parse(await fs.readFile(path.join(root,'source/recipes.json'),'utf8'));const passed=[];
  for(const dish of dishes){
   const file=path.join(root,'assets/cooking/globe-'+dish.id+'.webp'),meta=await sharp(file).metadata();
-  const expected=await sharp(path.join(root,'assets/cooking',dish.image)).resize(meta.width,meta.height,{fit:'contain',background:'#eee8dc'}).flatten({background:'#eee8dc'}).removeAlpha().raw().toBuffer();
-  const actual=await sharp(file).removeAlpha().raw().toBuffer();let error=0;for(let i=0;i<actual.length;i++)error+=Math.abs(actual[i]-expected[i]);
+  assert.ok(meta.hasAlpha,dish.name+': globe thumbnail must retain its transparent background');
+  const alpha=await sharp(file).ensureAlpha().extractChannel('alpha').raw().toBuffer();
+  assert.ok(alpha[0]===0&&alpha[meta.width-1]===0&&alpha.at(-1)===0,dish.name+': thumbnail corners must be fully transparent');
+  assert.ok(alpha.some(value=>value>=250),dish.name+': the plated food must remain opaque after image resampling');
+  const resized=await sharp(path.join(root,'assets/cooking',dish.image)).resize(meta.width,meta.height,{fit:'contain',background:{r:0,g:0,b:0,alpha:0}}).png().toBuffer();
+  const expected=await sharp(resized).flatten({background:'#080a08'}).removeAlpha().raw().toBuffer();
+  const actual=await sharp(file).flatten({background:'#080a08'}).removeAlpha().raw().toBuffer();let error=0;for(let i=0;i<actual.length;i++)error+=Math.abs(actual[i]-expected[i]);
   assert.ok(error/actual.length<5,dish.name+': the entire plate must remain visible, not cropped to fill its thumbnail');
- }passed.push('All 12 globe thumbnails preserve the full source composition');
+ }passed.push('All 12 globe thumbnails preserve the full plate and transparent background');
  const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});const errors=[];
  try{
   for(const [width,height] of [[320,568],[375,812],[390,844],[844,390]]){
    const page=await browser.newPage({viewport:{width,height},hasTouch:true,isMobile:true,reducedMotion:'reduce'});page.on('pageerror',e=>errors.push(e.message));await page.goto(base);
    await page.waitForFunction(()=>document.querySelectorAll('.sphere-card img.ready').length===60);
+   const tile=await page.locator('.sphere-card').first().evaluate(e=>({background:getComputedStyle(e.querySelector('figure')).backgroundColor,imageBackground:getComputedStyle(e.querySelector('img')).backgroundColor,overlay:getComputedStyle(e.querySelector('figure'),'::after').content}));
+   assert.equal(tile.background,'rgba(0, 0, 0, 0)');assert.equal(tile.imageBackground,'rgba(0, 0, 0, 0)');assert.equal(tile.overlay,'none','A rectangular overlay must not cover transparent plate images');
    const before=await page.locator('#world').getAttribute('style');
    const client=await page.context().newCDPSession(page);
    await client.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:width/2,y:height*.42}]});
