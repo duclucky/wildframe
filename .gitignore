@@ -17,3 +17,7 @@
 
 .vercel
 .env*
+# Local source archives are never part of the repository.
+*.zip
+*.rar
+*.7z

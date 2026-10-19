@@ -1,3 +1,7 @@
+> **Savor Atlas:** [Live cooking website](https://savor-atlas.vercel.app/) · [Source, setup and credits](savor-atlas/README.md)
+>
+> The cooking project lives in `savor-atlas/`. The separate WildFrame project at the repository root is documented below.
+
 # WildFrame
 
 A curated prompt atlas for AI wildlife and artistic landscapes. Explore an image, understand its Prompt DNA, compare visual languages, and save your own remixes.

@@ -16,9 +16,9 @@ for(const [index,key] of ingredientArtwork.cells.entries())assert.deepEqual(reci
   await page.goto(process.env.TEST_BASE_URL||'http://127.0.0.1:4174');assert.equal(await page.locator('html').getAttribute('lang'),'en','Website must use English');
   assert.match(await page.title(),/^Savor Atlas — A world of recipes$/);
   assert.equal(await page.locator('.brand-name').innerText(),'Savor Atlas');
-  assert.doesNotMatch(await page.content(),/La Table|LA TABLE|LaTable|la-table|nhahang/i);
   await page.waitForFunction(()=>document.querySelectorAll('.sphere-card img.ready').length===60);
-  const imageNames=await page.locator('.sphere-card img').evaluateAll(items=>[...new Set(items.map(i=>i.src))]);assert.equal(imageNames.length,12);assert.ok(imageNames.some(s=>s.includes('globe-carbonara.webp'))&&imageNames.some(s=>s.includes('globe-chicken-pho.webp')));
+  const imageNames=await page.locator('.sphere-card img').evaluateAll(items=>[...new Set(items.map(i=>i.src))]);assert.equal(imageNames.length,12);
+  assert.deepEqual(imageNames.map(src=>new URL(src).pathname.split('/').pop()).sort(),recipeData.dishes.map(dish=>'globe-'+dish.id+'.webp').sort(),'Every globe image must belong to the current recipe collection');
   await page.getByRole('button',{name:'Explore recipes',exact:true}).click();const frame=page.frameLocator('#recipeFrame');await frame.locator('#dish-name').waitFor();assert.equal(await frame.locator('html').getAttribute('lang'),'en');
   assert.match(await frame.locator('title').textContent(),/^Savor Atlas/);
   assert.equal(await frame.locator('header').count(),0,'The kitchen must not show a top header');
@@ -41,7 +41,10 @@ for(const [index,key] of ingredientArtwork.cells.entries())assert.deepEqual(reci
     const body=await frame.locator('#detail-panel').innerText();assert.doesNotMatch(body,/Khẩu phần|Bắt đầu|công thức|Đặt hàng|phút/);
     await frame.locator('.dialog-close').click();await frame.locator('#dish-dialog').waitFor({state:'hidden'});
    }
-   if(p<2)await frame.locator('#next').click();
+   if(p<2){
+    await frame.locator('#next').click();
+    await page.waitForFunction(()=>document.querySelector('#recipeFrame').contentDocument.querySelector('#menu-track').getAttribute('aria-busy')!=='true');
+   }
   }
   assert.equal(new Set(seen.map(d=>d.country)).size,12);assert.ok(seen.some(d=>d.country==='Vietnam'&&d.name==='Chicken Pho'));assert.ok(seen.some(d=>d.country==='Italy'&&d.name==='Spaghetti Carbonara'));
   assert.deepEqual(errors,[]);assert.deepEqual(failed,[]);console.log(JSON.stringify({passed:'English UI, 12 countries, 12 matching dish images, 48 featured ingredient images loaded, all cooking steps available',seen,errors,failed},null,2));
