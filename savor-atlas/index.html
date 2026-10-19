@@ -75,23 +75,20 @@
 *{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;height:100dvh;overflow:hidden;background:var(--bg);color:var(--ink)}body{font:400 14px/1.5 var(--sans);-webkit-font-smoothing:antialiased}button,a{color:inherit;font:inherit;-webkit-tap-highlight-color:transparent;touch-action:manipulation}button{border:0;background:none;cursor:pointer}a{text-decoration:none}img{display:block;max-width:100%}[hidden]{display:none!important}button:focus-visible,a:focus-visible,[tabindex]:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.skip-link{position:fixed;z-index:120;top:10px;left:16px;padding:12px 18px;background:var(--accent);color:#192019;transform:translateY(-180%)}.skip-link:focus{transform:none}
 header{position:fixed;inset:0 0 auto;z-index:60;display:flex;align-items:center;padding:calc(18px + env(safe-area-inset-top,0px)) var(--pad) 18px;pointer-events:none}.brand{display:flex;align-items:center;gap:12px;min-height:44px;pointer-events:auto}.brand-name{font:400 29px/1 var(--serif);letter-spacing:-.045em}.brand-name em{color:var(--accent)}.brand-mark{height:31px;width:31px;border:1px solid #d7e6a080;border-radius:50% 50% 4px 4px;display:flex;justify-content:center;align-items:center;font:19px/1 var(--serif);color:var(--accent)}.brand-mark span{font-size:13px;margin-left:-3px;margin-top:8px}
 #stage{position:fixed;inset:0;z-index:10;perspective:var(--persp);perspective-origin:50% 50%;overflow:hidden;touch-action:none;cursor:default;transition:opacity .35s}#stage.dragging{cursor:grabbing}#stage:focus-visible{outline-offset:-5px}#world,#orb{position:absolute;width:0;height:0;transform-style:preserve-3d}#world{top:var(--sphere-y,50%);left:50%;will-change:transform}#orb{top:0;left:0}#headline{position:absolute;top:var(--sphere-y,50%);left:50%;width:var(--hw);margin-left:calc(var(--hw)/-2);text-align:center;font:400 clamp(38px,5.6vw,80px)/1.02 var(--serif);letter-spacing:-.035em;pointer-events:none;user-select:none;text-shadow:0 2px 12px #000,0 4px 50px #0009;z-index:2}#headline .inner{position:absolute;top:0;left:0;width:100%;transform:translateY(-50%)}#headline .inner::before{content:'';position:absolute;inset:-38% -22%;background:radial-gradient(ellipse,#080a08df 0%,#080a08a3 36%,#080a0800 74%);z-index:-1}#headline em{font-weight:400;color:var(--accent)}
-.sphere-card{position:absolute;top:0;left:0;width:var(--cw);height:calc(var(--cw)/1.5);margin-left:calc(var(--cw)/-2);margin-top:calc(var(--cw)/-3);cursor:pointer;user-select:none}.sphere-card figure{position:relative;width:100%;height:100%;overflow:hidden;border-radius:4px;background:#28291e;transition:box-shadow 180ms,filter 180ms}.sphere-card img{width:100%;height:100%;object-fit:cover;pointer-events:none;opacity:0;transition:opacity .5s}.sphere-card img.ready{opacity:1}.sphere-card figure::after{content:'';position:absolute;inset:0;background:rgba(8,10,8,var(--d,0));box-shadow:inset 0 0 0 1px #ffffff18;pointer-events:none}.sphere-card.is-previewed figure{box-shadow:0 0 0 2px var(--accent),0 0 25px #d7e6a026}#orb.previewing .sphere-card:not(.is-previewed) figure{filter:brightness(.9)}.vignette{position:fixed;inset:0;z-index:12;pointer-events:none;background:radial-gradient(ellipse at center,transparent 37%,#080a0820 68%,#080a08bb 100%)}
+.sphere-card{position:absolute;top:0;left:0;width:var(--cw);height:calc(var(--cw)/1.5);margin-left:calc(var(--cw)/-2);margin-top:calc(var(--cw)/-3);cursor:default;user-select:none}.sphere-card figure{position:relative;width:100%;height:100%;overflow:hidden;border-radius:4px;background:#28291e;transition:box-shadow 180ms,filter 180ms}.sphere-card img{width:100%;height:100%;object-fit:cover;pointer-events:none;opacity:0;transition:opacity .5s}.sphere-card img.ready{opacity:1}.sphere-card figure::after{content:'';position:absolute;inset:0;background:rgba(8,10,8,var(--d,0));box-shadow:inset 0 0 0 1px #ffffff18;pointer-events:none}.vignette{position:fixed;inset:0;z-index:12;pointer-events:none;background:radial-gradient(ellipse at center,transparent 37%,#080a0820 68%,#080a08bb 100%)}
 .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:10px 18px;border:1px solid #ffffff30;border-radius:999px;background:#10150e80;font-size:12px;line-height:1.4;transition:background .2s,border-color .2s}.button:hover{border-color:#d7e6a080;background:#d7e6a00d}.hero-cta{position:fixed;z-index:25;left:50%;bottom:calc(38px + var(--safe));transform:translateX(-50%);max-width:calc(100vw - 128px);white-space:nowrap}.load-note{position:fixed;z-index:25;left:50%;bottom:10px;transform:translateX(-50%);max-width:calc(100vw - 112px);white-space:nowrap;text-align:center;font-size:10px;color:#9aa28f}
 .atlas-controls{position:fixed;z-index:27;right:var(--pad);bottom:calc(38px + var(--safe));width:44px;height:44px}.atlas-controls summary{list-style:none;width:44px;height:44px;display:grid;place-items:center;border:1px solid #ffffff24;border-radius:50%;color:var(--muted);background:#10150e60;cursor:pointer;font-size:24px}.atlas-controls summary::-webkit-details-marker{display:none}.atlas-controls summary:hover,.atlas-controls[open] summary{border-color:#d7e6a070;color:var(--accent);background:var(--panel)}.atlas-options-panel{position:absolute;right:0;bottom:54px;width:210px;padding:7px;background:#10150ef5;border:1px solid #ffffff30;border-radius:12px;box-shadow:0 12px 30px #0007}.atlas-controls:not([open]) .atlas-options-panel{display:none}.atlas-options-panel .button{width:100%;justify-content:flex-start;border:0;border-radius:7px;background:none;font-size:12px}.atlas-options-panel .button:hover{background:#ffffff0a}.atlas-options-panel .button[aria-pressed=true]{color:var(--accent);background:#d7e6a018}
-.sphere-preview{position:fixed;z-index:25;left:var(--pad);top:96px;width:278px;padding:14px;display:flex;align-items:center;gap:12px;border:1px solid #d7e6a040;border-radius:12px;background:#10150ef2;box-shadow:0 12px 36px #0005;pointer-events:none}.sphere-preview img{width:62px;height:52px;object-fit:cover;border-radius:5px}.sphere-preview p,.sphere-preview small{font-size:11px;color:var(--muted)}.sphere-preview h2{font:400 18px/1.3 var(--serif);margin:4px 0 6px;overflow-wrap:anywhere}
 #recipeView{position:fixed;inset:0;z-index:100;background:#f5f1e8}#recipeFrame{width:100%;height:100%;border:0;display:block;background:#f5f1e8}#viewLoading{position:absolute;inset:0;display:grid;place-items:center;background:#f5f1e8;color:#30372f}#loadingBack{position:absolute;top:20px;right:24px;color:#30372f;border-color:#927044;background:#f5f1e8}body.recipe-view header,body.recipe-view .hero-layer,body.recipe-view .vignette{visibility:hidden}body.recipe-view #stage{opacity:0;pointer-events:none}
-@media(max-width:520px){#headline{font-size:clamp(32px,10vw,40px)}.sphere-preview{width:min(278px,calc(100vw - 36px))}.brand-name{font-size:26px}.hero-cta .button{font-size:11px;padding:10px 13px}}
+@media(max-width:520px){#headline{font-size:clamp(32px,10vw,40px)}.brand-name{font-size:26px}.hero-cta .button{font-size:11px;padding:10px 13px}}
 @media(max-height:520px){.hero-cta,.atlas-controls{bottom:12px}.load-note{display:none}#headline{font-size:clamp(26px,8.5vh,36px)}}
 html[data-motion="reduced"] *,html[data-motion="reduced"] *::before,html[data-motion="reduced"] *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
 
 /* Each tile shows the complete plate; one-finger rotation still permits pinch zoom. */
 #stage{touch-action:pinch-zoom}
-.sphere-card img,.sphere-preview img{object-fit:contain;background:transparent}
+.sphere-card img{object-fit:contain;background:transparent}
 .sphere-card figure{background:transparent;border-radius:0;overflow:visible}
 .sphere-card figure::after{content:none}
 .sphere-card img.ready{opacity:calc(1 - var(--d,0))}
-.sphere-card.is-previewed figure{box-shadow:none}
-.sphere-card.is-previewed img{opacity:1;filter:drop-shadow(0 0 7px #d7e6a080)}
 .button:active,.atlas-controls summary:active{background:#d7e6a022}
 </style>
 </head>
@@ -103,8 +100,7 @@ html[data-motion="reduced"] *,html[data-motion="reduced"] *::before,html[data-mo
 <div class="hero-cta hero-layer"><button class="button" id="browseRecipes">Explore recipes <span aria-hidden="true">→</span></button></div>
 <p id="loadNote" class="load-note hero-layer" role="status">Preparing something delicious…</p>
 <details class="atlas-controls hero-layer" id="atlasOptions"><summary id="atlasOptionsToggle" aria-label="Globe settings"><span aria-hidden="true">⋯</span></summary><div class="atlas-options-panel"><button class="button" id="lockSphere" aria-pressed="false">Lock view</button><button class="button" id="resetSphere">Reset angle</button><button class="button" id="motionToggle" data-motion-toggle aria-label="Enable effects" aria-pressed="false"><span data-motion-label>Effects: Auto</span></button></div></details>
-<div id="spherePreview" class="sphere-preview" hidden><img id="spherePreviewImage" alt=""><div><p id="spherePreviewMeta"></p><h2 id="spherePreviewTitle"></h2><small id="spherePreviewHint"></small></div></div>
-<p class="sr-only" id="sphereHelp">Move your mouse or drag to turn the globe. Use arrow keys to rotate and Enter to open a recipe. Explore recipes opens the complete collection.</p><p class="sr-only" id="sphereStatus" role="status"></p>
+<p class="sr-only" id="sphereHelp">Move your mouse, drag or use arrow keys to turn the decorative globe. Choose Explore recipes to browse the complete collection.</p><p class="sr-only" id="sphereStatus" role="status"></p>
 <section id="recipeView" aria-label="Discover world recipes" hidden inert><iframe id="recipeFrame" title="Savor Atlas — Recipes and cooking guides" src="about:blank"></iframe><div id="viewLoading" role="status">Opening the kitchen…</div><button id="loadingBack" class="button">← Back to globe</button></section>
 <script>const recipeData={
   "dishes": [
@@ -1602,20 +1598,20 @@ html[data-motion="reduced"] *,html[data-motion="reduced"] *::before,html[data-mo
 'use strict';
 const $=s=>document.querySelector(s),root=document.documentElement,stage=$('#stage'),world=$('#world'),orb=$('#orb');
 const recipeView=$('#recipeView'),recipeFrame=$('#recipeFrame');
-const reduced=window.SavorAtlasMotion,coarse=matchMedia('(pointer:coarse)'),clamp=(v,a,b)=>Math.min(b,Math.max(a,v)),radians=Math.PI/180;
+const reduced=window.SavorAtlasMotion,clamp=(v,a,b)=>Math.min(b,Math.max(a,v)),radians=Math.PI/180;
 const recipes=recipeData.dishes.map(d=>({...d,title:d.name,subject:d.name,thumb:'assets/cooking/globe-'+d.id+'.webp'}));
 const byId=new Map(recipes.map(d=>[d.id,d]));
 const sphereRecipes=Array.from({length:60},(_,i)=>recipes[(i*5+Math.floor(i/12))%12]);
 const vectors=[],sphereCards=[],thumbs=new Map(),thumbnailLoads=new Map();
 let R=300,perspective=1150,yaw=0,pitch=-4,velocityX=0,velocityY=0,pointer=null,raf=0,lastFrame=0,lastWidth=0,lastHeight=0,renderStamp='',activeId=null;
-let hoverPoint=null,hoverAim=null,sphereLocked=false,previewCard=null,previewTimer=0,previewPoint=null;
+let hoverPoint=null,hoverAim=null,sphereLocked=false;
 let viewReady=false,frameStarted=false,pendingDish=null,returnFocus=null;
 function resetHoverMotion(){hoverPoint=null;hoverAim=null}
 function setHomeInert(inert){stage.inert=inert;$('header').inert=inert;$('.hero-cta').inert=inert;$('#atlasOptions').inert=inert;$('#skipMenu').inert=inert}
 function openRecipe(id=null,trigger=null,{route=true}={}){
  if(id&&!byId.has(id))return;
  if(recipeView.hidden)returnFocus=trigger||document.activeElement;
- activeId=id;pendingDish=id;resetHoverMotion();hideSpherePreview();velocityX=velocityY=0;$('#atlasOptions').open=false;
+ activeId=id;pendingDish=id;resetHoverMotion();velocityX=velocityY=0;$('#atlasOptions').open=false;
  recipeView.hidden=false;recipeView.inert=false;document.body.classList.add('recipe-view');setHomeInert(true);
  if(route){const hash=id?'#dish='+encodeURIComponent(id):'#menu';if(location.hash!==hash)history.pushState(null,'',hash)}
  if(!frameStarted){frameStarted=true;recipeFrame.src='kitchen/index.html'+(id?'?dish='+encodeURIComponent(id):'')}
@@ -1650,44 +1646,28 @@ $('#skipMenu').addEventListener('click',e=>{e.preventDefault();openRecipe(null,$
 $('#homeLink').addEventListener('click',e=>{e.preventDefault();closeRecipes()});
 $('#loadingBack').addEventListener('click',()=>closeRecipes());
 addEventListener('hashchange',handleRoute);addEventListener('popstate',handleRoute);
-function hideSpherePreview(){clearTimeout(previewTimer);previewTimer=0;previewPoint=null;previewCard?.classList.remove('is-previewed');previewCard=null;orb.classList.remove('previewing');$('#spherePreview').hidden=true}
-function showSpherePreview(card,keyboard=false){
- if(!card||stage.inert)return;const recipe=byId.get(card.dataset.id);if(!recipe)return;
- previewCard?.classList.remove('is-previewed');previewCard=card;card.classList.add('is-previewed');orb.classList.add('previewing');
- $('#spherePreviewTitle').textContent=recipe.name;$('#spherePreviewMeta').textContent=recipe.country+' · '+recipe.time;
- $('#spherePreviewHint').textContent=keyboard?'Arrow keys to turn · Enter to open':'Select a dish to discover its recipe';
- $('#spherePreviewImage').src=recipe.thumb;$('#spherePreview').hidden=false;
- if(keyboard)$('#sphereStatus').textContent=recipe.name+'. '+recipe.time+'. Press Enter to open the recipe.';
-}
-function queueSpherePreview(event){
- hideSpherePreview();if(event.pointerType!=='mouse'||event.buttons||pointer||stage.inert)return;previewPoint={x:event.clientX,y:event.clientY};
- const reveal=()=>{previewTimer=0;if(!previewPoint||stage.inert||pointer)return;if(hoverAim){previewTimer=setTimeout(reveal,80);return}showSpherePreview(document.elementFromPoint(previewPoint.x,previewPoint.y)?.closest('.sphere-card'))};previewTimer=setTimeout(reveal,220);
-}
-function frontSphereCard(){const sx=Math.sin(pitch*radians),cx=Math.cos(pitch*radians),sy=Math.sin(yaw*radians),cy=Math.cos(yaw*radians);let index=0,depth=-Infinity;vectors.forEach((v,i)=>{const z=-v.x*sy+(-v.y*sx+v.z*cx)*cy;if(z>depth){depth=z;index=i}});return sphereCards[index]}
 function updateAtlasHint(){if(loaded<sphereRecipes.length)return;$('#loadNote').textContent='';$('#loadNote').hidden=true}
 function initializeSphereControls(){
  const options=$('#atlasOptions');
  const closeOptions=(focus=false)=>{options.open=false;if(focus)$('#atlasOptionsToggle').focus({preventScroll:true})};
- $('#lockSphere').addEventListener('click',()=>{sphereLocked=!sphereLocked;resetHoverMotion();hideSpherePreview();velocityX=velocityY=0;$('#lockSphere').setAttribute('aria-pressed',sphereLocked);$('#lockSphere').textContent=sphereLocked?'Unlock view':'Lock view';closeOptions(true);wake()});
- $('#resetSphere').addEventListener('click',()=>{resetHoverMotion();hideSpherePreview();velocityX=velocityY=0;yaw=0;pitch=-4;renderStamp='';closeOptions(true);wake()});
- options.addEventListener('toggle',()=>{if(options.open){hideSpherePreview();resetHoverMotion();velocityX=velocityY=0}});
+ $('#lockSphere').addEventListener('click',()=>{sphereLocked=!sphereLocked;resetHoverMotion();velocityX=velocityY=0;$('#lockSphere').setAttribute('aria-pressed',sphereLocked);$('#lockSphere').textContent=sphereLocked?'Unlock view':'Lock view';closeOptions(true);wake()});
+ $('#resetSphere').addEventListener('click',()=>{resetHoverMotion();velocityX=velocityY=0;yaw=0;pitch=-4;renderStamp='';closeOptions(true);wake()});
+ options.addEventListener('toggle',()=>{if(options.open){resetHoverMotion();velocityX=velocityY=0}});
  document.addEventListener('click',e=>{if(options.open&&!options.contains(e.target))closeOptions()});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&options.open){e.preventDefault();closeOptions(true)}});
- stage.addEventListener('pointermove',queueSpherePreview);stage.addEventListener('pointerleave',hideSpherePreview);stage.addEventListener('pointerdown',hideSpherePreview);
- stage.addEventListener('focus',()=>{resetHoverMotion();velocityX=velocityY=0;showSpherePreview(frontSphereCard(),true)});stage.addEventListener('blur',hideSpherePreview);
+ stage.addEventListener('focus',()=>{resetHoverMotion();velocityX=velocityY=0});
  stage.addEventListener('keydown',e=>{
   if(e.target!==stage||e.altKey||e.ctrlKey||e.metaKey||stage.inert)return;
   if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)){
    e.preventDefault();if(sphereLocked)return;resetHoverMotion();velocityX=velocityY=0;
-   if(e.key==='ArrowLeft')yaw-=12;if(e.key==='ArrowRight')yaw+=12;if(e.key==='ArrowUp')pitch=clamp(pitch+10,-32,32);if(e.key==='ArrowDown')pitch=clamp(pitch-10,-32,32);wake();showSpherePreview(frontSphereCard(),true);
-  }else if(e.key==='Enter'||e.key===' '){e.preventDefault();openRecipe((previewCard||frontSphereCard()).dataset.id,stage)}else if(e.key==='Escape')hideSpherePreview();
+   if(e.key==='ArrowLeft')yaw-=12;if(e.key==='ArrowRight')yaw+=12;if(e.key==='ArrowUp')pitch=clamp(pitch+10,-32,32);if(e.key==='ArrowDown')pitch=clamp(pitch-10,-32,32);wake();
+  }
  });
- addEventListener('blur',hideSpherePreview);addEventListener('resize',hideSpherePreview);document.addEventListener('visibilitychange',hideSpherePreview);
 }
 
 sphereRecipes.forEach((recipe,i)=>{
  const y=1-i/(sphereRecipes.length-1)*2,r=Math.sqrt(Math.max(0,1-y*y)),angle=i*Math.PI*(3-Math.sqrt(5)),x=Math.cos(angle)*r,z=Math.sin(angle)*r;vectors.push({x,y,z,lat:Math.asin(y)/radians,lon:Math.atan2(x,z)/radians});
- const card=document.createElement('div');card.className='sphere-card';card.dataset.id=recipe.id;card.tabIndex=-1;card.setAttribute('role','button');card.setAttribute('aria-label','View recipe: '+recipe.title);const figure=document.createElement('figure'),image=document.createElement('img');image.alt=recipe.subject;image.draggable=false;image.width=480;image.height=320;image.decoding='async';figure.append(image);card.append(figure);orb.append(card);sphereCards.push(card);
+ const card=document.createElement('div');card.className='sphere-card';card.dataset.id=recipe.id;card.setAttribute('aria-hidden','true');const figure=document.createElement('figure'),image=document.createElement('img');image.alt='';image.draggable=false;image.width=480;image.height=320;image.decoding='async';figure.append(image);card.append(figure);orb.append(card);sphereCards.push(card);
 });
 function wake(){if(!raf&&!document.hidden)raf=requestAnimationFrame(frame)}
 function layout(force=false){
@@ -1726,9 +1706,9 @@ function followMouse(event){
 stage.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')hoverPoint={x:event.clientX,y:event.clientY}});
 stage.addEventListener('pointerleave',()=>{hoverPoint=null});
 stage.addEventListener('pointermove',event=>{if(!pointer)followMouse(event)});
-stage.addEventListener('pointerdown',event=>{if(event.button!==0||pointer||activeId)return;resetHoverMotion();pointer={id:event.pointerId,x:event.clientX,y:event.clientY,lastX:event.clientX,lastY:event.clientY,time:event.timeStamp,card:document.elementFromPoint(event.clientX,event.clientY)?.closest('.sphere-card')||null,touch:event.pointerType==='touch',decided:event.pointerType!=='touch',distance:0};velocityX=velocityY=0;if(!sphereLocked)stage.classList.add('dragging');if(!pointer.touch){stage.setPointerCapture(event.pointerId);event.preventDefault()}});
+stage.addEventListener('pointerdown',event=>{if(event.button!==0||pointer||activeId)return;resetHoverMotion();pointer={id:event.pointerId,x:event.clientX,y:event.clientY,lastX:event.clientX,lastY:event.clientY,time:event.timeStamp,touch:event.pointerType==='touch',decided:event.pointerType!=='touch',distance:0};velocityX=velocityY=0;if(!sphereLocked)stage.classList.add('dragging');if(!pointer.touch){stage.setPointerCapture(event.pointerId);event.preventDefault()}});
 stage.addEventListener('pointermove',event=>{if(!pointer||pointer.id!==event.pointerId)return;const dx=event.clientX-pointer.x,dy=event.clientY-pointer.y;pointer.distance=Math.max(pointer.distance,Math.hypot(dx,dy));if(pointer.touch&&!pointer.decided){if(pointer.distance<10)return;pointer.decided=true;stage.setPointerCapture(event.pointerId)}if(sphereLocked)return;const vx=(event.clientX-pointer.lastX)*.13,vy=-(event.clientY-pointer.lastY)*.13,dt=Math.max(8,event.timeStamp-pointer.time)/16.667;yaw+=vx;pitch=clamp(pitch+vy,-32,32);velocityX=clamp(vx/dt,-4,4);velocityY=clamp(vy/dt,-4,4);pointer.lastX=event.clientX;pointer.lastY=event.clientY;pointer.time=event.timeStamp;wake()});
-function endPointer(event,cancel=false){if(!pointer||pointer.id!==event.pointerId)return;const start=pointer;pointer=null;stage.classList.remove('dragging');if(stage.hasPointerCapture(event.pointerId))stage.releasePointerCapture(event.pointerId);if(cancel||reduced.matches||sphereLocked||event.timeStamp-start.time>100)velocityX=velocityY=0;if(!cancel&&start.distance<(coarse.matches?14:6)&&start.card){velocityX=velocityY=0;openRecipe(start.card.dataset.id,start.card)}wake()}
+function endPointer(event,cancel=false){if(!pointer||pointer.id!==event.pointerId)return;const start=pointer;pointer=null;stage.classList.remove('dragging');if(stage.hasPointerCapture(event.pointerId))stage.releasePointerCapture(event.pointerId);if(cancel||reduced.matches||sphereLocked||event.timeStamp-start.time>100)velocityX=velocityY=0;wake()}
 stage.addEventListener('pointerup',event=>endPointer(event));stage.addEventListener('pointercancel',event=>endPointer(event,true));stage.addEventListener('lostpointercapture',event=>endPointer(event,true));
 addEventListener('blur',()=>{resetHoverMotion();velocityX=velocityY=0});
 addEventListener('resize',()=>layout());addEventListener('orientationchange',()=>setTimeout(()=>layout(true),220));if(window.visualViewport)visualViewport.addEventListener('resize',()=>layout());document.fonts?.ready.then(()=>layout(true));document.addEventListener('visibilitychange',()=>{resetHoverMotion();if(document.hidden){cancelAnimationFrame(raf);raf=0;lastFrame=0;velocityX=velocityY=0}else wake()});reduced.addEventListener('change',()=>{resetHoverMotion();velocityX=velocityY=0;wake()});

@@ -29,7 +29,7 @@ const base=process.env.TEST_BASE_URL||'http://127.0.0.1:4174',root=path.resolve(
    await client.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
    await page.waitForFunction(old=>document.querySelector('#world').getAttribute('style')!==old,before,{timeout:1500});
    await page.getByRole('button',{name:'Explore recipes',exact:true}).click();const frame=page.frameLocator('#recipeFrame');await frame.locator('#dish-name').waitFor();
-   const layout=await frame.locator('body').evaluate(el=>({width:el.scrollWidth,viewport:innerWidth,buttons:[...el.querySelectorAll('.kitchen-actions button,.arrow-button,.pager button')].map(e=>({id:e.id,width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height}))}));
+   const layout=await frame.locator('body').evaluate(el=>({width:el.scrollWidth,viewport:innerWidth,buttons:[...el.querySelectorAll('#backToSphere,.arrow-button,.pager button')].map(e=>({id:e.id,width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height}))}));
    assert.ok(layout.width<=layout.viewport,width+': kitchen must not overflow horizontally');assert.ok(layout.buttons.every(b=>b.width>=44&&b.height>=44),width+': navigation controls need comfortable touch targets');
    const open=frame.getByRole('button',{name:'View recipe',exact:true});await open.click();await frame.locator('#detail-panel').waitFor({state:'visible'});
    await page.evaluate(()=>document.querySelector('#recipeFrame').contentWindow.postMessage({type:'savor-atlas:select',id:'teriyaki-salmon'},location.origin));

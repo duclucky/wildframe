@@ -3,10 +3,12 @@
 An English-language cooking website, built independently inside WildFrame’s `savor-atlas` child folder. No framework or bundler is required.
 
 - The home globe keeps WildFrame’s mouse-follow rotation and easing, with 60 cards from 12 dishes representing 12 countries.
+- The globe is decorative: hovering and clicking dishes do not show details or open recipes. Use Explore recipes to enter the collection.
 - The kitchen retains the supplied Savor Atlas rotating table, staggered recipe carousel, flying plate, spinning transition and reverse close animation.
+- The kitchen collection fits one viewport with a responsive table, dish summary and recipe picker. Only the full recipe dialog has a scrolling reading area.
 - Choose 1, 2 or 4 servings, check off ingredients and follow the cooking steps. There is no ordering or image-generation flow.
 - Links such as `#dish=chicken-pho` open a specific recipe. Returning to the globe preserves the camera angle.
-- Effects follow the system motion preference by default. The globe’s options menu and kitchen header offer an explicit per-site override that persists and synchronizes between both views. The user’s preview has effects enabled.
+- Effects follow the system motion preference by default. The globe’s options menu offers an explicit per-site override that persists and synchronizes between both views. The kitchen has no top header; its footer provides a return to the globe. The user’s preview has effects enabled.
 
 After editing `source/recipes.json` or the source templates, run:
 
@@ -31,4 +33,4 @@ Recipes are practical home-kitchen adaptations written for this prototype, not a
 
 Globe thumbnails preserve the entire plate and the original alpha transparency inside a 480×320 frame. Globe tiles have no rectangular background, border or shading overlay; depth is expressed through the plate image’s opacity. Rebuild thumbnails with `node scripts/build-thumbnails.cjs` when dish images change; that local image utility uses this workstation’s bundled Sharp. Production serves the prepared WebP files directly and shares each thumbnail across repeated globe tiles, with no runtime canvas conversion.
 
-Local verification uses `tests/cooking-flow.cjs`, `tests/sphere-and-layout.cjs`, `tests/motion-preference.cjs`, `tests/world-recipes.cjs` and `tests/mobile-ux.cjs`. The test scripts reference this workstation’s bundled Playwright and Edge installation; production requires neither.
+Local verification uses `tests/cooking-flow.cjs`, `tests/sphere-and-layout.cjs`, `tests/motion-preference.cjs`, `tests/world-recipes.cjs`, `tests/mobile-ux.cjs` and `tests/kitchen-fit.cjs`. The test scripts reference this workstation’s bundled Playwright and Edge installation; production requires neither.

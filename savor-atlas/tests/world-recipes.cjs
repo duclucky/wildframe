@@ -21,7 +21,8 @@ for(const [index,key] of ingredientArtwork.cells.entries())assert.deepEqual(reci
   const imageNames=await page.locator('.sphere-card img').evaluateAll(items=>[...new Set(items.map(i=>i.src))]);assert.equal(imageNames.length,12);assert.ok(imageNames.some(s=>s.includes('globe-carbonara.webp'))&&imageNames.some(s=>s.includes('globe-chicken-pho.webp')));
   await page.getByRole('button',{name:'Explore recipes',exact:true}).click();const frame=page.frameLocator('#recipeFrame');await frame.locator('#dish-name').waitFor();assert.equal(await frame.locator('html').getAttribute('lang'),'en');
   assert.match(await frame.locator('title').textContent(),/^Savor Atlas/);
-  assert.equal(await frame.locator('.brand-logo').getAttribute('src'),'../assets/cooking/logo-savor-atlas.svg');
+  assert.equal(await frame.locator('header').count(),0,'The kitchen must not show a top header');
+  assert.equal(await frame.locator('footer #backToSphere').count(),1,'Return navigation belongs in the footer');
   for(let p=0;p<3;p++){
    for(let i=0;i<4;i++){
     const card=frame.locator('.dish-card').nth(i);const name=await card.locator('strong').textContent();await card.click();

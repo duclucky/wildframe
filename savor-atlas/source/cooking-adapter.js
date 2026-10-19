@@ -52,6 +52,14 @@
     sendToHome({type:'savor-atlas:selected',id:dishes[index].id});
   }
   function initializeCookingNavigation() {
+    const fitTable=()=>{
+      const height=stage.clientHeight,width=stage.clientWidth;
+      const table=Math.max(600,Math.min(1100,width*(width<=600?2:1.05)));
+      const plate=Math.max(40,Math.min(330,height*.9,width*.7));
+      stage.style.setProperty('--table',table+'px');stage.style.setProperty('--plate',plate+'px');
+      stage.style.setProperty('--center',(height*.62-table/2)+'px');stage.style.setProperty('--orbit',(table/2-height*.12)+'px');
+    };
+    new ResizeObserver(fitTable).observe(stage);fitTable();
     document.querySelector('#view-recipe').addEventListener('click',openDishDetails);
     document.querySelector('#servings').addEventListener('change',renderQuantities);
     document.querySelector('#start-cooking').addEventListener('click',()=>{
@@ -61,7 +69,7 @@
     document.querySelector('#previous-step').addEventListener('click',()=>{if(cookingStep>0)cookingStep--;updateCookingStep();scrollToCookingStep()});
     document.querySelector('#next-step').addEventListener('click',()=>{if(cookingStep<currentRecipe.steps.length)cookingStep++;updateCookingStep();scrollToCookingStep();if(cookingStep===currentRecipe.steps.length)document.querySelector('#start-cooking').focus({preventScroll:true})});
     const goHome=e=>{e.preventDefault();if(parent===window)location.href='../';else sendToHome({type:'savor-atlas:home'})};
-    document.querySelector('#backToSphere').addEventListener('click',goHome);document.querySelector('#kitchenHome').addEventListener('click',goHome);
+    document.querySelector('#backToSphere').addEventListener('click',goHome);
     addEventListener('keydown',e=>{if(e.key==='Escape'&&!dialog.open)goHome(e)});
     addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==parent||!event.data||event.data.type!=='savor-atlas:select')return;if(typeof event.data.id==='string')selectRecipeById(event.data.id);if(parent!==window&&!dialog.open)stage.focus({preventScroll:true})});
     const id=new URLSearchParams(location.search).get('dish');if(id)selectRecipeById(id);

@@ -75,15 +75,8 @@
 </script>
         <link rel="stylesheet" href="../assets/cooking/table-presets.css" />
         <link rel="stylesheet" href="../assets/cooking/table.css" />
-    <link rel="stylesheet" href="../assets/cooking/cooking.css"><link rel="icon" href="../assets/cooking/favicon.svg" type="image/svg+xml"></head>
+    <link rel="stylesheet" href="../assets/cooking/cooking.css"><link rel="stylesheet" href="../assets/cooking/kitchen-layout.css"><link rel="icon" href="../assets/cooking/favicon.svg" type="image/svg+xml"></head>
     <body>
-        <header class="site-header">
-            <a class="brand" id="kitchenHome" href="../" aria-label="Savor Atlas — Back to the food globe"
-                ><img class="brand-logo" src="../assets/cooking/logo-savor-atlas.svg" alt="" width="224" height="60" /></a
-            ><span class="header-note">A world of home cooking</span
-            ><div class="kitchen-actions"><button class="motion-toggle" id="kitchenMotionToggle" data-motion-toggle aria-label="Enable effects" aria-pressed="false"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 4l12 8-12 8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span data-motion-label>Effects: Auto</span></button><button class="back-to-sphere" id="backToSphere" type="button">← Back to globe</button></div>
-        </header>
-
         <main class="experience">
             <section
                 class="stage"
@@ -132,9 +125,10 @@
             </section>
         </main>
 
-        <footer>
+        <footer class="kitchen-footer">
             <span class="footer-mark">Good food. New places. Your kitchen.</span
             ><span>SAVOR ATLAS · THE WORLD, ONE RECIPE AT A TIME</span>
+            <button class="back-to-sphere" id="backToSphere" type="button">← Back to globe</button>
         </footer>
 
         <dialog class="dish-dialog" id="dish-dialog" aria-labelledby="modal-name" tabindex="-1">
@@ -2232,6 +2226,14 @@
     sendToHome({type:'savor-atlas:selected',id:dishes[index].id});
   }
   function initializeCookingNavigation() {
+    const fitTable=()=>{
+      const height=stage.clientHeight,width=stage.clientWidth;
+      const table=Math.max(600,Math.min(1100,width*(width<=600?2:1.05)));
+      const plate=Math.max(40,Math.min(330,height*.9,width*.7));
+      stage.style.setProperty('--table',table+'px');stage.style.setProperty('--plate',plate+'px');
+      stage.style.setProperty('--center',(height*.62-table/2)+'px');stage.style.setProperty('--orbit',(table/2-height*.12)+'px');
+    };
+    new ResizeObserver(fitTable).observe(stage);fitTable();
     document.querySelector('#view-recipe').addEventListener('click',openDishDetails);
     document.querySelector('#servings').addEventListener('change',renderQuantities);
     document.querySelector('#start-cooking').addEventListener('click',()=>{
@@ -2241,7 +2243,7 @@
     document.querySelector('#previous-step').addEventListener('click',()=>{if(cookingStep>0)cookingStep--;updateCookingStep();scrollToCookingStep()});
     document.querySelector('#next-step').addEventListener('click',()=>{if(cookingStep<currentRecipe.steps.length)cookingStep++;updateCookingStep();scrollToCookingStep();if(cookingStep===currentRecipe.steps.length)document.querySelector('#start-cooking').focus({preventScroll:true})});
     const goHome=e=>{e.preventDefault();if(parent===window)location.href='../';else sendToHome({type:'savor-atlas:home'})};
-    document.querySelector('#backToSphere').addEventListener('click',goHome);document.querySelector('#kitchenHome').addEventListener('click',goHome);
+    document.querySelector('#backToSphere').addEventListener('click',goHome);
     addEventListener('keydown',e=>{if(e.key==='Escape'&&!dialog.open)goHome(e)});
     addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==parent||!event.data||event.data.type!=='savor-atlas:select')return;if(typeof event.data.id==='string')selectRecipeById(event.data.id);if(parent!==window&&!dialog.open)stage.focus({preventScroll:true})});
     const id=new URLSearchParams(location.search).get('dish');if(id)selectRecipeById(id);

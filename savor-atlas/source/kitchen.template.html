@@ -12,15 +12,8 @@
         <script>/* MOTION_PREFERENCE */</script>
         <link rel="stylesheet" href="../assets/cooking/table-presets.css" />
         <link rel="stylesheet" href="../assets/cooking/table.css" />
-    <link rel="stylesheet" href="../assets/cooking/cooking.css"><link rel="icon" href="../assets/cooking/favicon.svg" type="image/svg+xml"></head>
+    <link rel="stylesheet" href="../assets/cooking/cooking.css"><link rel="stylesheet" href="../assets/cooking/kitchen-layout.css"><link rel="icon" href="../assets/cooking/favicon.svg" type="image/svg+xml"></head>
     <body>
-        <header class="site-header">
-            <a class="brand" id="kitchenHome" href="../" aria-label="Savor Atlas — Back to the food globe"
-                ><img class="brand-logo" src="../assets/cooking/logo-savor-atlas.svg" alt="" width="224" height="60" /></a
-            ><span class="header-note">A world of home cooking</span
-            ><div class="kitchen-actions"><button class="motion-toggle" id="kitchenMotionToggle" data-motion-toggle aria-label="Enable effects" aria-pressed="false"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 4l12 8-12 8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span data-motion-label>Effects: Auto</span></button><button class="back-to-sphere" id="backToSphere" type="button">← Back to globe</button></div>
-        </header>
-
         <main class="experience">
             <section
                 class="stage"
@@ -69,9 +62,10 @@
             </section>
         </main>
 
-        <footer>
+        <footer class="kitchen-footer">
             <span class="footer-mark">Good food. New places. Your kitchen.</span
             ><span>SAVOR ATLAS · THE WORLD, ONE RECIPE AT A TIME</span>
+            <button class="back-to-sphere" id="backToSphere" type="button">← Back to globe</button>
         </footer>
 
         <dialog class="dish-dialog" id="dish-dialog" aria-labelledby="modal-name" tabindex="-1">
