@@ -43,4 +43,3 @@ const base=process.env.TEST_BASE_URL||'http://127.0.0.1:4174',root=path.resolve(
   assert.deepEqual(errors,[]);console.log(JSON.stringify({passed,mobileAnimationObservedMs:{open:openMs,close:Math.round(performance.now()-closeStart)},errors},null,2));
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exitCode=1});
-
