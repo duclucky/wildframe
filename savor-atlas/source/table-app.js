@@ -92,7 +92,7 @@
       outgoing.append(...oldCards);
       track.append(outgoing);
       const distance = track.getBoundingClientRect().width + 16;
-      const speed = 1.2,
+      const speed = innerWidth <= 600 ? 1.8 : 1.2,
         stagger = 65 / speed,
         exitDuration = 620 / speed,
         entryDuration = 680 / speed;
@@ -226,9 +226,12 @@
     }));
   }
   async function runDetailAnimation(el, keyframes, options) {
+    const timeScale = detailMotion?.timeScale ?? 1;
     const animation = el.animate(keyframes, {
       fill: 'forwards',
-      ...options
+      ...options,
+      duration: options.duration * timeScale,
+      delay: (options.delay || 0) * timeScale
     });
     activeAnimations.push(animation);
     await animation.finished;
@@ -290,7 +293,7 @@
       dialog.classList.add('returning');
       const returnAnimations = detailMotion.flight.filter(animation => animation.effect.getKeyframes().some(frame => frame.opacity !== undefined));
       returnAnimations.forEach(animation => {
-        animation.currentTime = 1000;
+        animation.currentTime = 1000 * detailMotion.timeScale;
       });
       const returnPlate = runDetailAnimation(flyer, [{
         transform: getComputedStyle(flyer).transform
@@ -326,7 +329,8 @@
     returnFocus = document.activeElement;
     detailMotion = {
       width: innerWidth,
-      height: innerHeight
+      height: innerHeight,
+      timeScale: innerWidth <= 600 ? .6 : 1
     };
     wheel.getAnimations().forEach(a => a.finish());
     const img = plates[tableTurn % 4],

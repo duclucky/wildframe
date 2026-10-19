@@ -12,3 +12,9 @@ header{position:fixed;inset:0 0 auto;z-index:60;display:flex;align-items:center;
 @media(max-width:520px){#headline{font-size:clamp(32px,10vw,40px)}.sphere-preview{width:min(278px,calc(100vw - 36px))}.brand-name{font-size:26px}.hero-cta .button{font-size:11px;padding:10px 13px}}
 @media(max-height:520px){.hero-cta,.atlas-controls{bottom:12px}.load-note{display:none}#headline{font-size:clamp(26px,8.5vh,36px)}}
 html[data-motion="reduced"] *,html[data-motion="reduced"] *::before,html[data-motion="reduced"] *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+
+/* Each tile shows the complete plate; one-finger rotation still permits pinch zoom. */
+#stage{touch-action:pinch-zoom}
+.sphere-card img,.sphere-preview img{object-fit:contain;background:#eee8dc}
+.sphere-card figure{border-radius:7px}
+.button:active,.atlas-controls summary:active{background:#d7e6a022}

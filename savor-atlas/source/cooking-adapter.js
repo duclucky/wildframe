@@ -3,11 +3,12 @@
   function sendToHome(message) { if (parent !== window) parent.postMessage(message, location.origin); }
   function renderQuantities() {
     if (!currentRecipe) return;
+    const checked = [...document.querySelectorAll('#recipe-ingredients input')].map(input => input.checked);
     const servings = Number(document.querySelector('#servings').value);
     document.querySelector('#modal-servings').textContent = servings + ' servings';
-    document.querySelector('#recipe-ingredients').replaceChildren(...currentRecipe.quantities.map(([name, amount, unit]) => {
+    document.querySelector('#recipe-ingredients').replaceChildren(...currentRecipe.quantities.map(([name, amount, unit], index) => {
       const li=document.createElement('li'), label=document.createElement('label'), check=document.createElement('input'), text=document.createElement('span'), quantity=document.createElement('strong');
-      check.type='checkbox'; text.textContent=name; quantity.textContent=quantityFormat.format(amount*servings/currentRecipe.servings)+' '+unit;
+      check.type='checkbox'; check.checked=checked[index]||false; text.textContent=name; quantity.textContent=quantityFormat.format(amount*servings/currentRecipe.servings)+' '+unit;
       label.append(check,text,quantity);li.append(label);return li;
     }));
   }
@@ -32,7 +33,7 @@
     target.scrollIntoView({block:'center',behavior:reducedMotion.matches?'instant':'smooth'});
   }
   function renderCookingRecipe(d) {
-    currentRecipe=d;cookingStep=-1;document.querySelector('#recipe-scroll').scrollTop=0;document.querySelector('#servings').value=String(d.servings);renderQuantities();
+    currentRecipe=d;cookingStep=-1;document.querySelector('#recipe-scroll').scrollTop=0;document.querySelector('#servings').value=String(d.servings);document.querySelector('#recipe-ingredients').replaceChildren();renderQuantities();
     document.querySelector('#recipe-steps').replaceChildren(...d.steps.map(([title,copy],index)=>{
       const li=document.createElement('li'), heading=document.createElement('h4'), text=document.createElement('p');li.dataset.step=index;heading.textContent=title;text.textContent=copy;li.append(heading,text);return li;
     }));
@@ -45,12 +46,13 @@
     updateCookingStep();
   }
   function selectRecipeById(id) {
-    const index=dishes.findIndex(d=>d.id===id);if(index<0)return;
+    const index=dishes.findIndex(d=>d.id===id);if(index<0||index===selectedDishIndex)return;
     if(dialog.open)resetDishDetails();
     menuPage=Math.floor(index/PAGE_SIZE);renderMenuPage();selectDish(index);
     sendToHome({type:'savor-atlas:selected',id:dishes[index].id});
   }
   function initializeCookingNavigation() {
+    document.querySelector('#view-recipe').addEventListener('click',openDishDetails);
     document.querySelector('#servings').addEventListener('change',renderQuantities);
     document.querySelector('#start-cooking').addEventListener('click',()=>{
       if(cookingStep<0||cookingStep===currentRecipe.steps.length)cookingStep=0;
@@ -61,9 +63,9 @@
     const goHome=e=>{e.preventDefault();if(parent===window)location.href='../';else sendToHome({type:'savor-atlas:home'})};
     document.querySelector('#backToSphere').addEventListener('click',goHome);document.querySelector('#kitchenHome').addEventListener('click',goHome);
     addEventListener('keydown',e=>{if(e.key==='Escape'&&!dialog.open)goHome(e)});
-    addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==parent||!event.data||event.data.type!=='savor-atlas:select')return;if(typeof event.data.id==='string')selectRecipeById(event.data.id);if(parent!==window)stage.focus({preventScroll:true})});
+    addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==parent||!event.data||event.data.type!=='savor-atlas:select')return;if(typeof event.data.id==='string')selectRecipeById(event.data.id);if(parent!==window&&!dialog.open)stage.focus({preventScroll:true})});
     const id=new URLSearchParams(location.search).get('dish');if(id)selectRecipeById(id);
     track.addEventListener('click',()=>sendToHome({type:'savor-atlas:selected',id:dishes[selectedDishIndex].id}));
     stage.setAttribute('aria-label','Open selected recipe');
-    sendToHome({type:'savor-atlas:ready'});
+    plates[tableTurn % 4].decode().catch(()=>{}).then(()=>sendToHome({type:'savor-atlas:ready'}));
   }

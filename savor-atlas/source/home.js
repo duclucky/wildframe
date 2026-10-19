@@ -5,7 +5,7 @@ const reduced=window.SavorAtlasMotion,coarse=matchMedia('(pointer:coarse)'),clam
 const recipes=recipeData.dishes.map(d=>({...d,title:d.name,subject:d.name,thumb:'assets/cooking/globe-'+d.id+'.webp'}));
 const byId=new Map(recipes.map(d=>[d.id,d]));
 const sphereRecipes=Array.from({length:60},(_,i)=>recipes[(i*5+Math.floor(i/12))%12]);
-const vectors=[],sphereCards=[],thumbs=new Map(),blobURLs=[];
+const vectors=[],sphereCards=[],thumbs=new Map(),thumbnailLoads=new Map();
 let R=300,perspective=1150,yaw=0,pitch=-4,velocityX=0,velocityY=0,pointer=null,raf=0,lastFrame=0,lastWidth=0,lastHeight=0,renderStamp='',activeId=null;
 let hoverPoint=null,hoverAim=null,sphereLocked=false,previewCard=null,previewTimer=0,previewPoint=null;
 let viewReady=false,frameStarted=false,pendingDish=null,returnFocus=null;

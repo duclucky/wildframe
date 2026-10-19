@@ -27,3 +27,34 @@ html[data-motion="reduced"] .recipe-steps li{transition:none}
 .ingredient-photo--world{background-image:url("ingredients-world-atlas.webp")}
 .ingredient-photo.ingredient-initial{display:grid;place-items:center;background-image:none;background-color:#e9eadf;color:#5b674a;font:400 22px Georgia,serif;letter-spacing:.04em}
 .card-price{line-height:1.6}.dish-card strong{overflow-wrap:anywhere}
+
+/* Keep recipe navigation reachable and the photographs intact on touch screens. */
+.site-header{position:sticky;top:0;background:#f5f1e8f5;backdrop-filter:blur(10px)}
+.view-recipe-button{display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:48px;margin-top:22px;padding:12px 24px;border:1px solid #705b3e;border-radius:999px;background:#705b3e;color:#fffdf8;font-size:14px}
+.view-recipe-button:hover{background:#59462e}.view-recipe-button:active{transform:translateY(1px)}
+.arrow-button{width:44px;height:44px}.carousel{grid-template-columns:44px minmax(0,1fr) 44px}
+.pager{gap:8px;margin-top:4px}.pager button,.pager button.active{width:44px;height:44px;background:none;border-radius:50%}
+.pager button::before{inset:auto;left:50%;top:50%;width:7px;height:4px;border-radius:4px;background:#c4b59a;transform:translate(-50%,-50%)}
+.pager button.active::before{width:22px;background:#927044}
+.dish-card strong{overflow-wrap:normal;text-wrap:balance}.dish-card:active{background:#e9dfcb}
+@media(max-width:600px){
+ :root{--table:700px;--center:-190px;--orbit:310px;--plate:clamp(192px,62vw,248px);--duration:650ms}
+ html{scrollbar-gutter:auto}.site-header{height:auto;min-height:72px;padding:calc(12px + env(safe-area-inset-top,0px)) 12px 12px;gap:8px}
+ .site-header .brand{flex-shrink:0}.brand-logo{width:clamp(112px,35vw,150px);max-width:150px;height:auto}
+ .kitchen-actions{gap:8px}.back-to-sphere{padding:10px 12px;font-size:11px}
+ .stage{height:250px}.details{padding:8px 20px 0}.details h1{font-size:clamp(34px,9vw,42px);text-wrap:balance;margin:12px 0}
+ .description{font-size:14px;line-height:1.75;min-height:0;max-width:440px}.dish-meta{gap:12px;margin-top:16px}.preparation{font-size:11px}
+ .ingredient-tags{margin-top:10px}.ingredient-tags span{font-size:10px}.view-recipe-button{margin-top:18px}
+ .menu-section{position:relative;padding:28px 16px 0}.menu-heading{display:flex;align-items:flex-start;flex-direction:column;gap:6px;margin:0 108px 14px 0}
+ .menu-heading h2{font-size:13px;line-height:1.5;max-width:none}.menu-counter{font-size:10px;letter-spacing:.4px}
+ .carousel{display:block}.carousel>.arrow-button{position:absolute;top:30px;right:16px;width:44px;height:44px;border-radius:50%}
+ .carousel>#previous{right:68px}.menu-track{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0}
+ .dish-card{padding:12px 8px;gap:8px;min-height:176px;border-radius:12px}.dish-card img{width:96px;height:96px}.dish-card strong{font-size:16px}.card-price{font-size:11px}
+ footer{padding:12px 20px calc(20px + env(safe-area-inset-bottom,0px));line-height:1.7}
+ .dish-dialog{padding:12px}.detail-panel{max-height:calc(100dvh - 24px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))}
+ .ingredients-heading select{font-size:16px}.detail-copy,.recipe-steps p{font-size:15px;line-height:1.75}.recipe-help{font-size:13px}
+ .ingredient-checklist label{font-size:14px;min-height:48px}.ingredient-checklist label>span{min-width:0}.ingredient-checklist strong{font-size:12px}
+ .ingredient-name{font-size:12px}.recipe-top>span{font-size:10px}.recipe-steps h4{font-size:15px}.recipe-tip p,.recipe-safety{font-size:14px}
+ .detail-bottom{padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}.cooking-controls{gap:8px}.cooking-controls button{font-size:12px;min-height:48px}
+ .dish-dialog.returning::backdrop{animation-duration:.348s;animation-delay:.252s}
+}
