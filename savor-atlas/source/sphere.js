@@ -5,8 +5,7 @@ sphereRecipes.forEach((recipe,i)=>{
 function wake(){if(!raf&&!document.hidden)raf=requestAnimationFrame(frame)}
 function layout(force=false){
  const w=innerWidth,h=innerHeight;if(!force&&w===lastWidth&&h===lastHeight)return;lastWidth=w;lastHeight=h;
- const controls=$('.atlas-controls').getBoundingClientRect();
- const top=Math.max($('header').getBoundingClientRect().bottom+8,controls.left<w/2&&controls.right>w/2?controls.bottom+8:0);
+ const top=$('header').getBoundingClientRect().bottom+8;
  const bottom=$('.hero-cta').getBoundingClientRect().top-8;
  // Leave room for perspective and tangent cards, with the whole atlas in view.
  R=Math.max(44,Math.min(360,h*.36,w*.44,(bottom-top)/2/1.08));
@@ -16,7 +15,7 @@ function layout(force=false){
  sphereCards.forEach((card,i)=>{const v=vectors[i];card.style.transform=`translate3d(${v.x*R}px,${-v.y*R}px,${v.z*R}px) rotateY(${v.lon}deg) rotateX(${v.lat}deg)`});renderStamp='';wake();
 }
 function frame(time){
- raf=0;const dt=lastFrame?clamp((time-lastFrame)/16.667,.25,2):1;lastFrame=time;const paused=sphereLocked||!recipeView.hidden;
+ raf=0;const dt=lastFrame?clamp((time-lastFrame)/16.667,.25,2):1;lastFrame=time;const paused=!recipeView.hidden;
  if(!pointer&&!paused){
   if(reduced.matches)velocityX=velocityY=0;
   if(hoverAim){const follow=1-Math.exp(-dt*16.667/(reduced.matches?85:115));yaw+=(hoverAim.yaw-yaw)*follow;pitch+=(hoverAim.pitch-pitch)*follow;if(Math.abs(hoverAim.yaw-yaw)<.01&&Math.abs(hoverAim.pitch-pitch)<.01){yaw=hoverAim.yaw;pitch=hoverAim.pitch;hoverAim=null}}
@@ -28,7 +27,7 @@ function frame(time){
  if(!paused&&(hoverAim||Math.abs(velocityX)>0||Math.abs(velocityY)>0))wake();else lastFrame=0;
 }
 function followMouse(event){
- if(event.pointerType!=='mouse'||event.buttons||sphereLocked||stage.inert)return;
+ if(event.pointerType!=='mouse'||event.buttons||stage.inert)return;
  const current={x:event.clientX,y:event.clientY};
  if(hoverPoint){const dx=current.x-hoverPoint.x,dy=current.y-hoverPoint.y;if(dx||dy){const aim={yaw:(hoverAim?.yaw??yaw)+dx*.16,pitch:clamp((hoverAim?.pitch??pitch)-dy*.12,-32,32)};
   // Dampen only deliberate input, with a shorter settling time for reduced motion.
@@ -39,9 +38,9 @@ function followMouse(event){
 stage.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')hoverPoint={x:event.clientX,y:event.clientY}});
 stage.addEventListener('pointerleave',()=>{hoverPoint=null});
 stage.addEventListener('pointermove',event=>{if(!pointer)followMouse(event)});
-stage.addEventListener('pointerdown',event=>{if(event.button!==0||pointer||activeId)return;resetHoverMotion();pointer={id:event.pointerId,x:event.clientX,y:event.clientY,lastX:event.clientX,lastY:event.clientY,time:event.timeStamp,touch:event.pointerType==='touch',decided:event.pointerType!=='touch',distance:0};velocityX=velocityY=0;if(!sphereLocked)stage.classList.add('dragging');if(!pointer.touch){stage.setPointerCapture(event.pointerId);event.preventDefault()}});
-stage.addEventListener('pointermove',event=>{if(!pointer||pointer.id!==event.pointerId)return;const dx=event.clientX-pointer.x,dy=event.clientY-pointer.y;pointer.distance=Math.max(pointer.distance,Math.hypot(dx,dy));if(pointer.touch&&!pointer.decided){if(pointer.distance<10)return;pointer.decided=true;stage.setPointerCapture(event.pointerId)}if(sphereLocked)return;const vx=(event.clientX-pointer.lastX)*.13,vy=-(event.clientY-pointer.lastY)*.13,dt=Math.max(8,event.timeStamp-pointer.time)/16.667;yaw+=vx;pitch=clamp(pitch+vy,-32,32);velocityX=clamp(vx/dt,-4,4);velocityY=clamp(vy/dt,-4,4);pointer.lastX=event.clientX;pointer.lastY=event.clientY;pointer.time=event.timeStamp;wake()});
-function endPointer(event,cancel=false){if(!pointer||pointer.id!==event.pointerId)return;const start=pointer;pointer=null;stage.classList.remove('dragging');if(stage.hasPointerCapture(event.pointerId))stage.releasePointerCapture(event.pointerId);if(cancel||reduced.matches||sphereLocked||event.timeStamp-start.time>100)velocityX=velocityY=0;wake()}
+stage.addEventListener('pointerdown',event=>{if(event.button!==0||pointer||activeId)return;resetHoverMotion();pointer={id:event.pointerId,x:event.clientX,y:event.clientY,lastX:event.clientX,lastY:event.clientY,time:event.timeStamp,touch:event.pointerType==='touch',decided:event.pointerType!=='touch',distance:0};velocityX=velocityY=0;stage.classList.add('dragging');if(!pointer.touch){stage.setPointerCapture(event.pointerId);event.preventDefault()}});
+stage.addEventListener('pointermove',event=>{if(!pointer||pointer.id!==event.pointerId)return;const dx=event.clientX-pointer.x,dy=event.clientY-pointer.y;pointer.distance=Math.max(pointer.distance,Math.hypot(dx,dy));if(pointer.touch&&!pointer.decided){if(pointer.distance<10)return;pointer.decided=true;stage.setPointerCapture(event.pointerId)}const vx=(event.clientX-pointer.lastX)*.13,vy=-(event.clientY-pointer.lastY)*.13,dt=Math.max(8,event.timeStamp-pointer.time)/16.667;yaw+=vx;pitch=clamp(pitch+vy,-32,32);velocityX=clamp(vx/dt,-4,4);velocityY=clamp(vy/dt,-4,4);pointer.lastX=event.clientX;pointer.lastY=event.clientY;pointer.time=event.timeStamp;wake()});
+function endPointer(event,cancel=false){if(!pointer||pointer.id!==event.pointerId)return;const start=pointer;pointer=null;stage.classList.remove('dragging');if(stage.hasPointerCapture(event.pointerId))stage.releasePointerCapture(event.pointerId);if(cancel||reduced.matches||event.timeStamp-start.time>100)velocityX=velocityY=0;wake()}
 stage.addEventListener('pointerup',event=>endPointer(event));stage.addEventListener('pointercancel',event=>endPointer(event,true));stage.addEventListener('lostpointercapture',event=>endPointer(event,true));
 addEventListener('blur',()=>{resetHoverMotion();velocityX=velocityY=0});
 addEventListener('resize',()=>layout());addEventListener('orientationchange',()=>setTimeout(()=>layout(true),220));if(window.visualViewport)visualViewport.addEventListener('resize',()=>layout());document.fonts?.ready.then(()=>layout(true));document.addEventListener('visibilitychange',()=>{resetHoverMotion();if(document.hidden){cancelAnimationFrame(raf);raf=0;lastFrame=0;velocityX=velocityY=0}else wake()});reduced.addEventListener('change',()=>{resetHoverMotion();velocityX=velocityY=0;wake()});
@@ -60,5 +59,5 @@ async function loadThumbnail(i){
  loaded++;if(loaded===sphereRecipes.length)updateAtlasHint();else $('#loadNote').textContent=`${loaded} / ${sphereRecipes.length} food previews ready`;
 }
 async function thumbnailWorker(){while(queue.length)await loadThumbnail(queue.shift())}
-initializeSphereControls();layout(true);handleRoute();for(let i=0;i<4;i++)thumbnailWorker();
+initializeSphereInteraction();layout(true);handleRoute();for(let i=0;i<4;i++)thumbnailWorker();
 addEventListener('pagehide',()=>{cancelAnimationFrame(raf);raf=0});addEventListener('pageshow',()=>{layout(true);wake()});

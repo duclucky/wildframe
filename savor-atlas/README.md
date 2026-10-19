@@ -8,7 +8,7 @@ An English-language cooking website, built independently inside WildFrame’s `s
 - The kitchen collection fits one viewport with a responsive table, dish summary and recipe picker. Only the full recipe dialog has a scrolling reading area.
 - Choose 1, 2 or 4 servings, check off ingredients and follow the cooking steps. There is no ordering or image-generation flow.
 - Links such as `#dish=chicken-pho` open a specific recipe. Returning to the globe preserves the camera angle.
-- Effects follow the system motion preference by default. The globe’s options menu offers an explicit per-site override that persists and synchronizes between both views. The kitchen has no top header; its footer provides a return to the globe. The user’s preview has effects enabled.
+- Effects follow the system motion preference by default and preserve existing saved preferences across both views. The globe has no settings menu or lock/reset/effects buttons. The kitchen has no top header; its footer provides a return to the globe.
 
 After editing `source/recipes.json` or the source templates, run:
 

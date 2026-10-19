@@ -7,14 +7,14 @@ const byId=new Map(recipes.map(d=>[d.id,d]));
 const sphereRecipes=Array.from({length:60},(_,i)=>recipes[(i*5+Math.floor(i/12))%12]);
 const vectors=[],sphereCards=[],thumbs=new Map(),thumbnailLoads=new Map();
 let R=300,perspective=1150,yaw=0,pitch=-4,velocityX=0,velocityY=0,pointer=null,raf=0,lastFrame=0,lastWidth=0,lastHeight=0,renderStamp='',activeId=null;
-let hoverPoint=null,hoverAim=null,sphereLocked=false;
+let hoverPoint=null,hoverAim=null;
 let viewReady=false,frameStarted=false,pendingDish=null,returnFocus=null;
 function resetHoverMotion(){hoverPoint=null;hoverAim=null}
-function setHomeInert(inert){stage.inert=inert;$('header').inert=inert;$('.hero-cta').inert=inert;$('#atlasOptions').inert=inert;$('#skipMenu').inert=inert}
+function setHomeInert(inert){stage.inert=inert;$('header').inert=inert;$('.hero-cta').inert=inert;$('#skipMenu').inert=inert}
 function openRecipe(id=null,trigger=null,{route=true}={}){
  if(id&&!byId.has(id))return;
  if(recipeView.hidden)returnFocus=trigger||document.activeElement;
- activeId=id;pendingDish=id;resetHoverMotion();velocityX=velocityY=0;$('#atlasOptions').open=false;
+ activeId=id;pendingDish=id;resetHoverMotion();velocityX=velocityY=0;
  recipeView.hidden=false;recipeView.inert=false;document.body.classList.add('recipe-view');setHomeInert(true);
  if(route){const hash=id?'#dish='+encodeURIComponent(id):'#menu';if(location.hash!==hash)history.pushState(null,'',hash)}
  if(!frameStarted){frameStarted=true;recipeFrame.src='kitchen/index.html'+(id?'?dish='+encodeURIComponent(id):'')}
@@ -50,19 +50,12 @@ $('#homeLink').addEventListener('click',e=>{e.preventDefault();closeRecipes()});
 $('#loadingBack').addEventListener('click',()=>closeRecipes());
 addEventListener('hashchange',handleRoute);addEventListener('popstate',handleRoute);
 function updateAtlasHint(){if(loaded<sphereRecipes.length)return;$('#loadNote').textContent='';$('#loadNote').hidden=true}
-function initializeSphereControls(){
- const options=$('#atlasOptions');
- const closeOptions=(focus=false)=>{options.open=false;if(focus)$('#atlasOptionsToggle').focus({preventScroll:true})};
- $('#lockSphere').addEventListener('click',()=>{sphereLocked=!sphereLocked;resetHoverMotion();velocityX=velocityY=0;$('#lockSphere').setAttribute('aria-pressed',sphereLocked);$('#lockSphere').textContent=sphereLocked?'Unlock view':'Lock view';closeOptions(true);wake()});
- $('#resetSphere').addEventListener('click',()=>{resetHoverMotion();velocityX=velocityY=0;yaw=0;pitch=-4;renderStamp='';closeOptions(true);wake()});
- options.addEventListener('toggle',()=>{if(options.open){resetHoverMotion();velocityX=velocityY=0}});
- document.addEventListener('click',e=>{if(options.open&&!options.contains(e.target))closeOptions()});
- document.addEventListener('keydown',e=>{if(e.key==='Escape'&&options.open){e.preventDefault();closeOptions(true)}});
+function initializeSphereInteraction(){
  stage.addEventListener('focus',()=>{resetHoverMotion();velocityX=velocityY=0});
  stage.addEventListener('keydown',e=>{
   if(e.target!==stage||e.altKey||e.ctrlKey||e.metaKey||stage.inert)return;
   if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)){
-   e.preventDefault();if(sphereLocked)return;resetHoverMotion();velocityX=velocityY=0;
+   e.preventDefault();resetHoverMotion();velocityX=velocityY=0;
    if(e.key==='ArrowLeft')yaw-=12;if(e.key==='ArrowRight')yaw+=12;if(e.key==='ArrowUp')pitch=clamp(pitch+10,-32,32);if(e.key==='ArrowDown')pitch=clamp(pitch-10,-32,32);wake();
   }
  });

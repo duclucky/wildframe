@@ -11,9 +11,8 @@ const base=process.env.TEST_BASE_URL||'http://127.0.0.1:4174';
    const trace=await page.evaluate(()=>new Promise(resolve=>{const trace=[],start=performance.now();function sample(time){const yaw=Number(document.querySelector('#world').style.transform.match(/rotateY\(([-\d.]+)deg\)/)[1]);trace.push({t:time-start,yaw});if(time-start<1100)requestAnimationFrame(sample);else resolve(trace)}requestAnimationFrame(sample)}));
    assert.ok(trace.at(-1).yaw-trace[0].yaw>4);assert.ok(Math.abs(trace.at(-1).yaw-32)<.1);assert.ok(trace.every((v,i)=>!i||v.yaw>=trace[i-1].yaw-.001));
    const idle=await page.evaluate(()=>new Promise(resolve=>{const frames=appFrames;setTimeout(()=>resolve(appFrames-frames),500)}));assert.ok(idle<=1);
-   await page.locator('#atlasOptionsToggle').click();await page.locator('#lockSphere').click();const locked=await page.locator('#world').getAttribute('style');await page.mouse.move(480,330);await page.waitForTimeout(150);assert.equal(await page.locator('#world').getAttribute('style'),locked);
-   await page.locator('#atlasOptionsToggle').click();await page.locator('#lockSphere').click();await page.locator('#atlasOptionsToggle').click();await page.locator('#resetSphere').click();
-   passed.push(`${reducedMotion}: original sensitivity, smooth deceleration, no overshoot/idle loop, lock and reset work`);await page.close();
+   assert.equal(await page.locator('#atlasOptions').count(),0);assert.equal(await page.locator('[data-motion-toggle]').count(),0);
+   passed.push(`${reducedMotion}: original sensitivity, smooth deceleration, no overshoot/idle loop, no settings menu`);await page.close();
   }
   const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});page.on('pageerror',e=>errors.push(e.message));await page.goto(base);await page.evaluate(()=>document.fonts.ready);
   for(const viewport of [{width:1440,height:1000},{width:1366,height:768},{width:1280,height:720},{width:614,height:630},{width:375,height:812},{width:320,height:568},{width:844,height:390}]){

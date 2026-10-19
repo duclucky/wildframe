@@ -15,6 +15,8 @@ const base=process.env.TEST_BASE_URL||'http://127.0.0.1:4174';
   passed.push('60 food cards, 12 unique dishes, mouse-follow rotation retained');
   assert.equal(await page.locator('.sphere-card[role="button"]').count(),0,'Globe dishes are decorative, not recipe buttons');
   assert.equal(await page.locator('#spherePreview').count(),0,'The globe must not show recipe tooltips');
+  assert.equal(await page.locator('#atlasOptions').count(),0,'The home settings menu must be removed');
+  assert.equal(await page.locator('[data-motion-toggle]').count(),0,'The home must not retain an effects button');
   const hit=await page.evaluate(()=>{for(const card of document.querySelectorAll('.sphere-card')){const b=card.getBoundingClientRect(),x=b.x+b.width/2,y=b.y+b.height/2;if(x>100&&x<innerWidth-100&&y>150&&y<innerHeight-150&&document.elementFromPoint(x,y)?.closest('.sphere-card')===card)return{x,y}}});assert.ok(hit);await page.mouse.click(hit.x,hit.y);
   assert.equal(await page.locator('#recipeView').isVisible(),false,'Clicking the decorative globe must not navigate');
   await page.locator('#stage').focus();await page.keyboard.press('Enter');assert.equal(await page.locator('#recipeView').isVisible(),false);
